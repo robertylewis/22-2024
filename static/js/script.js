@@ -13,7 +13,6 @@ let planets = {
 }
 
 function placePlanets() {
-    console.log('placing')
     const height = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
         document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
 
