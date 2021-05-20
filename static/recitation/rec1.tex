@@ -1,0 +1,413 @@
+\documentclass[12pt,letterpaper]{article}
+
+%Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{tikz}
+%\usepackage[]{mcode}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usetikzlibrary{automata,arrows}
+
+%Page formatting
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+
+% Common Commands
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\q{\mathbb q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% 22 style
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em}{\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}%
+  \lhead{\textbf{CSCI 0220}}%
+  \chead{\textbf{Discrete Structures and Probability}}%
+  \rhead{Littman}%
+}
+
+\pagestyle{fancyplain}
+
+\newcommand\EX{\mathds{E}}
+\newcommand\PR{\mathds{P}}
+\newcommand\zlam{Z_\lambda}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+%%%%%%%%%%%%%%%% COMPILE WITH \soltrue or \solfalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifsol
+% \solfalse  % SOLUTIONS
+\soltrue % NO SOLUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\solu}[2]{ \begin{mdframed} \ifsol #2 \else \vspace{#1} \fi \end{mdframed} }
+\newcommand{\solt}{ \ifsol (T) \fi }
+\newcommand{\solf}{ \ifsol (F) \fi }
+\newcommand{\solm}[1]{\ifsol \textit{(#1)} \fi}
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\large \textbf{Recitation 1}}
+    
+    {\large Proofs and Logic}
+  \end{center}
+  
+    \section*{What's recitation?}
+    
+    Recitation is a space for you to work with other members of the CS22 community on problems that we hope will help you hone your understanding of the course material, get better at communicating with other folks about mathematical ideas, and practice for the homework. You'll also get to know some of the TAs and ask them any questions about the course material that you're passionate about, barring specific questions about the homework for the week. If you have any feedback on recitation or the course in general, please share with us through the \href{https://docs.google.com/forms/d/e/1FAIpqLSfq3do7_irvrtC_f-1zxwq3f-Ro17K_P6lAiRa78OSeHkYoGw/viewform}{anonymous feedback form}.
+      
+      \section*{Proof Techniques}
+
+      \subsection*{Direct Proof}
+
+      A direct proof is one that begins with statements you know to be true, makes logical jumps to new statements, and eventually ends up with what you are trying to prove.
+      
+      Here is an example:
+
+      \textbf{Claim:} If $n$ is odd, then $n^2$ is odd.
+
+      \textbf{Proof (direct):} We know that $n$ is odd, so $n = 2k + 1$ for some $k \in \Z$.
+
+      So $n^2 = (2k+1)(2k+1) = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 = 2m+1$,
+
+      where $m =  2k^2 + 2k$.
+
+      Since $m$ is an integer, $n^2$ is odd. \qed
+
+      \begin{enumerate}[a.]
+        \item Prove that the product of an even number and odd number is even. 
+
+        \begin{mdframed}
+        \vspace{1.5cm}
+        \end{mdframed}
+		
+        \item \textit{Optional:} Prove that the product of two rational numbers is rational.
+
+        \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+
+      \end{enumerate}
+
+      \subsection*{Negation and Counterexample}
+
+      Sometimes, we don't ask you to prove claims are true; we instead ask you to prove that they are false! This means your task is to prove the \textit{negation} of the claim. 
+
+      What is the negation of a claim? Let's think about it. 
+      
+      \textbf{Question:} Suppose Galileo says to Aries: ``Everyone in the universe likes Asteroids!". What would Aries need to show Galileo to convince him this was false?
+
+      \begin{enumerate}[(a)]
+      \item Every person in the universe hates Asteroids. 
+      \item There is at least one person in the universe who does not like Asteroids.
+      \item There are at least 22 people in the universe who do not like Asteroids. 
+      \end{enumerate}
+      
+      \begin{mdframed} \vspace{0.5cm} \end{mdframed}
+
+      \textbf{Question:} Now, practice negating each of the following claims. Write the negated version of the claim below.
+
+     \begin{enumerate}
+        \item All CS22 students want to be an astronaut.
+        \item There exists a student in CS22 who is an astronaut.
+        \item $\forall x \in \Z$, if $x$ is even, $2x$ is odd.
+      \end{enumerate}
+      
+      \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+      
+      Sometimes, we can show that a claim is false (i.e. the negation of the claim is true) by providing a \textbf{counterexample}. For example, suppose Aries makes the claim that if $xy$ is rational then $x$ and $y$ are rational.
+
+      Galileo can disprove Aries's claim by coming up with a counterexample. For example, if $x = \sqrt{2}$ and $y = \sqrt{2}$, then $xy = 2$, which is rational. 
+
+      \textbf{Question:} Now, disprove the following statement by providing a counterexample.
+      If $xyz$ is rational, then $x$, $y$, and $z$ are rational.
+
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\textbf{\textit{Optional Recommended} Checkpoint — Call over a TA.}
+
+      \subsection*{Proof by Contradiction}
+
+      In math, we can't have that a claim and its negation are both true. This would be a \textbf{contradiction}. For example, it cannot be the case that $3$ is odd and $3$ is not odd. Only one of these statements can be true, and one of them has to be true.
+
+      This idea motivates a proof technique called \textit{proof by contradiction}. The general idea is this:
+
+      Say we have some statement $T$ that we are trying to prove is true.
+
+      To prove $T$ is true by contradiction: 
+      \begin{enumerate}
+        \item We begin by assuming $T$ is NOT true. That is, we assume that the negation of $T$ is true. 
+        \item Assuming $T$ is not true leads us to a contradiction. That is, by making logical leaps from $T$ being true, we arrive at the fact that a statement $x$ and its negation both have to be true.
+        \item But $x$ and its negation cannot both be true; this is a contradiction. We got to this contradiction by assuming $T$ was false. Therefore, we know $T$ cannot be false; i.e. $T$ is true.
+      \end{enumerate}
+
+      Here is an example.
+
+      \textbf{Claim:}  There is no smallest rational number greater than 0.
+
+      \textbf{Proof:} Assume for sake of contradiction that there exists a smallest rational number, say $r$.
+      
+      However, $r/2$ is a rational number greater than $0$ and smaller than $r$.
+      
+      This is a contradiction to the fact that $r$ is the smallest rational number.
+      
+      Assuming that there is a smallest rational number led to a contradiction, and therefore there is no smallest rational number greater than $0$.
+      
+      Now it's your turn! Prove the following statements by contradiction. 
+      
+      \begin{enumerate}[a.]
+
+        \item 2 is an even number.
+
+        \begin{mdframed} \vspace{2cm} \end{mdframed}
+        
+        \item \textit{Optional:} Suppose $a,b \in R$. If $a$ is rational and $ab$ is irrational, then $b$ is irrational.
+        
+        \begin{mdframed} \vspace{2cm} \end{mdframed}
+        
+      \end{enumerate}
+		
+	\subsection*{Proof by Contrapositive}
+	If we have a statement ``if $A$ then $B$", we define the contrapositive of that statement to be ``if not $B$ then not $A$". If the statement is true, then the contrapositive is true, and if the statement is false, then the contrapositive is false (check this for yourself!). We can therefore prove statements just by showing that their contrapositive is true.
+	
+	\textbf{Example:} Let's say we want to prove the statement \textit{if $x^2$ is even, then $x$ is even}. We could spend the effort to come up with a new direct proof of this. But, earlier in the recitation (the direct proof example) we already showed that \textit{if $n$ is odd, then $n^2$ is odd}. This is exactly the contrapositive of what we want to show, so we can just reuse that proof for this new statement.
+	
+     \textbf{Question:} Now, practice writing the contrapositive for each of these statements. Write the contrapositive next to the original.  
+
+     \begin{enumerate}
+        \item If a student attends recitation, then they understand the material.
+        \item If someone is an alien, then they are from another planet.
+        \item A student is a Gemini if they are born on May 21.
+      \end{enumerate}
+      
+    \begin{mdframed} \vspace{2.5cm} \end{mdframed}
+
+    \textbf{Checkpoint 1 — Call a TA over.}
+\newpage 
+\begin{22enumerate}
+	
+	\section*{Logic}
+	
+	\item A \textbf{propositional formula} is a function of one or more variables, each of which can be set to true or false, that evaluates to true or false. We call a propositional formula a \textit{proposition} for short. 
+	
+	\item The term \textbf{logical expression} is often used synonymously with the word proposition. 
+	
+	\item Two propositions are \textbf{logically equivalent} when they have  the same truth tables.
+	
+	\item A proposition is \textbf{valid} if it evaluates to true on any choice of inputs; it is true no matter what. That is, a valid proposition is logically equivalent to the expression ($p$ OR NOT $p$). This is also called a \textit{tautology}. 
+	
+	\item A proposition is \textbf{satisfiable} if it evaluates to true on some choice of inputs. A valid proposition is satisfiable, but so are many propositions which sometimes evaluate to false.
+	
+	\item If a proposition is not satisfiable, it evaluates to false on any choice of inputs; it is false no matter what. That is, it is logically equivalent to the expression ($p$ AND NOT $ p$). This is called a \textit{contradiction}.
+	
+	\end{22enumerate}
+
+Let's now review the interpretation of each of the following logical connectives:    
+
+\begin{tabular}{c|c|c|c|c|c|c|c}
+ $p$ & $q$ & NOT $ p$ & $p$ AND $q$ & $p$ OR $q$ & $p$ XOR $q$ & $p$ IMPLIES $q$ & $p$ IFF $q$\\
+\hline
+T & T & F & T & T & F & T & T\\
+T & F & F & F & T & T & F & F\\
+F & T & T & F & T & T & T & F\\
+F & F & T & F & F & F & T & T
+\end{tabular}
+
+\subsection*{Why do we have propositions?} 
+
+Propositions are condensed ways of representing truth tables. Because they're more condensed, we oftentimes can more easily extract the meaning from them. It can be hard to look at a truth table and see the ``general rule'' that transforms input to output. A proposition is that rule. 
+
+Remember when we represented functions in the form $f(x) = ...$? This notation is a general rule for creating the set of ordered pairs that is the function. In the same way, a proposition is a general rule for creating the truth table. 
+
+	\subsection*{Logical Equivalence: Two approaches}
+	
+	You have two techniques at your disposal to determine if two expressions are logically equivalent: by using truth tables or by using logical rewrite rules.
+	
+	Given two expressions, you can write out the truth table for each one. If they have the same inputs and their truth tables are the same, they are logically equivalent.
+	
+	Or, given two expressions, you use logical equivalence rules to try to get from one expression to the other. For example, take the expression NOT($x$ AND $y$). Using DeMorgan's law, you could get that the not ``distributes'' in this expression, and it is therefore equivalent to $($NOT $ x $ OR $ $NOT $ y)$. A full list of rules you can use can be found \href{https://cs22.netlify.app/static/documents/logic.pdf}{on the course website}.
+
+	\textbf{TASK:} Determine if each pair of expressions below are logically equivalent (i.e. determine if the equivalence stated holds). You can choose to either use truth tables or simplify the expressions to arrive at your answer. To show that the expressions are not logically equivalent, you only need to provide one counterexample.
+		
+		\begin{enumerate}[i.]
+			\item $p$ OR $q$ $\equiv$ (NOT $p$) AND (NOT $q$)
+			
+			\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+
+			\item $p \Leftrightarrow q \equiv (p $ AND $ q) $ OR $ ($NOT $ p $ AND $ $NOT $ q)$
+			
+			\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+			
+			\item \textit{Optional:} $p $ AND $ $NOT $ q \equiv $ NOT$ ($NOT $ p $ OR $ q)$
+			
+			\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+			
+			\item \textit{Optional:} $((p $ OR $ q) $ AND $ z) \equiv (p $ OR $ (q $ AND $ z))$ 
+			
+			\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+			
+	\end{enumerate}
+	
+	    \section*{More Practice}
+	\begin{enumerate}[a.]
+		\item Give an assignment to the variables $x_1,x_2,x_3$ which makes the following logical expression evaluate to true.
+
+		$(x_1 $ OR $ x_2)$ AND $ ($NOT $ x_1 $ OR $ $NOT $ x_2 $ OR $ $NOT $ x_3) $ AND $ x_3$
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+		\item Is the following logical expression valid? Explain your answer.
+
+		$(x_1 $ AND $ x_2)$ OR $ ($NOT $ x_1 $ AND $ $NOT $ x_2 $ AND $ $NOT $ x_3) $ OR $ (x_3 $ AND $ $NOT $ x_3) $
+
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+		\item Come up with a logical expression with three variables which has \textbf{only one} assignment to the variables which makes it true.
+
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+% 		\item Given inputs $p$ and $q$, create an expression which outputs $p \oplus q$ using only \textbf{not}, \textbf{or}, and \textbf{and}.
+
+% 		\solu{3cm}{Something like: $(p \wedge $NOT$ q) \vee ( $NOT$ p \wedge q)$}
+    \end{enumerate}
+
+    \newpage
+	\subsection*{Normal Forms}
+	We say a proposition is in \textbf{DNF (disjunctive normal form)} when it is the disjuction (clauses ORed together) of conjuctions (terms ANDed together).
+	
+	We say a proposition is in \textbf{CNF (conjunctive normal form)} when it is the conjuction (clauses ANDed together) of disjuctions (terms ORed together). 
+	
+	Here's a truth table, and propositions in DNF and CNF which represent it:
+	
+	\begin{tabular}{c|c|c|c}
+         $p$ & $q$ & $r$ & ?\\
+        \hline
+        T & T & T & F \\
+        T & T & F & T \\
+        T & F & T & F \\
+        T & F & F & T \\
+        F & T & T & F \\
+        F & T & F & F \\
+        F & F & T & T \\
+        F & F & F & T
+    \end{tabular}
+    
+    DNF: $(p $ AND $ q $ AND $ $NOT $ r) $ OR $ (p $ AND $ $NOT $ q $ AND $ $NOT $ r) $ OR $ ($NOT $ p $ AND $ $NOT $ q $ AND $ r) $ OR $ ($NOT $ p $ AND $ $NOT $ q $ AND $ $NOT $ r)$
+    
+	CNF: $($NOT $ p $ OR $ $NOT $ q $ OR $ $NOT $ r) $ AND $ ($NOT $ p $ OR $ q $ OR $ $NOT $ r) $ AND $ (p $ OR $ $NOT $ q $ OR $ $NOT $ r) $ AND $ (p $ OR $ $NOT $ q $ Or $ r)$
+	
+	If we have an arbitrary truth table, here are two ways we can think about describing it:
+
+	\begin{itemize}
+	    \item Listing the true rows
+	    \item Listing the false rows
+	\end{itemize}
+	Since every row must be either true or false, both of these ways will uniquely describe our truth table.
+	
+	These two ways correspond to DNF and CNF, respectively. To write a proposition in DNF, we can think about it like this: we find all rows where our proposition should evaluate to true, and we say that we must be in one of those rows. On the other hand, to write a proposition in CNF, we find all rows where our proposition should evaluate to false, and say we are not in any of those rows.
+	
+	\textbf{TASK:} How do we specify that we are in one of the true rows (DNF)? How do we specify that we are not in any of the false rows (CNF)?
+	
+	$\textit{Hint}:$ Look at the DNF and CNF representations of the truth tables above. How do they relate to this idea?
+	
+    \begin{mdframed} \vspace{2.5cm} \end{mdframed}
+	
+	\textbf{TASK:} Write two propositions corresponding to the following truth table: one in DNF and one in CNF.
+	
+	\begin{tabular}{c|c|c|c}
+         $p$ & $q$ & $r$ & ?\\
+        \hline
+        T & T & T & T \\
+        T & T & F & T \\
+        T & F & T & F \\
+        T & F & F & T \\
+        F & T & T & T \\
+        F & T & F & F \\
+        F & F & T & F \\
+        F & F & F & T
+    \end{tabular}
+	
+    \begin{mdframed} \vspace{2.5cm} \end{mdframed}
+	
+\newpage 
+ \section*{Facebook Censorship Rules}
+  
+  In 2017, Propublica allegedly released information on how Facebook determines what constitutes hate speech. The ruleset they outlined was a highly deterministic, logic-based system (note the difference between logic-based and logical). 
+  
+  Here are several overarching censorship rules that Facebook follows to determine if a comment is hate speech (note that enforcement is inconsistent at best, and it is unknown whether or not Facebook has changed its methodology): 
+  
+     \begin{enumerate}[1.]
+        \item A comment in question is making an “attack” or hateful comment (the specifics on how this is determined is not clear).
+        \item The comment in question is directed towards \textbf{people} belonging to a “protected group” or any combination of protected groups. Note that each member of a protected group is protected indiscriminately (comments disparaging “man” are weighed equally as comments disparaging “woman”) and the comment must be directed towards people, not ideologies.
+        	\begin{itemize}
+                \item The protected groups are race, sex, gender identity, religious affiliation, national origin, ethnicity, sexual orientation, and serious disability/disease. This group can shift depending on current events; for example, “Syrian immigrants” were added as a protected group in the wake of the Syrian refugee crisis.
+        	\end{itemize}
+        \item If the target of the comment has multiple listed characteristics, (e.g. “Asian” has one characteristic, “Asian male” has two, and “elderly Asian male” has three), \textbf{each characteristic must be in a protected group} for the comment to be considered hate speech.
+    \end{enumerate}
+    
+    If these conditions are met, Facebook flags the comment as hate speech and the comment is subject to being taken down. We can express this as a proposition: let $p$ be that the comment is hateful, let $q_i$ be that the $i$th characteristic of the targeted group belongs in the “protected groups," and let $r$ be that the given comment is hate speech. We apply this simple logic to determine whether the statement is hate:
+    \begin {align*}
+    	p \text{ AND } q_1 \text{ AND } q_2 \text{ AND } q_3 … \text{ IMPLIES } r \\
+    \end {align*}
+    
+    \newpage 
+    \textbf{TASK:} Given the following list of subgroup characteristics, determine if the following groups would be protected from “hate speech” under the Facebook rules (focus on rules three and two). Give another example of a group that should be protected but isn’t.
+    
+    \begin{enumerate}[1.]
+        \item Female driver
+        \item Black kid
+        \item White man
+        \item Islam
+        \item Muslims
+    \end{enumerate}
+    
+    \begin{mdframed} \vspace{3cm} \end{mdframed}
+    
+     \textbf{TASK:} In 2018, Facebook responded to the article by adding “age” into the list of protected groups. How have your answers to the previous tasks changed? How could someone continue to post racist, sexist, and hateful comments with these rules? Does something still strike you wrong about the list of protected groups and unprotected groups? 
+     
+     \begin{mdframed} \vspace{3cm} \end{mdframed}
+     
+     \textbf{TASK:} Facebook tried its best to use a rigid set of predicates and propositions to determine whether a given comment is hate speech. Describe one limitation that logical formulas have in terms of applying them to complicated real-world situations.
+     
+     \begin{mdframed} \vspace{3cm} \end{mdframed}
+
+
+\subsection*{Checkoff - call over a TA!}
+
+\end{document}
