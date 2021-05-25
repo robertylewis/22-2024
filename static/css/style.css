@@ -362,6 +362,10 @@ td {
     transition: background-color linear 0.1s;
 }
 
+tr:hover > td {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 @media screen and (max-width: 768px) {
     th,
     td {
