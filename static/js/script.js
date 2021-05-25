@@ -36,3 +36,12 @@ $('#astronaut').click(() => {
     counter++;
     $('#astronaut').attr("src", prefix + astronauts[counter % 3]);
 })
+
+// Navbar
+function openNav() {
+    document.getElementById("navholder-mobile").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("navholder-mobile").style.height = "0%";
+}

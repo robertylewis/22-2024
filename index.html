@@ -43,9 +43,11 @@
 
     <!-- NAVBAR -->
     <nav>
+        <!-- REGULAR NAV -->
         <div class="nav-nav">
             <div class="nav-holder nav-left">
-                <img loading="lazy" class="nav-logo shake" src="static/img/planets/planet_22.png" draggable="false" alt="logo" />
+                <img loading="lazy" class="nav-logo shake" src="static/img/planets/planet_22.png" draggable="false"
+                    alt="logo" />
                 <span class="nav-link nav-link-main">
                     <a class="ul ul-1" href="#">CSCI 0220</a>
                 </span>
@@ -68,7 +70,24 @@
                 </span>
             </div>
         </div>
+
+        <!-- MOBILE NAV -->
+        <div id="navholder-mobile" class="navholder-mobile">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">☰</a>
+            <div class="navholder-content">
+                <a class="ul ul-1" onclick="closeNav()" href="#">CSCI 0220</a>
+                <a class="ul ul-2" onclick="closeNav()" href="#assignments">Assignments</a>
+                <a class="ul ul-3" onclick="closeNav()" href="#lectures">Lectures</a>
+                <a class="ul ul-4" onclick="closeNav()" href="#calendar">Calendar</a>
+                <a class="ul ul-5" onclick="closeNav()" href="#resources">Resources</a>
+                <a class="ul ul-6" onclick="closeNav()" href="#staff">Staff</a>
+            </div>
+        </div>
+
+        <!-- MOBILE NAV BUTTON -->
+        <span class="hamburger" onclick="openNav()">☰</span>
     </nav>
+
 
 
     <!-- MAIN BODY -->
@@ -98,8 +117,8 @@
                 <div class="ring">
                     <div class="ring">
                         <div class="ring">
-                            <img loading="lazy" id="astronaut" class="landing-logo shake" src="static/img/planets/astronaut.png"
-                                draggable="false" alt="astronaut" />
+                            <img loading="lazy" id="astronaut" class="landing-logo shake"
+                                src="static/img/planets/astronaut.png" draggable="false" alt="astronaut" />
                         </div>
                     </div>
                 </div>
@@ -127,7 +146,7 @@
                     <th>Solutions</th>
                 </tr <tr>
                 <td><a href="https://forms.gle/9TQU1QJPaHBHmndk6">HW0</a></td>
-                 <td>-</td>
+                <td>-</td>
                 <td>May 13</td>
                 <td>May 17</td>
                 <td>-</td>
@@ -219,7 +238,8 @@
                     <th>Solution</th>
                 </tr>
                 <tr>
-                    <td>Rec1 <a href="static/recitation/rec1.pdf">.pdf</a>, <a href="static/recitation/rec1.tex">.tex</a></td>
+                    <td>Rec1 <a href="static/recitation/rec1.pdf">.pdf</a>, <a
+                            href="static/recitation/rec1.tex">.tex</a></td>
                     <td>May 20</td>
                     <td>-</td>
                 </tr>
@@ -318,7 +338,7 @@
                 <tr>
                     <td>May 19</td>
                     <td><a href="static/lectures/Lecture4_5-19.pdf">
-                        Predicate Logic, Normal Forms (CNF, DNF)
+                            Predicate Logic, Normal Forms (CNF, DNF)
                         </a></td>
                     <td><a
                             href="https://brown.zoom.us/rec/play/igjUQ3ofevwRjR2FRNN6gJcWgOJafW_F6jfQKTTbBsYN8CJkc5d_a6FNP8-glLoIDCQDsVhHzeRIgR6X.Kjizp1UnWRI8sF7V?continueMode=true">
@@ -328,7 +348,7 @@
                 <tr>
                     <td>May 21</td>
                     <td><a href="static/lectures/Lecture5_5-21.pdf">
-                        Intro to Circuits
+                            Intro to Circuits
                         </a></td>
                     <td><a
                             href="https://brown.zoom.us/rec/play/vrClcqzOzyA2tklouK7xHEgdMswi5RBp0RzgMLGsPtQ-h4lG_00IMtVHVZnVRmeZ2sekFL5jCgvlRnbQ.rH7zEInJ3dfomM0Q?continueMode=true">
@@ -338,7 +358,7 @@
                 <tr>
                     <td>May 24</td>
                     <td><a href="static/lectures/Lecture6_5-24.pdf">
-                        Circuits for Computing
+                            Circuits for Computing
                         </a></td>
                     <td><a
                             href="https://brown.zoom.us/rec/play/4fUph-Rr-g-uhDC8hlN8yfIlu_iWJS40z1OhViVG57URuByi4AuTCDHe1RvtV66IWccCljlwcjqwGzzK.CMnmvJ6Xx_WRpkgd?continueMode=true">
@@ -348,7 +368,7 @@
                 <tr>
                     <td>May 26</td>
                     <td><a href="static/lectures/Lecture7_5-26.pdf">
-                        Intro to Set Theory
+                            Intro to Set Theory
                         </a></td>
                     <td>-</td>
                 </tr>
@@ -753,8 +773,10 @@
                 <!-- LITTMAN -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png" alt="astronaut profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/virgo.jpg" alt="virgo constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="astronaut profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/virgo.jpg" alt="virgo constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Michael Littman</h2>
@@ -767,8 +789,10 @@
                 <!-- KYRAN -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/kflynn6.png" alt="kyran's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/scorpio.jpg" alt="scorpio constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/kflynn6.png"
+                            alt="kyran's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/scorpio.jpg" alt="scorpio constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Kyran Flynn</h2>
@@ -782,8 +806,10 @@
                 <!-- MORLEY -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png" alt="astronaut profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/cancer.jpg" alt="cancer constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="astronaut profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/cancer.jpg" alt="cancer constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Morley Hawriluk</h2>
@@ -797,8 +823,10 @@
                 <!-- WILL -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/wyang29.jpg" alt="will's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/wyang29.jpg"
+                            alt="will's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Will Yang</h2>
@@ -813,8 +841,10 @@
                 <!-- BEN -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png" alt="astronaut profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/scorpio.jpg" alt="scorpio constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="astronaut profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/scorpio.jpg" alt="scorpio constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Ben Fiske</h2>
@@ -827,8 +857,10 @@
                 <!-- CALDER -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/chansen6.jpg" alt="calder's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/libra.jpg" alt="libra constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/chansen6.jpg"
+                            alt="calder's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/libra.jpg" alt="libra constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Calder Ruhl Hansen</h2>
@@ -843,8 +875,10 @@
                 <!-- ASHLEY -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/hchung21.jpg" alt="ashley's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/hchung21.jpg"
+                            alt="ashley's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Ashley Chung</h2>
@@ -859,8 +893,10 @@
                 <!-- JIAHUA -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/jchen345.jpg" alt="jiahua's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/taurus.jpg" alt="taurus constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/jchen345.jpg"
+                            alt="jiahua's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/taurus.jpg" alt="taurus constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Jiahua Chen</h2>
@@ -875,8 +911,10 @@
                 <!-- JOANNA -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/jtasmin.jpg" alt="joanna's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/leo.jpg" alt="leo constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/jtasmin.jpg"
+                            alt="joanna's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/leo.jpg" alt="leo constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Joanna Tasmin</h2>
@@ -891,8 +929,10 @@
                 <!-- KEN -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png" alt="ken's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/aries.jpg" alt="aries constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="ken's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aries.jpg" alt="aries constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Ken Kawamura</h2>
@@ -913,8 +953,10 @@
                 <!-- MARY -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/mlou2.jpg" alt="mary's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/capricorn.jpg" alt="capricorn constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/mlou2.jpg"
+                            alt="mary's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/capricorn.jpg" alt="capricorn constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Mary Lou</h2>
@@ -929,8 +971,10 @@
                 <!-- NICK -->
                 <div class="staff-tile">
                     <div title="sasageyo" class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/nyoung10.jpg" alt="nick's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/leo.jpg" alt="leo constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/nyoung10.jpg"
+                            alt="nick's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/leo.jpg" alt="leo constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Nick Young</h2>
@@ -944,8 +988,10 @@
                 <!-- CLAIRE -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/schung25.jpg" alt="claire's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/gemini.jpg" alt="gemini constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/schung25.jpg"
+                            alt="claire's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/gemini.jpg" alt="gemini constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Claire Chung</h2>
@@ -958,8 +1004,10 @@
                 <!-- WALTER -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/xzhan180.jpg" alt="walter's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/xzhan180.jpg"
+                            alt="walter's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Walter Zhang</h2>
@@ -974,14 +1022,17 @@
                 <!-- DANIEL -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/dghebrey.jpg" alt="dghebrey's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/libra.jpg" alt="libra constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/dghebrey.jpg"
+                            alt="dghebrey's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/libra.jpg" alt="libra constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Daniel Ghebreyesus</h2>
                         <p>UTA | dghebrey</p>
                         <p>he/his/him</p>
-                        <p>Hey! I'm a rising junior from the greater Seattle area studying CS. I enjoy solving crosswords and watching the NBA with friends.</p>
+                        <p>Hey! I'm a rising junior from the greater Seattle area studying CS. I enjoy solving
+                            crosswords and watching the NBA with friends.</p>
                         <p>🥳</p>
                     </div>
                 </div>
@@ -989,8 +1040,10 @@
                 <!-- ALYSSA -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/acong3.jpg" alt="alyssa's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/gemini.jpg" alt="gemini constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/acong3.jpg"
+                            alt="alyssa's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/gemini.jpg" alt="gemini constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Alyssa Cong</h2>
@@ -1005,8 +1058,10 @@
                 <!-- RAYMOND -->
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png" alt="raymond's profile picture" />
-                        <img loading="lazy" class="staff-photo staff-photo-hover" src="static/img/constellations/leo.jpg" alt="leo constellation" />
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="raymond's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/leo.jpg" alt="leo constellation" />
                     </div>
                     <div class="lightbox">
                         <h2>Raymond Dai</h2>
