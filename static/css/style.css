@@ -329,7 +329,6 @@ span.hamburger {
         right: 25px;
         font-size: 40px;
         color: var(--color-white);
-        text-shadow: 0 0 2px 2px black;
     }
 }
 
