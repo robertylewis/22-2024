@@ -1,0 +1,421 @@
+\documentclass[12pt,letterpaper]{article}
+
+%Packages
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepgfplotslibrary{external}
+\pgfplotsset{width=5cm,compat=1}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{mathtools}
+%\usepackage[]{mcode}
+\usepackage{graphicx}
+
+%Page formatting
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+
+% Common Commands
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand\definition{\textbf{Definition: }}
+\newcommand\proposition{\textbf{Proposition: }}
+
+% 22 style
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em}{\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}%
+  \lhead{\textbf{CSCI 0220}}%
+  \chead{\textbf{Discrete Structures and Probability}}%
+  \rhead{Littman}%
+}
+
+\pagestyle{fancyplain}
+
+\newcommand\EX{\mathds{E}}
+\newcommand\PR{\mathds{P}}
+\newcommand\zlam{Z_\lambda}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%%%%%%%%%%%%%%% COMPILE WITH \soltrue or \solfalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifsol
+\soltrue  % SOLUTIONS
+% \solfalse % NO SOLUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% solution help %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\solu}[2]{ \begin{mdframed} \ifsol #2 \else \vspace{#1} \fi \end{mdframed} }
+\newcommand{\solt}{ \ifsol (T) \fi }
+\newcommand{\solf}{ \ifsol (F) \fi }
+\newcommand{\solm}[1]{\ifsol \textit{(#1)} \fi}
+
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\large \textbf{Recitation 4}}
+    
+    {\large Relations and Functions}
+
+  \end{center}
+
+\section*{Part 1: Relations}
+
+	\subsection*{Definitions}
+
+\textbf{Defn 1:} A \textit{relation} $R:A \rightarrow B$ is defined on a domain $A$, co-domain $B$, and a graph that is a subset of the Cartesian product $A \times B$. As a slight abuse of notation, we will often write the relation $R$ as a subset of $A\times B$. A relation \empn{on} a set $A$ is $R:A \rightarrow A$. 
+
+\textbf{Defn 2:} An \textit{equivalence relation} is a relation that is reflexive, symmetric, and transitive.
+
+\textbf{Defn 4:} A relation $R$ on $A$ is \texit{reflexive} if $\forall a \in A$, $(a, a) \in R$.
+
+\textbf{Defn 5:} A relation $R$ on $A$ is \textit{symmetric} if $\forall (a, b) \in R$, $(b, a) \in R$. An equivalent definition is that a relation is \textit{not} symmetric if $ \exists (a, b) \in R$ such that $(b, a) \notin R$.
+
+\textbf{Defn 6:} A relation $R$ on $A$ is \textit{antisymmetric} if $\forall a, b \in A$, $(a, b) \in R$ and $(b, a) \in R$ implies that $a = b$.
+
+\textbf{Defn 7:} A relation $R$ on $A$ is \textit{transitive} if $\forall (a, b), (b, c) \in R$, $(a, c) \in R$. An equivalent definition is that a relation is \textit{not} transitive if $ \exists (a, b), (b, c) \in R$ such that $(a, c) \notin R$.
+
+\textbf{Defn 8:} Let $R$ be an equivalence relation on $A$. Then, the \textit{equivalence class} of $a \in A$, denoted $4$ $\left[a\right]_R$,
+is $\{x\in A \mid (a, x) \in R\}$. That is, 
+$\left[a\right]_R$ is all of the elements to which $a$ is related.
+
+\subsection*{What is the point of an equivalence relation, anyway?}
+
+What does it mean for two things to be equal? It can depend on context. For example, you probably generally think of the numbers 2 and 4 as not being equal. However, maybe I want to consider the numbers 2 and 4 to be equal in some contexts because they are both even. We could be in a situation where we only want there to be two kinds of things: even things and odd things. We don't care about anything else like how big or how small the thing is. 
+
+\textit{An equivalence relation allows us to specify what things in the world are equal to each other, and what things aren't.} % This is why they're called \textbf{equivalence} relations! 
+
+An equivalence relation $R$ splits up 
+% (``partitions'') 
+our world into categories, or equivalence classes. In a given equivalence class, all things within the class are things we consider equal, or equivalent, in the context of $R$.
+
+For instance, the equivalence relation $R = \{(x, y) \mid x \bmod 2 = y \bmod 2\}$, for all $x, y \in \Z$, divides the world into two categories: the odd and even numbers.
+
+We call the way the equivalence relation splits up our world a \textit{partition}. A little more formally, a \textit{partition} of a set $A$ is a list of subsets $B_1, \ldots, B_k$ of $A$ such that every element of $A$ is in some subset $B_i$ (exhaustive), but no two subsets share an element (mutually exclusive). \\
+
+\includegraphics[scale=.7]{partition.png}  \\
+\textit{One possible partition of some set $A$, where the dots in the square are distinct elements of $A$}
+
+\subsection*{Task 1}	
+
+	\begin{enumerate}[a.]
+        
+		\item Consider the set $A = \{1,2,3\}$. In the following questions, all relations are on $A$. It may be helpful to draw out a diagram of each relation.
+		
+			\begin{enumerate}[i.]
+				\item $R = A \times A$. List out the elements of $R$. Is $R$ an equivalence relation? If so, state its equivalence class(es).
+
+				\begin{mdframed} \vspace{2cm} \end{mdframed}
+				
+				
+				\item  $R = \{(1, 2), (2, 1)\}$. Is this relation \textit{transitive}?
+				
+				\begin{mdframed} \vspace{1cm} \end{mdframed}
+				
+				\item  $R = \{(1, 2), (2, 1),(2,2),(1,1)\}$. Is this relation reflexive? Symmetric? Transitive?
+				
+				\begin{mdframed} \vspace{2cm} \end{mdframed}
+				
+				\item If the relation in question iii is not an equivalence relation, can you add one pair to it and make it an equivalence relation? Write the equivalence classes of the new relation. 
+				
+				\begin{mdframed} \vspace{2cm} \end{mdframed}
+				
+				\end{enumerate}
+	\item Let $A=\{1,2\}$ and answer to the following questions.
+				\begin{enumerate}
+				
+				\item What is the equivalence relation on $A$ with the smallest number of equivalence classes possible?
+				
+				\begin{mdframed} \vspace{1cm} \end{mdframed}
+				
+				\item What is the equivalence relation on $A$ with the largest number of equivalence classes possible?
+				
+				\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+				\item Is  $R_0 = \{\}$ a relation on $A$?
+
+				\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+				\item Is $R_0$ symmetric? Is it antisymmetric? Why or why not?
+				
+				\begin{mdframed} \vspace{2cm} \end{mdframed}
+
+				\item Is $R_0$ transitive? Why or why not?
+
+				\begin{mdframed} \vspace{2cm} \end{mdframed}
+
+				\item 	$R_0$ is not an equivalence relation. Why?
+				
+				\begin{mdframed} \vspace{1cm} \end{mdframed}
+		\end{enumerate}
+
+ 
+    \item Suppose $R$ is an equivalence relation on $S$, and $R = \{\}$. What is $S$? 
+        
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+		\item Consider the set $B$ of all students at Brown. For each of the following relations on $B$, state whether they are reflexive, symmetric, antisymmetric, transitive, or some combination of them. If it is an equivalence relation, then determine the equivalence classes of the relation.
+		
+		\begin{enumerate}[i.]
+			\item Two students are related if they have the same astrology sign.
+
+				\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+
+
+			\item$s_1$ and $s_2$ are students and $(s_1,s_2) \in R$ if $s_1$ is younger than or the exact same age as $s_2$. (You can assume no students were born at the exact same time.)
+
+				\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+
+		\item Two students are related if they are studying anthropology.
+		
+				\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+
+	  	\item Two students are related if they go to Brown.
+				\begin{mdframed} \vspace{2.5cm} \end{mdframed}
+		\end{enumerate}
+    
+\end{enumerate}
+
+\textbf{Checkpoint 1 — Call a TA over!}
+
+\newpage
+
+	\section*{Part 2: Functions}
+
+      \subsection*{Definitions}
+
+      \textbf{Defn 1:} A relation $R: X\rightarrow Y$ is a \textbf{function} if for every $x$ in the domain $X$, $x$ is mapped to one and only one $y$ in $Y$, the codomain. Note that in the book this is called a \textit{total function}, and function refers to a \textit{partial function}, where for every $x$ in the domain $X$, $x$ is mapped to zero or one $y$ in the codomain $Y$. In this class, we will use function to mean total function and partial function to mean partial function.
+
+      \textbf{Defn 2:} The \textbf{range} of a function $f$ consists of all members of the codomain of $f$ that are mapped to by some member of the domain of $f$. It is the \emph{image} of the domain.
+
+      \textbf{Defn 3:} $f : X \rightarrow Y$ is \textbf{injective (one-to-one)}  if, for every $y \in Y$, there is \textit{at most one} $x \in X$ such that $f(x) = y$. Equivalently, for any $x,y\in Y$ we have $ f(x) = f(y)\implies x=y$, and you can also use its contrapositive $x_1 \not= x_2 \implies f(x_1) \not= f(x_2)$.
+    %   We can also define this property on all relations instead of just functions.
+
+      \textbf{Defn 4:} $f : X \rightarrow Y$ is \textbf{surjective (onto)} if, for every $y \in Y$, there is at least one $x \in X$ such that $f(x) = y$. For surjective functions, the range is equal to co-domain.
+    %   We can also define this property on all relations instead of just functions.
+
+      \textbf{Defn 5:} $f : X \rightarrow Y$ is a \textbf{bijection} if it is both an injection and surjection. 
+
+      \subsection*{Task 2}
+      
+      Let $A$ be the set $\{1, 2, 3\}$. Consider the following relation on $A$, $R_1$ = $\{(1, 2), (2, 1)\}$. 
+
+      \begin{enumerate}
+      \item Is $R_1$ a function? 
+      \begin{mdframed} \vspace{1cm} \end{mdframed}
+      \end{enumerate}
+
+      Now, consider $R_2$, another relation on $A$:  $\{(1, 2), (2, 1), (3, 2)\}$. 
+      \begin{enumerate}
+      \item Is $R_2$ a function? 
+      \begin{mdframed} \vspace{1cm} \end{mdframed}
+      \item If $R_2$ is a function, what is its codomain? How about its range?
+       \begin{mdframed} \vspace{1cm} \end{mdframed}
+      \end{enumerate}
+
+      \subsection*{Task 3}
+      
+      Consider these diagrams that visualize a relation $R:A \rightarrow B$. The diagrams have two sets of dots, one for $A$ and one for $B$, and they have an arrow from $a$ to $b$ in whenever $(a, b)\in R$.
+      
+      \includegraphics[scale=.5]{diagrams.png}
+      
+      Match each of the five diagrams, labeled \sf{A}--\sf{E}, with one of these five descriptions below:
+      \begin{enumerate}[1.]
+          \item \underline{\hspace{5mm}} Not a function
+          \item \underline{\hspace{5mm}} A function that is neither surjective nor injective
+          \item \underline{\hspace{5mm}} A surjective function that is not injective
+          \item \underline{\hspace{5mm}} An injective function that is not surjective
+          \item \underline{\hspace{5mm}} A bijective function — both surjective and injective
+      \end{enumerate}
+      
+    \begin{mdframed} \vspace{3cm} \end{mdframed}
+
+\textbf{\textit{Optional} Checkpoint (recommended if queue is short) — Call a TA over!}
+    
+\newpage
+\subsection*{Task 4}
+ 
+ Consider the following functions and determine if the given function is an injection, surjection, and/or bijection.
+
+\begin{figure}[ht]
+ \begin{subfigure}[b]{0.3\textwidth}
+\begin{tikzpicture}
+  \draw[->] (-2, 0) -- (2, 0) node[right] {$x$};
+  \draw[->] (0, -2) -- (0, 2) node[above] {$y$};
+  \draw[scale=0.3, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
+\end{tikzpicture}
+ \caption{ $f(x)=x^2$}
+\end{subfigure}
+\hfill
+ \begin{subfigure}[b]{0.3\textwidth}
+\begin{tikzpicture}
+  \draw[->] (-2, 0) -- (2, 0) node[right] {$x$};
+  \draw[->] (0, -2) -- (0, 2) node[above] {$y$};
+  \draw[scale=0.3, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {2*\x});
+\end{tikzpicture}   
+ \caption{ $g(x)=x/2$}
+ \end{subfigure}
+ \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+\begin{tikzpicture}
+  \draw[->] (-2, 0) -- (2, 0) node[right] {$x$};
+  \draw[->] (0, -2) -- (0, 2) node[above] {$y$};
+  \draw[scale=0.3, domain=-2:2, smooth, variable=\x, blue] plot ({\x}, {\x*(\x*\x-1)});
+\end{tikzpicture}   
+ \caption{ $h(x)=x^3-x$}
+ \end{subfigure}
+ \end{figure}
+ 
+      Discuss your answers!
+      \begin{enumerate}[a.]
+      
+		
+		\item $f : \R \rightarrow \R$, $f(x) = x^2$
+
+		\begin{mdframed} \vspace{1cm} \end{mdframed}
+		
+		 \item $g : \R \rightarrow \R$, $g(x) = \frac{x}{2}$
+
+		\begin{mdframed} \vspace{1cm} \end{mdframed}
+		
+        \item $h:\R\rightarrow \R$, $h(x)=x^3-x$
+        
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+        
+         \item Question: All of the above functions are defined on $\R$. Consider their graphs in the coordinate system. Which of the following implies surjectivity, which implies injectivity, and which implies neither?
+ \begin{enumerate}[(1)]
+     \item any vertical line intersects the graph \textbf{at most} once
+     \item any horizontal line intersects the graph \textbf{at most} once
+      \item any vertical line intersects the graph \textbf{at least} once
+     \item any horizontal line intersects the graph \textbf{at least}  once
+ \end{enumerate}
+
+\begin{mdframed} \vspace{2cm} \end{mdframed}
+
+        \item Recall the functions defined in parts a-c. Is $f\circ h:\R\rightarrow \R$ surjective and/or injective? (Use \href{https://www.desmos.com/calculator}{\color{blue} a graphing calculator} if you need to.)
+        
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+        
+        \item Is $h\circ f: \R\rightarrow \R$ surjective and/or injective?
+        
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+        \item Let $f : \R \rightarrow \Z$
+        % , where
+        % $f(x) = \lfloor x \rfloor $.
+        % Let $f$
+        give as output the greatest integer less than or equal to $x$, denoted as the floor function $f(x) = \lfloor x\rfloor$. For instance, $f(3.5)=3$, $f(3)=3$, and $f(\pi)=3$.\footnote{Note that we can similarly define the ceiling function $f : \R \rightarrow \Z$ that gives as output the smallest integer greater than or equal to $x$, denoted the ceiling function $f(x) = \lceil x \rceil $. For example, $hf(3.5)=4$, $f(3)=3$, and $f(\pi)=4$.}
+        
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+ 
+        \item $f: \Z \rightarrow \Z$
+        
+        $f(x) = \lfloor x \rfloor$
+
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+      %  $f(\text{player}) = \text{the player's role}$
+
+	%	\solu{1cm}{Not injective. Surjective.}		
+
+
+%         \item \textit{Optional:}
+        
+%         $f : \{0,1\} \rightarrow \N$
+
+%         $f(0) = 1, f(1) = 0$ 
+
+% 	  \solm{Injective but not surjective.}
+        \item \textit{Optional:} $f : \text{Brown University Students} \rightarrow \text{Countries in the World}$
+
+        $f(\text{student}) = \text{country where student is from}$
+
+		\begin{mdframed} \vspace{1cm} \end{mdframed}
+		
+        \item \textit{Optional:} $f : \text{First Year Students} \rightarrow \text{First Year Dorms}$ 
+
+        $f(\text{student}) = \text{dorm that student lives in}$
+
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+      \end{enumerate}
+      
+\subsection*{Task 5}
+
+\begin{enumerate}[a. ]
+\item  Let $A=\{0,1,2\}$ and the function $f:{\mathcal P}(A)\rightarrow \{0,1\}^3$.
+
+Denote the output as $(f_0, f_1, f_2)$, where each $f_i$ is 0 or 1. Given an element $X \in \mathcal{P}(A)$, define $f(X)$ where each $f_i$ is 1 iff $i\in X$, and 0 otherwise.
+ 
+ For instance, $f(\{0, 2\}) = (1, 0, 1)$, $f(A) = (1, 1, 1)$, and $f(\emptyset) = (0, 0, 0)$.
+ 
+ \begin{enumerate}[i.]
+     \item Consider a set of size $n$ where $A=\{1,2,\ldots, n\}$. Generalize the above bijective function for ${\mathcal P}(A)$ and binary strings of length $n$ (that is, $\{0,1\}^n$).
+     
+     \begin{mdframed} \vspace{2cm} \end{mdframed}
+     
+     \item Prove that the above function is a bijection.
+     \begin{mdframed} \vspace{8cm} \end{mdframed}
+ \end{enumerate}
+ 
+ 
+ 
+\item If $f: X \rightarrow Y$ is bijective, and $g: Y \rightarrow Z$ is bijective, what can we say about the cardinalities of $X$ and $Z$? Can you say that $g\circ f $ is bijective?
+      
+      \begin{mdframed} \vspace{2cm} \end{mdframed}
+      
+\end{enumerate}
+
+\subsection*{\textit{Optional} Task 6}
+      
+      \begin{enumerate}[a.]
+      \item If a function $f : X \rightarrow Y$ is injective, what can we say about the cardinalities of $X$ and $Y$? Try making some diagrams where $X$ has more elements than $Y$, fewer elements than $Y$, or the same number of elements as $Y$. When are you able to create an injection, and when are you not?
+      
+      \begin{mdframed} \vspace{2cm} \end{mdframed}
+      
+      \item If a function $f : X \rightarrow Y$ is surjective, what can we say about the cardinalities of $X$ and $Y$? Again, you might want to draw out some examples.
+      
+      \begin{mdframed} \vspace{2cm} \end{mdframed}
+      
+      \item Based on what you've found in the previous two questions, if a function $f: X \rightarrow Y$ is bijective, what can we say about the cardinalities of $X$ and $Y$? When can we create a bijection between two sets, and when can we not?
+      
+      \begin{mdframed} \vspace{2cm} \end{mdframed}
+
+      \end{enumerate}
+      
+\textbf{Checkoff - Call a TA over!}
+
+\end{document}
