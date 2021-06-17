@@ -1,0 +1,312 @@
+\documentclass[12pt,letterpaper]{article}
+
+%Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{mathtools}
+%\usepackage[]{mcode}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+%Page formatting
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+
+% Common Commands
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% 22 style
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em}{\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}%
+  \lhead{\textbf{CSCI 0220}}%
+  \chead{\textbf{Discrete Structures and Probability}}%
+  \rhead{Littman}%
+}
+
+\pagestyle{fancyplain}
+
+\newcommand\EX{\mathds{E}}
+\newcommand\PR{\mathds{P}}
+\newcommand\zlam{Z_\lambda}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%%%%%%%%%%%%%%% COMPILE WITH \soltrue or \solfalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifsol
+\soltrue  % %SOLUTIONS
+% \solfalse % NO SOLUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% solution help %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\solu}[2]{ \begin{mdframed} \ifsol #2 \else \vspace{#1} \fi \end{mdframed} }
+\newcommand{\solt}{ \ifsol (T) \fi }
+\newcommand{\solf}{ \ifsol (F) \fi }
+\newcommand{\solm}[1]{\ifsol \textit{(#1)} \fi}
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\large \textbf{Recitation 5}}
+    
+    {\large Induction}
+  \end{center}
+ 
+ 
+\section*{Induction}
+ 
+ \subsection*{Why does induction work?}
+ 
+ Let's consider an infinite ladder (the best kind of ladder). Suppose we can prove to you both of the following things:
+ 
+ \begin{enumerate}
+ \item You can get to the $1^{\text{st}}$ step of the ladder.
+ \item If you can get to the $k^{\text{th}}$ step of the ladder, then you can get to step $k+1$.
+ \end{enumerate}
+ 
+Why is it the case that for all $n \geq 1$, you can get to the $n^{\text{th}}$ step of the ladder? Discuss with your neighbors.
+
+\begin{mdframed} \vspace{1.5cm} \end{mdframed}
+ 
+ Why are we talking about climbing infinite ladders? Well, it turns out this is a good way to think about how induction works. 
+
+	The \textit{base case} says that we can reach the first step of the ladder.
+
+	The \textit{inductive hypothesis} says that we can get to the $k^{\text{th}}$ step of the ladder.
+
+	The \textit{inductive step} says that if we can get to the $k^{\text{th}}$ step of the ladder, then we can get to step $k+1$. 
+
+	Therefore, once we get to step 1, we can get to step 2. Once we get to step 2, we can get to step 3. And so on for all steps of the infinite ladder.
+ 
+ \subsection*{Induction Template}
+ 
+      We will now review the template for an inductive proof.
+
+
+      For example, say we are trying to prove that $\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}$ is true for all $n \in \N$. In other words, show that this is the equation for calculating the sum of squares $0^2 + 1^2 + 2^2 + \cdots + n^2$.
+
+      \begin{enumerate}
+        \item Define the predicate $P(n)$. Recall that a predicate is a function that takes in an argument, $n$, and evaluates to true or false.
+        
+         \textit{Let $P(n)$ be the predicate that $\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}$.}
+        
+        \item Make the aspirational assertion that, for all $n \geq a$, where $a$ is the smallest value we are considering, $P(n)$ holds. \textbf{Remember to bound $n$}! 
+        
+        \textit{We will show that, for all $n \geq 0$, $P(n)$ holds.}
+
+        \item Show that the base case is true. For some proofs, we may want multiple base cases, but not this time.
+
+        \textit{We will first show $P(0)$ is true. $\sum_{i=0}^0 i^2 = 0$ and $\frac{0(0+1)(2*0+1)}{6} = 0$ so they are equal.}
+
+        \item State the inductive hypothesis. In standard induction\footnote{We will also cover strong induction, in which we assume $P(i)$ is true for \textbf{all} $a \le i \leq k$}, we assume 
+			$P(k)$ is true for some fixed, arbitrary integer $k \geq a$, where $a$ is your base case value. Sometimes, you may need multiple base cases, and you'll want $k$ to be greater than or equal to the biggest of them.
+% 			If you do need multiple base cases, you'll usually detect this when writing your inductive step (so you'll need to go back and add more base cases!). In this example though, it turns out we only need one. 
+
+        \textit{Assume $P(k)$ is true for some fixed, arbitrary integer $k \geq 0$.}
+
+        \item Show that $P(k+1)$ is true given the inductive hypothesis. At some point, you'll want to ``invoke the inductive hypothesis", which is using the fact that $P(k)$ is true to show something else in your proof.
+
+		\textit{We will now show that $P(k+1)$ holds, namely  $\sum_{i=0}^{k+1} i^2 = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}$}.
+
+       	\textit{We know that $\sum_{i=0}^{k+1} i^2 = \left( \sum_{i=0}^{k} i^2 \right)+ (k+1)^2$.}
+
+		\textit{Invoking the inductive hypothesis, we know that $\sum_{i=0}^k i^2 = \frac{k(k+1)(2k+1)}{6}$.}
+
+         \textit{Therefore}
+		\begin{align*}
+			\sum_{i=0}^{k+1} i^2 &= \left( \sum_{i=0}^{k} i^2 \right)+ (k+1)^2 \\
+			&=  \frac{k(k+1)(2k+1)}{6} + (k+1)^2 \\
+			&= \frac{k(k+1)(2k+1) + 6(k+1)^2}{6} \\
+			&= \frac{(k+1)(k(2k+1)+6(k+1))}{6} \\
+			&= \frac{(k+1)(2k^2+k+6k+6)}{6} \\
+			&= \frac{(k+1)(2k^2+7k+6)}{6} \\
+			&= \frac{(k+1)(k+2)(2k+3)}{6} \\
+			&= \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}
+		\end{align*}
+		\textit{as needed.}
+		
+		 \item Conclude.
+		 
+		 \textit{Because the base case, $P(0)$ holds, and because $P(k)$ IMPLIES $P(k + 1)$, we have that, for all $n \geq 0$, $P(n)$ holds.} \qed
+		\end{enumerate}
+
+\subsection*{$\star$ Note $\star$}
+
+For the sake of time, we're only going to look for proof \textit{sketches} in recitation. It's OK to not write down everything, as long as you understand it. In your homework, we'll be looking for full-fledged formal proofs.
+
+	\subsection*{Task 1}
+
+      Prove by induction that, for all $n \geq 2$, 
+      
+      $$(1 - \frac{1}{2^2})(1 - \frac{1}{3^2}) \cdots (1 - \frac{1}{n^2}) = \frac{n+1}{2n}$$
+\begin{mdframed} \vspace{8cm} \end{mdframed}
+
+\subsection*{Task 2}
+Blue and Green are playing a \textit{very fun game}. They have some number of tasks to do, and take turns completing one, two, or three tasks. Whoever has to do the last task loses. If Green goes second, prove that they always have a winning strategy if the number of tasks equals $4k+1$ for some $k \geq 0$.
+
+\begin{mdframed} \vspace{8cm} \end{mdframed}
+
+	\subsection*{\textit{Optional:} Task 3}
+
+      Use induction to prove the following
+      generalization of one of De Morgan's laws:
+      \begin{center}
+      $\lnot(p_1 \land p_2 \land p_3 \land ... \land p_n) 
+      = \lnot p_1 \lor \lnot p_2 \lor ... \lor \lnot p_n$
+      \end{center}
+      for $n \in \Z^+, n \geq 2$.
+
+	\begin{mdframed} \vspace{8cm} \end{mdframed}
+	
+\textbf{Checkpoint 1 — Call over a TA!}
+
+\newpage
+
+ \section*{Strong Induction}
+ 
+With standard induction under our belts, it's time to look at a variant of it, strong induction. In many ways, strong induction is similar to normal induction, as the basic steps listed above are all the same.
+
+Remember that our goal is to prove $\forall i\geq a,  P(i)$.
+The difference is in the inductive hypothesis. When using induction, we assume that $P(k)$ is true to prove $P(k+1)$. In strong induction, we assume that the particular statement holds at all the steps from the base case to the $k$th step. Sometimes, we assume all of $P(b)$, $P(b+1)$, ..., $P(k)$ are true to prove $P(k+1)$. Note that we may need to prove the base case for multiple values. 
+
+Why would we need to do that? Sometimes, you can't just rely on the fact that $P(k)$ is true. Maybe you also need $P(k-1)$ to be true, or perhaps also $P(k-2)$, or even $P(k/2)$. While writing out your inductive step, if you realize that $P(k)$ isn't enough to prove $P(k+1)$, odds are you need strong induction.
+
+\section*{Multiple Base Cases?}
+
+Something to think about: If you need both $P(k)$ and $P(k-1)$, you also need \textit{multiple base cases}. Say you're trying to prove $P(n)$ for $n \geq 1$. If you prove $P(1)$ as your base case, how can you show $P(2)$ without $P(0)$ in the inductive step? You'd have to include \textit{both} $P(1)$ and $P(2)$ as base cases.
+
+And so, you naturally might ask...
+
+\subsection*{Which method should we use?}
+
+With some standard types of problems (e.g., sum formulas) it is clear ahead of time what type of induction is likely to be required, but usually this question answers itself during the exploratory/scratch phase of the argument. In the induction step you will need to reach the $k + 1$ case, and you should ask yourself which of the previous cases you need to get there. If all you need to prove the $k + 1$ case is the case $k$ of the statement, then ordinary induction is appropriate. On the other hand, you may realize that you need the two preceding cases ($k − 1$ and $k$) or the full range of preceding cases, to get to $k + 1$, in which case strong induction is needed.
+
+\section*{Example}
+
+Prove that every integer $n \geq 2$ can be written as a product of one or more prime numbers.
+
+\textbf{Proof}
+
+Let $P(n)$ be the predicate “$n$ can be written as a product of one or more prime numbers”.
+
+\textbf{Base case.} The integer 2 is prime, so it is a product of exactly one prime number (itself). Therefore, $P(2)$ is true.
+
+\textbf{Inductive Hypothesis.} Assume the inductive hypothesis, that for a particular $k$, $P(i)$ is true for all $2 \leq i \leq k$.
+
+
+
+
+\textbf{Inductive Step.} We must prove $P(k + 1)$, that $k + 1$ is the product of one or more prime numbers. $k + 1$ is either prime or composite. If it is prime, then it is the product of exactly one prime number (itself), and $P(k + 1)$ is true. If it is composite, then by definition it is the product of two factors, $k + 1 = ab$, where $a$ and $b$ are integers $\geq 2$.
+
+Since $a$ and $b$ are both greater than 1, they must also both be less than $k + 1$. By the inductive hypothesis, $a$ and $b$ can each by written as a product of one or more primes. But since $k + 1 = ab$, we can combine these two products to express $k + 1$ as a product of primes, so $P(k + 1)$ is true.
+
+
+\smallskip 
+
+Thus \textbf{inductive hypothesis and inductive step} imply:
+
+$$\forall k, (\bigwedge_{j=2}^k P(j))\implies P(k+1)$$
+
+\textbf{Conclusion.} Since $P(2)$ is true and $P(2),...,P(k)$ together imply $P(k + 1)$, $P(n)$ is true for all integers $n \geq 2$.
+
+\subsection*{Task 4}
+
+In which step of the induction proof is there a difference between ordinary and strong induction? What is the difference? 
+
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\subsection*{Task 5}
+
+\begin{enumerate}
+    \item Prove by strong induction that every amount of postage that is at least 15 cents can be made from 4-cent and 5-cent stamps.
+
+\textit{Hint:} You'll need 4 base cases.
+
+\begin{mdframed} \vspace{8cm} \end{mdframed}
+
+\item Why do we need to use strong induction for this proof? In other words, why can't we just 'assume that $P(k)$ is true' in our induction hypothesis? 
+
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\item In part 1, we proved by strong induction that every amount of postage that is at least 15 cents can be made from 4-cent and 5-cent stamps.
+
+Prove the same claim using \textbf{ordinary induction}.
+
+\begin{mdframed} \vspace{8cm} \end{mdframed}
+
+\item \textit{Optional: } Are strong and ordinary induction equivalent?
+
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+\end{enumerate}
+
+\subsection*{\textit{Optional:} Task 6}
+
+Consider a candy bar with $n$ squares in a row. Suppose we want to break this candy bar up into individual squares. How many breaks should we perform? 
+	
+\begin{figure}[tph!]
+\centerline{\includegraphics[totalheight=3cm]{chocolate.jpg}}
+    \caption{A Delicious Candy Bar}
+    \label{fig:verticalcell}
+\end{figure}
+	
+\textbf{Claim}: For all $n \geq 1$, \textbf{any sequence} of $n-1$ breaks will reduce a candy bar of $n$ squares into single squares. This means it doesn't matter what order we break squares in: think about this fact for your inductive step!
+
+Prove this claim by (strong) induction. 
+
+\begin{mdframed} \vspace{8cm} \end{mdframed}
+
+
+\subsection*{Required: Feedback Form}
+Congrats on finishing Recitation~5---it's remarkable how much we learned about proof techniques, logic, set theory, functions and relations, and induction!
+
+The last part of recitation is to fill out this mandatory \href{https://forms.gle/i9Zkq99XyaoweysF8}{\color{blue} feedback form}, which should be completed individually. You will be checked off only if we receive a submission from you.
+
+Your responses will be super helpful as we continue to improve the course, and thank you for an amazing first few weeks of 22!
+
+\subsection*{Checkoff}
+If you are done, call over a TA to get checked off. There's a bonus problem on the next page while you wait.
+
+Lastly, just a reminder that you can direct conceptual questions to your TAs during recitation as well!
+\newpage
+
+\subsection*{\textit{Optional Challenge:} Green-Eyed Aliens}
+
+There are $n$ (where $n$ is 2 or greater) aliens sitting in a circle so that every alien can see every other alien.
+
+Every alien has green eyes. However, no alien knows its own eye color. Additionally, the aliens cannot talk, so they cannot inform each other of the fact that they have green eyes. However, if an alien ever figures out their own eyes are green, they will leave the spaceship that night.
+
+On Day 1, Professor Littman comes and tells the circle of aliens that at least one of them has green eyes. Prove that, on the $n$th night, all $n$ aliens will leave the ship. 
+
+\begin{mdframed} \vspace{8cm} \end{mdframed}
+
+\end{document}
