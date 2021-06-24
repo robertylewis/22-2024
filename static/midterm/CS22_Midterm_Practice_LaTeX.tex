@@ -1,0 +1,296 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newcounter{enum22i}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em\setcounter{enumi}{\value{enum22i}}}{\setcounter{enum22i}{\value{enumi}}\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{\textbf{Discrete Structures and Probability}}
+  \rhead{M. Littman}
+}
+
+\fancypagestyle{fancyplain} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{Midterm Practice}
+}
+\pagestyle{fancyplain}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\huge \textbf{Midterm Practice}}
+  \end{center}
+  
+\section{Proofs}
+
+\subsection*{Problem 1}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+  Show that the square of an even number is also an even number using both:
+  \begin{22itemize}
+    \item A Direct Proof
+    \item A Proof by Contradiction
+  \end{22itemize}
+
+}
+}
+
+\subsection*{Problem 2}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+  Prove that $\forall n \in \Z,\ n^2 + 3n - 5$ is odd by dividing into cases.
+
+}
+}
+
+\newpage
+
+\section{Logic/Circuits}
+
+
+\subsection*{Problem 1}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+
+      \begin{22enumerate}
+        \item Suppose $p$ and $q$ are propositions such that
+        $p$ IMPLIES $q$ is False.  Determine the values of:
+          \begin{enumerate}[(i)]\itemsep0pt
+            \item (NOT $p$) IMPLIES $q$
+            \item $p$ OR $q$
+            \item $q$ IMPLIES $p$
+          \end{enumerate}
+         \item You are now going to design a circuit that takes as
+	 input two 1-bit binary numbers
+        $A$ and $B$ and outputs whether or not $A > B$, $A < B$,
+       	or $A=B$. Namely, the circuit should have two inputs, the bits
+        $A$ and $B$, and three outputs $G$, $E$, and $L$.
+        For any input, exactly one of $G$ (greater), $E$ (equal),
+	or $L$ (less) should be 1. Specifically, $G$ corresponds to
+	$A>B$.
+          \begin{enumerate}[(i)]\itemsep0pt
+            \item Write out a truth table equivalent to this circuit.
+            \item Draw your circuit. Please use only \textsc{And},
+            \textsc{Or}, and \textsc{Not} gates with at most
+            two inputs per gate. Note that we care only about the
+	    correctness of the circuit, not its complexity. Be sure to explain how your circuit works.
+          \end{enumerate}
+      \end{22enumerate}
+    
+}
+}
+
+\subsection*{Problem 2}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+
+      \begin{enumerate}[a.]
+        \item Add parentheses to the following expressions to make them true (1 represents
+           true, and 0 represents false). Note also that there is no implicit
+           ordering; that is, all ordering comes from your parentheses. State
+           explicitly any assumptions you are making about the order of operations.
+          \begin{enumerate}[i.]
+\renewcommand{\land}{\mathrm {\ AND\ }}
+\renewcommand{\lor}{\mathrm {\ OR\ }}
+\renewcommand{\Rightarrow}{\mathrm {\ IMPLIES\ }}
+\renewcommand{\Leftrightarrow}{\mathrm {\ IFF\ }}
+
+          \item $0 \land 1 \lor 1 \Rightarrow 1 \land 1 \land 1 \lor 0$
+          \item $0 \lor 0 \land 1 \land 0 \land 1 \land 1 \lor 1$
+          \item $0 \land 1 \lor 1 \Leftrightarrow 0 \Rightarrow 0$
+          \item $0 \lor 1 \Rightarrow 0 \land 0 \Rightarrow 1$
+          \end{enumerate}
+	\item Prove the following logical equivalences:
+	
+\renewcommand{\land}{\mathrm {\ AND\ }}
+\renewcommand{\lor}{\mathrm {\ OR\ }}
+\renewcommand{\Rightarrow}{\mathrm {\ IMPLIES\ }}
+\renewcommand{\Leftrightarrow}{\mathrm {\ IFF\ }}
+\renewcommand{\lnot}{\mathrm {NOT\ }}
+	  \begin{enumerate}[i.]	  
+	  
+		\item $\lnot (p \lor (\lnot p \land q) \equiv \lnot p \land \lnot q$
+		\item $(p \Rightarrow r) \land (q \Rightarrow r) \equiv (p \lor q) \Rightarrow r$
+	  \end{enumerate}
+	\item Prove that $q \land \lnot (p \Rightarrow q)$ is unsatisfiable.
+	\item Prove that $(p \land q) \Rightarrow (p \lor q)$ is valid.
+	\end{enumerate}
+    
+}
+}
+
+
+
+\newpage
+
+\section{Set Theory}
+
+\subsection*{Problem 1}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+	
+    Determine whether each of the following statements is true or false, and explain why.
+      \begin{22enumerate}
+      \item The powerset of the empty set has the empty set as a member.
+      \item The empty set is an element of every set.
+      \item The empty set is a subset of any set that does not have the empty set as a member.
+      \item Any set that has the empty set as a member must be the empty set.
+      \item The set containing the set containing the set containing the empty set has a cardinality of zero (here, $A$ contains $B$ means $B \in A$).
+      \item The set of all empty sets is the same as the powerset of the empty set.
+    \end{22enumerate}
+    
+    
+}
+}
+
+\subsection*{Problem 2}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+
+
+     \begin{22enumerate}
+     \item Disprove the following claim: 
+
+     For any two sets finite $A$ and $B$, there are the same number of elements in $\Pow(A \times B)$ and $\Pow(A) \times \Pow(B)$.
+
+
+     \item Consider two finite, \textit{non-empty} sets $A$ and $B$. Suppose $\Pow(A \times B)$ and $\Pow(A) \times \Pow(B)$ were equal in size. What must be the size of $A$? What must be size of $B$? Explain your answer. 
+
+     \end{22enumerate}
+    
+}
+}
+
+\newpage
+
+\section{Relations}
+
+\subsection*{Problem 1}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+
+    \begin{22enumerate}
+      \item
+        Prove or disprove that a relation that is reflexive and symmetric is necessarily
+        transitive.
+      \item
+        Prove or disprove that a relation that is reflexive and transitive is necessarily
+        symmetric.
+      \item
+        Prove or disprove that a relation that is symmetric and transitive is necessarily
+         reflexive.
+    \end{22enumerate}
+    
+}
+}
+
+
+
+\subsection*{Problem 2}
+{
+
+{\setcounter{enum22i}{0}
+	Let $S=\{0,1\}, \; T = \{t | t \subseteq S \times S\}$, and $R$ be the set of all possible functions from $S$ to $S$.
+	\begin{22enumerate}
+	\item Can an injection from $T$ to $R$ exist?
+	If so, give one such injection and prove that this mapping is indeed
+	injective.  If not, prove why such a mapping cannot exist.
+	\item Can a surjection from $T$ to $R$ exist?
+	If so, give one such surjection and prove that this mapping is indeed
+       	surjective.  If not, prove why such a mapping cannot exist.
+	\item Can a bijection from $T$ to $R$ exist? If so, why?
+	If not, why not?
+	\end{22enumerate}
+
+}
+}
+
+
+\newpage
+
+\section{Induction}
+
+\subsection*{Problem 1}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+
+        Suppose we have a sequence defined as follows:
+    	\begin{align*}
+    		a_1 &= 1 \\
+    		a_2 &= 3 \\
+    		a_k &= a_{k-2} + 2a_{k-1}
+    	\end{align*}
+
+    	Prove by induction that $a_n$ is odd for all positive integers $n$.
+    
+}
+}
+
+
+\subsection*{Problem 2}
+{
+
+{\setcounter{enum22i}{0}
+	Use mathematical induction to prove the following generalization of one of DeMorgan's laws:
+			\[\overline{\bigcap_{j=1}^{n}{A_j}} = \bigcup_{j=1}^{n}{\overline{A_j}},\]
+	whenever $A_1,A_2,...,A_n$ are subsets of a universal set $U$ and $n \geq 2$. To give you an idea of what this notation means, note that:
+\[\bigcap_{j=1}^{3}{A_j} = A_1 \cap A_2 \cap A_3. \]
+  \textbf{Note:} You must prove DeMorgan's Law for the base case.
+
+}
+}
+
+\end{document}
