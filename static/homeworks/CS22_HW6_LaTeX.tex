@@ -1,0 +1,152 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newcounter{enum22i}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em\setcounter{enumi}{\value{enum22i}}}{\setcounter{enum22i}{\value{enumi}}\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{\textbf{Discrete Structures and Probability}}
+  \rhead{M. Littman}
+}
+
+\fancypagestyle{fancyplain} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{Problem}
+  \rhead{\textit{ }}
+}
+\pagestyle{fancyplain}
+
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\huge \textbf{Homework 6}}
+
+    {\large Due: \textit{Tuesday, July 6th at 11:59pm EDT}}
+  \end{center}
+
+    Please do not include any identifying information about yourself in the handin, including your Banner ID.
+
+    Be sure to fully explain your reasoning and show all work for full credit. We recommend checking out the sample proofs on the course website to see the level of rigor for which we're looking.
+    
+    
+\subsection*{Problem 1}
+{
+{\setcounter{enum22i}{0}
+
+	\begin{22enumerate}
+	\item
+    Find the values of $x$ that satisfy each congruence. If there
+	are infinitely many, list four of them and state the pattern.
+    (No further proof needed)
+
+	\begin{22itemize}
+	\item[i.] $x \equiv 8 \pmod{7}$
+	\item[ii.] $4x \equiv 1 \pmod{1}$
+	\item[iii.] $x^3 \equiv 1 \pmod{27}$
+	\item[iv.] $16 \equiv 24 \pmod{x}$, where $x>0$
+	\end{22itemize}
+	\item
+	Compute the greatest common divisor of the numbers specified using
+	the Euclidean algorithm. Furthermore, for each pair, express the
+	gcd as a linear combination of the given numbers.  Show all steps.
+
+	\begin{22itemize}
+		\item[i.] $5, 38$
+		\item[ii.] $30, 72$
+	\end{22itemize}
+	\item
+    Use the Euclidean algorithm to find a representative $x$ that solves the equation. Show all steps.
+	\begin{22itemize}
+	\item[i.] $4x \equiv 2 \pmod{13}$
+	\item[ii.] $6x \equiv 3 \pmod{9}$
+	\end{22itemize}
+	
+	\item Compute the remainder when
+    $2^{2222} + 4^{4444} + 6^{6666} + 8^{8888}$ is divided by 11.
+
+    \hint{Can anything be simplified with Fermat's Little Theorem?}
+	\end{22enumerate}
+}
+}
+
+
+\subsection*{Problem 2}
+{
+{\setcounter{enum22i}{0}
+	Given that $x$ and $y$ are integers, prove that $11 | 2x+3y$ if and only if $11 | 10x+4y$.
+
+
+}
+}
+
+\subsection*{Problem 3}
+{
+{\setcounter{enum22i}{0}
+  Let $f_n$ be the $n$th Fibonacci number, defined as follows:
+
+  \[f_0 = 0,f_1 = 1,f_n = f_{n-1} + f_{n-2}\]
+
+  \begin{22enumerate}
+  \item Use the Euclidean Algorithm to show that any 2 
+  consecutive Fibonacci numbers are relatively prime (a formal 
+  proof is not necessary).
+  \item Prove that for any $n \geq 2$, $f_n^2 + (-1)^n = f_{n+1}f_{n-1}$.
+  \item Prove that for any $n \geq 2$, either $f_{n-1}$ is its own 
+  multiplicative inverse $\pmod{f_n}$, or $f_n$ is its own multiplicative inverse $\pmod{f_{n+1}}$.
+  \end{22enumerate}
+}
+}
+
+
+\subsection*{Mind Bender (Extra Credit)}
+{
+{\setcounter{enum22i}{0}
+	On the year of the ultimate syzygy, every planet in the solar system is aligned. To celebrate this extremely rare event, every planet invites its exoplanet friends over to orbit in alignment with them and play a \textit{very fun game} involving, you guessed it, asteroids.
+	
+	Consider a syzygy of $n$ planets (numbered 1 through $n$). Together they arrange a line of $n$ asteroids (also numbered 1 through $n$) in front of them. Each asteroid has a warm and a cold side as a result of being exposed to the sun from only one direction. Every asteroid is initially arranged such that their cold side faces the planets.
+	
+	In turn, each planet floats along the line of asteroids. Each planet has the ability to flip an asteroid 180$^{\circ}$ such that the other (warmer or colder) side faces the planets. The rule is this: planet $i$ flips every asteroid numbered with a multiple of $i$. For instance, planet 1 will flip every asteroid. Prove that, once every person is done, asteroid $a$ is flipped onto its warm side if and only if $a$ is a perfect square.
+	
+	As an initial exercise, consider an integer $m$ with exactly three factors: $1$, $p$, and $m$, where $1<p<m$. Prove that $p$ is prime, and prove that $m=p^2$. You do not need to write up this initial exercise. It is to get you thinking about the problem.\\\\
+	\note{For the purpose of this problem, we will let $n \geq 1$, even if there are 8(.5?) planets in the solar system!}
+}
+}
+
+\end{document}
