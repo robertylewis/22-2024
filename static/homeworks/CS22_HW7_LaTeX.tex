@@ -1,0 +1,231 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newcounter{enum22i}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em\setcounter{enumi}{\value{enum22i}}}{\setcounter{enum22i}{\value{enumi}}\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{\textbf{Discrete Structures and Probability}}
+  \rhead{M. Littman}
+}
+
+\fancypagestyle{fancyplain} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{Homework 7}
+  \rhead{\textit{ }}
+}
+\pagestyle{fancyplain}
+
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\huge \textbf{Homework 7}}
+
+    {\large Due: \textit{Monday, July 12th at 11:59pm EDT}}
+  \end{center}
+
+
+    All homeworks are due the Monday after their release at 11:59pm EDT on Gradescope.
+
+    Please do not include any identifying information about yourself in the handin, including your Banner ID.
+
+    Be sure to fully explain your reasoning and show all work for full credit. We recommend checking out the sample proofs on the course website to see the level of rigor for which we're looking.
+   
+   
+\subsection*{Problem 1}
+{
+{\setcounter{enum22i}{0}
+\newcommand{\personA}{Saturn }
+\newcommand{\personB}{Titan }
+
+\personA and its moon \personB want to establish a secure communication channel to discuss who the impostor moon is without any eavesdroppers. They want to use a cryptosystem that is both simple and effective and have decided to use the RSA cryptosystem as a result. \personA publishes the product of primes $n = 1963$ and the public key $e = 49$.
+
+
+	\begin{22enumerate}
+		\item
+			Titan wants to send nonsense along the communication channel to test the system out. Encrypt the random word `SAND' by encrypting each letter separately by using the encoding of $A = 1, \ B =2, \ \dots \ , Z = 26$.
+			Your answer should be a sequence of numbers.
+
+		\item
+			In a moment of weakness, \personA leaked the private key $d = 1249$! Decrypt the most recent series of messages sent by \personB:
+      \[ (1224, 1344, 1305, 1, 407) \]
+
+			\note{\personA and \personB are using the same encoding as used in part (a) for encoding letters.  As such, your answer should be a sequence of letters that \personB originally encoded.}
+\newpage
+		\item
+			Suppose the impostor moon has found two integers $x$ and $y$ such that
+			$x^2 \equiv y^2 \pmod{n}$, but
+			$x \ensuremath{\not}\equiv \pm y \pmod n$.
+			Show how it can use this to find the prime factors of $n$, which we'll denote by $p$ and $q$.\\
+			\hint{What does $n$ divide?}
+			
+		\item
+
+			\personA has regained its senses and has chosen the new
+			public key $e_2=101$. However, the impostor moon has duped them once again and stolen the corresponding private key, $d_2=1301$. The impostor now knows of two pairs of public and private keys, $(e,d)$ and $(e_2,d_2)$ that both work for $n$. Show how these two pairs alone allow the impostor moon to compute the prime factors $p$ and $q$ of $n$.\\
+			\hint{What congruence relation holds for both pairs?}
+
+	\end{22enumerate}
+
+
+}
+}
+
+    
+\subsection*{Problem 2}
+{
+
+{\setcounter{enum22i}{0}
+
+Answer the following questions, explaining the reasoning behind your result. 
+\begin{22enumerate}
+    \item Saturn has a total of 82 moons. Out of this total, 24 of them are regular satellites whose orbits are not greatly inclined relative to Saturn's equatorial plane. The rest are non-regular satellites.
+    
+    Saturn decides to bring four moons on a trip. If it picks one regular satellite and three non-regular satellites, how many distinct groups of moons can Saturn bring on a trip?
+    
+    \item Saturn's moon Rhea is playing with Morse code. The symbols in Morse code are represented by variable-length sequences of dots and dashes (more formally, dits or dahs). For example, the letter A = $\bullet \boldsymbol{-}$, and the number 1 = $\bullet \boldsymbol{-} \boldsymbol{-} \boldsymbol{-} \boldsymbol{-}$. How many different symbols can Rhea represent by sequences of seven or fewer dots and dashes?
+    
+    
+    \item Saturn's moon Titan is making bracelets. It has nine charms to include on its bracelets: a clover, a rainbow, a heart, a shooting star, a horseshoe, a balloon, a blue moon, a pot-o-gold and a leprachaun hat. If each bracelet uses seven charms and does not use a charm more than once, how many distinct bracelets can Titan make with its nine charms? \\\note{The charms are able to slide over the clasp of the bracelet!}
+    
+    
+    \item Saturn's moon Enceladus is playing with a deck of cards. There are 52 cards in a deck, 13 for each of the four suits. It repeatedly draws 5 cards randomly, sees what they are, and then puts them back. In how many ways can Enceladus draw a set of five cards with at least four diamonds and exactly one pair?
+    
+    \item It's been a long time since a family photo has been taken. Saturn asks all of its moons to pick a spot in a line in front of its camera. However, all 24 of the regular satellites have been in a fight, and refuse to sit next to each other. In how many ways can Saturn arrange its 82 moons for a photo if respecting this constraint?
+    
+\end{22enumerate}
+
+}
+}
+
+
+\subsection*{Problem 3}
+{
+{\setcounter{enum22i}{0}
+	\begin{22enumerate}
+	
+	\item On a $4 \times 4$ square grid dots, how many paths of
+      length six connect the lower left-hand corner dot to the upper right-hand corner dot (dot $a$ to dot $b$)? The length of a path is the number of hops between points on that path. A hop can be a move up, move down, move left, or move right. Explain your reasoning.
+	\begin{center}
+	\begin{tabular*}{3cm}{@{\extracolsep{\fill}} r r r r}
+	$\bullet$ & $\bullet$ & $\bullet$ & $_b \bullet$ \\
+	$\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+	$\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+	$_a \bullet$ & $\bullet$ & $\bullet$ & $\bullet$
+	\end{tabular*}
+	\end{center}
+	
+	 \item Now consider a generalized Cartesian grid with height and width equal to $n$, an $(n+1)$ by $(n+1)$ grid of dots. Here we label the lower left-hand corner dot by $(0,0)$ and the upper right-hand corner dot by $(n,n)$. How many paths of shortest length go from the $(0, 0)$ dot to the $(n, n)$ dot? Explain your reasoning.
+
+	 \item Now, holes have appeared in the grid at every point $(x, y)$ such that $x<y$. With the same rules as before, how many paths of shortest length go from $(0, 0)$ to $(n, n)$ without hitting the holes in the grid? Explain your reasoning.\\
+	 \hint{Consider the diagonal where $x+1=y$. If a path crosses this diagonal, is it valid? What can you say about the path up until it crosses the diagonal, and the rest of the path?}
+
+	 \item Another Cartesian grid has height $n-1$ and width $n+1$, but has holes in the grid at every point $(x, y)$ such that $x\leq y$, except for $(0,0)$. Prove that this new grid has the same number of valid paths as the one in part (c) by proving the existence of a bijection between them.
+	\end{22enumerate}
+	\note{Drawing a diagram to familiarize yourself with 
+	valid paths can be helpful. Diagrams are an acceptable 
+	\textit{supplement} to a proof, but never a 
+	replacement for one.}
+	
+
+}
+}
+
+\newpage
+
+\subsection*{Mind Bender (Extra Credit)}
+{
+{\setcounter{enum22i}{0}
+
+	\note{This questions brings together a lot of the content we have covered so far, so we hope it gives you a deeper understanding of the content!}
+
+	Consider the set $M_0=\{0,1,\dots,m-1\}$, and the corresponding 
+	equivalence relation $R_m^*$ on $M_0$ defined by
+\[\left\{(x,y)\;|\;\exists a,b\in \Z^+,\text{ such that }x^a\equiv y^b\pmod m\right\}.\] 
+	Consider the prime factorization of $m=p_1^{a_1}p_2^{a_2}\dots p_n^{a_n}$ for distinct primes $p_1,\dots, p_n$. Let us define the set $F=\{p_1, p_2, \dots, p_n\}$. Let $E\subseteq\Pow(M_0)$ be the set of equivalence classes of $R_m^*$.
+
+	Define the function $f : \Pow(F) \mapsto E$ by
+	\[f\big(\{q_1,\dots,q_k\}\big)=\big[q_1\times q_2\times\dots\times q_k\big]_{R_m^*}\]
+	In words, $f$ maps a subset of the prime factors of $m$
+	to the equivalence class containing their product.
+	As an example, we will look at $m=30=2\times 3\times 5$.
+We then have that $F=\{2,3,5\}$, and:
+\begin{align*}
+f(\varnothing) &= \{1,7,11,13,17,19,23,29\}\\
+f\left(\{2\}\right) &= \{2,4,8,14,16,22,26,28\}\\
+f\left(\{3\}\right) &= \{3,9,21,27\}\\
+f\left(\{5\}\right) &= \{5,25\}\\
+f\left(\{2,3\}\right) &= \{6,12,18,24\}\\
+f\left(\{2,5\}\right) &= \{10,20\}\\
+f\left(\{3,5\}\right) &= \{15\}\\
+f\left(\{2,3,5\}\right) &=\{0\}
+\end{align*}
+
+To get you thinking; what kinds of patterns do you see in these equivalence classes? Make sure to pay special attention to $f(\varnothing)$ and $f(F)$.
+
+\begin{22enumerate}
+  \item Give an example of an $m$ where $f(F)$ is not just the set $\{0\}$. What property must $m$ have to make $f(F)=\{0\}$?
+  \item Consider two distinct subsets of $F$, $Q_1$ and $Q_2$, and define \begin{align*}
+    q_1^* &= \prod_{q\in Q_1} q\\
+    q_2^* &= \prod_{q\in Q_2} q.
+    \end{align*}
+    Prove that $(q_1^*, q_2^*)\not\in R_m^*$, concluding 
+    that $f$ is injective. 
+    Why is that equivalent to injectivity?\footnote{If you have never seen this notation before, big Pi notation ($\Pi$) is used just
+    like big Sigma notation ($\Sigma$), except it is used for 
+    \textbf{products} instead of for \textbf{sums}.}
+    
+  \item Consider some arbitrary element \[x=cq_1^{b_1}q_2^{b_2}\dots q_k^{b_k}\] where $Q=\{q_1,\dots,q_k\}\subseteq F$, $gcd(c,m)=1$,
+  all $b_i$ are positive, and $x \in M_0$. Prove that $x\in f(Q)$, concluding that $f$ is surjective. Why is that equivalent to surjectivity?
+  
+  \note{You may assume the following result without proof. For
+  $Q=\{q_1,\dots,q_k\}$ and positive exponents $\lambda_1,\dots,\lambda_k$, \[\left(q_1q_2\dots q_k,
+  q_1^{\lambda_1}q_2^{\lambda_2}\dots q_k^{\lambda_k}\right) \in R_m^*.\]}
+  
+  \item What can we conclude about the function $f$, and what do you think this says about the relative size of $\Pow(F)$ and $E$?
+  \item Show that $R_m^*$ has exactly two equivalence classes if $m$ is prime, and show what they are.
+\end{22enumerate}
+
+	
+
+}
+}
+  
+\end{document}
