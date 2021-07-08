@@ -1,0 +1,270 @@
+\documentclass[12pt,letterpaper]{article}
+
+%Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{mathtools}
+%\usepackage[]{mcode}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{automata,arrows}
+\usepackage{hyperref}
+\hypersetup{
+     colorlinks=true,
+     linkcolor=blue,
+     filecolor=blue,
+     citecolor = black,      
+     urlcolor=cyan,
+     }
+
+%Page formatting
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+
+% Common Commands
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% 22 style
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em}{\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}%
+  \lhead{\textbf{CSCI 0220}}%
+  \chead{\textbf{Discrete Structures and Probability}}%
+  \rhead{Littman}%
+}
+
+\pagestyle{fancyplain}
+
+\newcommand\EX{\mathds{E}}
+\newcommand\PR{\mathds{P}}
+\newcommand\zlam{Z_\lambda}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%%%%%%%%%%%%%%% COMPILE WITH \soltrue or \solfalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifsol
+\soltrue  % SOLUTIONS
+% \solfalse % NO SOLUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% solution help %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\solu}[2]{ \begin{mdframed} \ifsol #2 \else \vspace{#1} \fi \end{mdframed} }
+\newcommand{\solt}{ \ifsol (T) \fi }
+\newcommand{\solf}{ \ifsol (F) \fi }
+\newcommand{\solm}[1]{\ifsol \textit{(#1)} \fi}
+
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\large \textbf{Encryption and Intro to Counting}}
+    
+    {\large Recitation 7}
+  \end{center}
+   
+   \subsection*{A First Look at Encryption}
+   
+   Think back to the first time a teacher caught you passing a note in class: Wouldn’t it have been cool if that note looked like complete nonsense to your teacher but made sense to you and your friend? 
+   
+
+   The purpose of encryption is to allow people to communicate securely over some medium. Without secure cryptosystems (RSA, for example), we wouldn’t be able to purchase goods on the web without the fear of someone stealing your credit card information. 
+   
+   Suppose that Aries and Orion want to send secret messages to each other. They decide to replace letters with their order in the alphabet (that is, $A = 1$, $B = 2$, etc.). Note that $Z$ can be either 26 or 0.
+
+    They agree on the following \textit{encryption} and \textit{decryption} functions:
+    \[en(x) = \textrm{rem}(3x, 26)\]
+    \[de(m) =  \textrm{rem}(9x, 26)\]
+    
+    \textbf{Task 1}
+    \begin{enumerate}[a.]
+        \item Aries sends Orion their next meeting place with the encrypted message $(22, 10, 11, 8, 19)$. Where are they meeting? You can use a calculator such as \href{https://www.wolframalpha.com/}{Wolfram Alpha}.
+    
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item Now, you try encrypting a four-letter word of your choosing and then decrypt it to see if it's the same message.
+    
+    \begin{mdframed} \vspace{2cm} \end{mdframed}
+    
+    \item Why does Aries and Orion’s encryption scheme work for this 26 character alphabet, that is, why can any encrypted digit be recovered exactly by the decryption process? 
+    
+    \textit{Hint:} What is the relationship between 3, 9, and 26?
+    
+    \begin{mdframed} \vspace{2cm} \end{mdframed}
+    
+    \item \textit{Optional:} Would this scheme work if the modulus was 23? What about 29? Assume you can change the other constants in the encryption and decryption functions.
+    
+    \begin{mdframed} \vspace{2cm} \end{mdframed}
+    \end{enumerate}
+
+  \subsection*{RSA Encryption}
+    Aries and Orion realize that their encryption scheme, is nicely simple, but is altogether
+    too insecure. They opt instead to use RSA encryption to send notes to each other
+in class. Recall that the RSA encryption algorithm works as follows:
+\begin{enumerate}[1. ]
+    \item Choose two primes $p, q$.
+    \item Calculate $n = pq$. We can publish $n$ publicly while keeping $p, q$ private because factorization is a hard problem.
+    \item Calculate $\phi(n) = (p - 1)(q -1)$.
+    \item Choose some $1 < e < \phi(n)$ such that $\gcd(e, \phi(n)) = 1$.
+    \item Find a multiplicative inverse $d$ for $e$ such that $de \equiv 1 \pmod{\phi(n)}$. A multiplicative inverse has to exist because $e$ is defined to be relatively prime to the modulus.
+    \item Publish $n$ (the modulus) and $e$ (the encryption exponent).
+    \item Keep all other numbers private to yourself, but remember $d$: It will be your decryption exponent.
+\end{enumerate}
+
+To encrypt a message $m$, compute $m^* = \textrm{rem}(m^e, n)$. To decrypt an encrypted message $m^*$, calculate $\textrm{rem}((m^*)^d,  n)$.
+\newpage
+
+\textbf{Task 2}
+\begin{enumerate}[a.]
+    \item Now, create your group’s own personal RSA key by choosing \textbf{large} prime values of $p$ and $q$ with 10 digits---use \href{https://primes.utm.edu/lists/small/small.html}{an online list of primes} as a reference. (We want a larger modulus so we can send longer messages, but not so long that calculators can't handle it.) Write $p, q, n$, and $\phi(n)$ down here:
+
+\begin{mdframed} \vspace{2cm} \end{mdframed}
+
+\item Now, find a pair of multiplicative inverses $e$ and $d$ modulus $\phi(n)$. You can use any online calculators/generators (we recommend \href{https://www.wolframalpha.com/}{Wolfram Alpha}) to help you with things like prime factorization or solving congruencies.
+\begin{mdframed} \vspace{2cm} \end{mdframed}
+
+\item Now, ``publish" your $n$ and $e$ by posting them on this \href{https://campuswire.com/c/GA754240A/feed/442}{Campuswire post}. Your TAs will send you an encrypted message via a follow-up to your comment, which you'll have to decrypt to get checked off at the end of this section.
+\end{enumerate}
+
+\textbf{\textit{Optional} Checkpoint - Call over a TA if queue is short!}
+
+\pagebreak
+
+
+\subsection*{Encryption and Privacy}
+  
+    In the wake of the deadly December 2015 terrorist attack in San Bernardino, California, the FBI asked Apple to develop software that would allow the FBI to access their devices without use of a password. When Apple refused to \href{https://www.apple.com/customer-letter/}{comply (optional reading)}, it sparked massive debate about encryption and a user's right to privacy. \textbf{Read \href{https://www.bbc.com/news/technology-35601035}{this article}} about the FBI-Apple encryption dispute regarding FBI access to the iPhone 5C of one of the shooters. In the end, the FBI found a third party to unlock the iPhone for them, resulting in the case being dropped (if you're interested, you can read an updated news article \href{https://www.washingtonpost.com/technology/2021/04/14/azimuth-san-bernardino-apple-iphone-fbi/}{here}).
+    
+    \textbf{Task 3}
+    \begin{enumerate}[a.]
+    \item Give two reasons why Apple should have complied with the FBI request (that is, allowed the FBI to enter its devices), and two reasons why Apple shouldn't have complied with the request (that is, refuse to develop an FBI backdoor to their devices). 
+    
+    \begin{mdframed} \vspace{4cm} \end{mdframed}
+    
+    \item The data-encryption debate centers on one of the oldest questions about governance: Does public safety outweigh an individual's right to privacy? Consider the rise of privacy-conscious technologies like cryptocurrencies, the \href{https://medium.com/applied-cryptography/the-ethical-considerations-of-the-tor-browser-8bbc415720b6}{Tor browser}, and private-use VPNs. These technologies increase privacy for the user by encrypting and obfuscating data, but they can make it easier for malicious actors to cover their tracks. Should these technologies be regulated by the government, or is the increasingly privacy-aware public a good thing?
+    
+    \begin{mdframed} \vspace{4cm} \end{mdframed}
+    
+    \item Consider your role as a potential computer scientist or mathematician. To what extent are you responsible for protecting and encrypting user data? Is it worth collecting more data in some cases to develop a more robust, potentially insightful machine-learning program or is a user's right to privacy more important? Where does the balance between the two lie?
+    
+    \begin{mdframed} \vspace{4cm} \end{mdframed}
+    \end{enumerate}
+
+\textbf{Checkpoint 1 - Call a TA over!}
+
+  \pagebreak
+  
+  \section*{The Product Rule}
+  
+  Given finite sets $S_1, S_2, ..., S_n$, the product rule tells us that $$|S_1 \times S_2 \times ... \times S_n| = |S_1| \cdot |S_2| \cdot \ldots \cdot|S_n|.$$
+  
+  This rule is often useful when we are doing counting and what we are counting comes from some number of independent choices. For instance, when picking an outfit for the day, say you have 4 shirts, 3 pants, and 2 pairs of shoes to choose from. We can think of an outfit as a sequence (shirt, pant, shoe), so to find the total number of outfits, we multiply the number of choices we can make for each position, $4 \cdot 3 \cdot 2=24$.
+  
+  Even if our choices depend on each other, we can still sometimes use this concept. For instance, let's say that for each of our 4 shirts, one of our 3 pairs of pants looks terrible with it, so we don't want to wear those pants if we're wearing that shirt. Then, we still have 4 choices for our shirt, but having made that choice, we now only have 2 pants to choose from. We still have 2 shoe options. So, our total number of outfit choices is $4 \cdot 2 \cdot 2=16$.
+  
+  \textbf{Task 4}
+  \begin{enumerate}[a.]
+      \item Suppose we go to the sandwich shop, and we want to order a combo special. The combo special includes a sandwich, and side, and a drink.
+      
+      There are 5 different kinds of sandwiches, 6 different kinds of sides, and 8 different kinds of drinks. How many different ways could we order a combo special, and why?
+      
+      \begin{mdframed} \vspace{2cm} \end{mdframed}
+      
+      \item When we first talked about functions, these functions only took in one input. Since then, we've seen propositions, which are functions that can take in more than one input! In general, functions can take in one or more inputs. 
+      
+      Note that, if the function takes in more than one input, say $n$ inputs, we can \textit{think of it} taking in one input, where each input is a tuple of length $n$.
+      \begin{enumerate}[i.]
+        \begin{comment}
+        \item Consider a function of $3$ inputs, where each input value can be 0, 1, 2, or 3. If we think about this function as a function of one input, how many possible inputs does it have?
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+        \end{comment}
+        \item Consider a function with the same input as described above. Its output for each input is either 0 or 1. How many \textit{unique} functions are there?
+        
+        \textit{Hint:} Two functions are identical if every input leads to the same output.
+	    \begin{mdframed} \vspace{2cm} \end{mdframed}
+	    \begin{comment}
+	    \item Consider functions of $2$ inputs, where each input can take on 0, 1, or 2, and the function must output to 0 or 1. How many such functions are there?
+	    \begin{mdframed} \vspace{2cm} \end{mdframed}
+	    \end{comment}
+	    \item \textit{Optional: }Consider functions of $2$ inputs, where each input can take on either 0 or 1 and outputs either 0 or 1, but the order of the inputs does not affect that output of the function. For example, $f(x, y)$ could be $(x \land y)$. How many possible such functions are there?
+	    \begin{mdframed} \vspace{2cm} \end{mdframed}
+      \end{enumerate}
+  \end{enumerate} 
+	
+	\newpage
+	
+	\section*{Permutations and Counting Subsets}
+	   
+	A permutation of a set $A$ is an ordered list of the elements of $A$.
+	
+	\textbf{Task 5: }Explain why there are $n!$ different permutations of a set of size $n$.
+	
+	\begin{mdframed} \vspace{1cm} \end{mdframed}
+	
+	Let $|A| = n$. Let's say we want a permutation of $k$ elements of $A$, where $k \leq n$. We could make such a permutation by picking one of $n$ elements for the first position, $n-1$ elements for the second, etc, getting us $n*(n-1)*...*(n-k+1)$ permutations. We can also write this quantity  $$\frac{n!}{(n-k)!}.$$
+	
+	How could we have gotten that same result in a different way? Well, we could have made all $n!$ permutations of $A$, and then grouped those based on the ordering of the first $k$ elements. Each ordering of $k$ elements has $(n-k)!$ possibilities for the order of the elements that follow it, hence we divide by $(n-k)!$.
+	
+	Suppose we want to know the number of subsets of size $k$ of a set of size $n$. The general formula for this value, called $\binom{n}{k}$ is $$\frac{n!}{(n-k)!k!}.$$
+	
+	Why? First, we can think of the permutations of length $k$ of elements of $A$, which there are $\frac{n!}{(n-k)!}$ of. Then, we can group these with the other permutations that have the same elements but in a different order, and divide our count by the number in each group. How big is each group? For any set of $k$ elements, there are $k!$ ways to order them. So, we divide by $k!$.
+	
+	Try it out with a small example set to make sure it makes sense to you---perhaps with the number of ways to pick 2 astronauts out of a crew of 9?\\
+	
+	\textbf{Task 6: }Count the size of each set, and sort them from largest to smallest. 
+	\begin{enumerate}[a.]
+	    \item The number of permutations of all the letters in the alphabet.
+	    \item The number of subsets of size 6 of the letters of the English alphabet (one such subset is $\{a, b, c, d, e, f\}$).
+	    \item The number of 6 letter words made of non-repeating letters (one such 6-letter word is ``abcdef").
+	    \item The number of (any sized) subsets of the set of the letters in the English alphabet. 
+	    \item The number of subsets of size 20 of the letters of the alphabet. 
+	\end{enumerate}
+	\begin{mdframed} \vspace{4cm} \end{mdframed}
+
+\textbf{Task 7: }Consider a string of size $n \geq 2$, $S = s_1s_2...s_n$, where each $s_i$ is a $1$--$9$ digit. For each of the following conditions, find the number $N$ of such strings that satisfy the condition, and prove your answer.
+\begin{enumerate}[a.]
+    \item Only $x$ types of digits are used, where $1 \leq x \leq 9$.
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    \item No two \textit{consecutive} digits are the same.
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    \item \textit{Optional: }The sum of any $k$ consecutive digits is the same, where $1 \leq k \leq n$.
+    \begin{mdframed} \vspace{2cm} \end{mdframed}
+    \item \textit{Optional: }The product of any set of $k$ consecutive digits is the same, where $1 \leq k \leq n$.
+    \begin{mdframed} \vspace{2cm} \end{mdframed}
+\end{enumerate}
+
+\textbf{Task 8:} By now, you should've received an encrypted message from your TAs. Use your private decryption exponent $d$ to decrypt and read the message. More information about how to interpret the plaintext message is on the Campuswire post.
+
+\begin{mdframed} \vspace{2cm} \end{mdframed}
+
+\textbf{Checkoff - Call over a TA!}
+
+\end{document}
