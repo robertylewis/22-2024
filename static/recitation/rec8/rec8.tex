@@ -1,0 +1,305 @@
+\documentclass[12pt,letterpaper]{article}
+
+%Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{mathtools}
+%\usepackage[]{mcode}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{automata,arrows}
+\usepackage{verbatim}
+
+%Page formatting
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+
+% Common Commands
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% 22 style
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em}{\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}%
+  \lhead{\textbf{CSCI 0220}}%
+  \chead{\textbf{Discrete Structures and Probability}}%
+  \rhead{Littman}%
+}
+
+\pagestyle{fancyplain}
+
+\newcommand\EX{\mathds{E}}
+\newcommand\PR{\mathds{P}}
+\newcommand\zlam{Z_\lambda}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%%%%%%%%%%%%%%% COMPILE WITH \soltrue or \solfalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifsol
+\soltrue  % SOLUTIONS
+%\solfalse % NO SOLUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% solution help %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\solu}[2]{ \begin{mdframed} \ifsol #2 \else \vspace{#1} \fi \end{mdframed} }
+\newcommand{\solt}{ \ifsol (T) \fi }
+\newcommand{\solf}{ \ifsol (F) \fi }
+\newcommand{\solm}[1]{\ifsol \textit{(#1)} \fi}
+
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\large \textbf{Recitation 8}}
+    
+    {\large Counting and Intro to Probability}
+
+  \end{center}
+  
+	\section*{Counting Arguments}
+	
+	A counting argument shows that the LHS (lefthand side) and the RHS (righthand side) of some equation count the same thing. Instead of using algebraic manipulation, we explain why both sides enumerate the elements of some set, just in different ways.
+	
+% 	That is, we think about a set, and we come up with a story that corresponds to the LHS that describes an enumeration of the elements of that set, and then we come up with a different story that corresponds to the RHS that describes an enumeration of the elements of that very same set. 
+	
+	For instance, consider the following identity.
+    $$\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$$
+    
+    Let $S$ be a set with $n$ elements.
+    
+    \begin{itemize}
+        \item The LHS counts the number of ways to form a subset of $S$ size $k$.
+        \item The RHS also counts the number of subsets of size $k$. It partitions it into two parts:
+        \begin{itemize}
+            \item $k$-sized subsets \textbf{with} a fixed element $x$. Since we already know $x$ is in the subset, so we just want to pick $k-1$ more elements from the $n-1$ remaining elements.
+            \item $k$-sized subsets \textbf{without} $x$. We know we can't pick $x$ for our subsets, so we just choose $k$ elements from $n-1$ other elements in $S$.
+        \end{itemize}
+    \end{itemize}
+    
+	
+	\textbf{Task 1}
+	
+	Use counting arguments to prove the following identities:
+	\begin{22enumerate}
+	    \item $$\binom{n}{k} = \binom{n}{n - k}$$
+	    \begin{mdframed} \vspace{3cm} \end{mdframed}
+	   
+    	\item $$\sum_{k = 0}^{n} \binom{n}{k} = 2^n$$
+        \begin{mdframed} \vspace{3cm} \end{mdframed}
+        
+        \item \textit{Optional: }
+        
+        $$\binom{n}{m}\binom{m}{k} = \binom{n}{k}\binom{n - k}{m - k}$$
+        
+        \hint{Try this with small numbers where $k < m < n$.}
+        \begin{mdframed} \vspace{3cm} \end{mdframed}
+    \end{22enumerate}
+
+\newpage
+\textbf{Task 2}
+
+Below is a table of counting problems involving putting $k$ balls in $n$ distinct bins, and seven expressions. Match each problem with its solution. (One solution is used twice).
+\vspace{0.5cm}
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{p{2.5cm}|c|c|c}
+    & No restrictions & At \textbf{most} 1 ball per bin & At \textbf{least} 1 ball per bin  \\
+    & & \small assume $k \leq n$ & \small assume $k \geq n$\\
+    \hline
+    Identical balls & \small \textcircled{1}& \small \textcircled{3} & \small \textcircled{5} \textit{Optional} \\
+    &  &\\
+    \hline
+    Distinct balls &\small \textcircled{2} &\small \textcircled{4} & \small \textcircled{6} \textit{Optional} \\
+    & &\\
+\end{tabular}
+\begin{tabular}{ccccccc}
+    \\
+    \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & \textbf{F} & \textbf{G}\\
+    \large $\binom{n}{k}$ & \large $n^k$ & \large $\binom{k-1}{n-1}$ & \large $\frac{n!}{(n-k)!}$ & \large $\binom{k+n-1}{k}$ & \large $n^k-\sum_{i=1}^{n-1} \binom{n}{i} (n-i)^k (-1)^{i+1}$& $n!{{k}\choose{n}}n^{k-n}$ \\
+\end{tabular}
+\end{figure}
+\begin{mdframed} \vspace{4cm} \end{mdframed}
+\subsection*{Checkpoint 1 - Call over a TA}
+\newpage
+
+\subsection*{Inclusion/Exclusion}
+
+Say we have two sets, $A$ and $B$, and we want to know how many elements there are in their union, $A \cup B$. If $A$ and $B$ have no elements in common, we can compute this just by adding the cardinality of each, $|A| + |B|$. However, this approach will not work in general.
+
+For instance, if $A = \{1, 2\}$ and $B = \{1, 3\}$, then $A \cup B = \{1, 2, 3\}$. $|A \cup B| = 3$, but $|A| + |B| = 2 + 2 = 4$. The problem is that we've double counted the elements that are in both $A$ and $B$, that is, element 1. To fix this problem, we should subtract $|A \cap B|$.
+
+\begin{center} \includegraphics[scale=.5]{venn.png} \end{center}
+
+The resulting Inclusion/Exclusion property for two sets is: $$|A \cup B| = |A| + |B| - |A \cap B|.$$
+
+Let's try generalizing this idea to three sets, $A$, $B$, and $C$!
+% if we first add the cardinality of each set, . 
+
+\begin{center} \includegraphics[scale=.5]{venn3.png} \end{center}
+
+If we tried adding $|A|+|B|+|C|$, which regions would we double count? Which regions would we triple count?
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+As it turns out, the final formula for $|A \cup B \cup C|$ is the following. Convince yourself that it works!
+$$|A \cup B \cup C| = |A|+|B|+|C| - |A \cap B| - |B \cap C| - |A \cap C| + |A \cap B \cap C|.$$
+
+Going further, we can repeat this process for any number of sets, alternating between adding and subtracting the sizes of sets.
+
+\textbf{Task 3}
+\begin{22enumerate}
+    \item Let $S=\{1, 2, 3, 4, 5\}$.
+    \begin{enumerate}[i.]
+        \item How many permutations of $S$ contain the sequence 24?
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+        \item How many permutations of $S$ contain the sequence 52?
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+        \item How many permutations of $S$ contain the sequence 24 \textit{or} 52?
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+    \end{enumerate}
+    \item Let $X$ and $Y$ be sets such that $|X| = 8$ and $Y = \{a, b, c\}$.
+    \begin{enumerate}[i.]
+        \item How many functions from $X \rightarrow Y$ do not map to $a$?
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+        \item How many functions from $X \rightarrow Y$ do not map to $a$ and also do not map to $b$? 
+        \begin{mdframed} \vspace{1cm} \end{mdframed}
+        \item How many functions from $X \rightarrow Y$ are \textit{not} surjective?
+        
+        \hint{A function is not surjective if nothing maps to $a$, nothing maps to $b$, or nothing maps to $c$.}
+        \begin{mdframed} \vspace{3cm} \end{mdframed}
+    \end{enumerate}
+    
+    
+    
+\end{22enumerate}
+
+\subsection*{The Pigeonhole Principle}
+
+Let's say we have $n$ pigeons who are trying to fit in $n-1$ holes.
+
+ \includegraphics[scale=0.25]{pigeons.jpg}
+
+It isn't possible for each pigeon to get its own hole: at least two of them are going to have to share. It could be the case that they are all in the same hole, or, like the picture above, all but 2 pigeons get their own hole, or anything in between.
+
+This is the Pigeonhole Principle: in general, if we are assigning $n$ objects to $m$ categories, where $n > m$, there is at least one category that has more than one object assigned to it.
+
+Solve the following problems using the Pigeonhole Principle:
+
+\textbf{Task 4}
+\begin{22enumerate}
+  \item Celeste is pulling socks out of her drawer. She only has four types of socks: solid, striped, polka-dotted, and ones with planets on them. What is the minimum number of socks Celeste should pull out to ensure she has a pair? 
+  
+  \begin{mdframed} \vspace{1cm} \end{mdframed}
+  
+  \item  There are $n > 2$ astronauts having a party on Mars. Throughout the night, they dance with each other in pairs.
+
+		\begin{enumerate}[i.]
+			\item The minimum number of total dance partners someone can have is 0 (they didn't dance with anyone). What is the maximum number of dance partners one can have?
+			
+		    \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+			\item Prove that at least 2 astronauts have the same number of dance partners by the end of the night. (Come back to this question later if you get stuck.)
+			
+			\begin{mdframed} \vspace{2cm} \end{mdframed}
+		\end{enumerate}
+ \item \textit{Optional:} Given any 5 points inside a square with side length 2, there is always a pair whose distance apart is at most square root of 2. 
+ 
+\begin{mdframed} \vspace{2cm} \end{mdframed}
+\end{22enumerate}
+
+\subsection*{Checkpoint 2 - Call over a TA}
+
+\newpage
+\section*{Probability}
+% \subsection*{Motivation and Definitions}
+
+A \textbf{finite discrete probability space} is a pair $(S,\Pr)$ for some finite set $S$ and some function $\Pr:S\rightarrow \mathbb{R}$, where, for all $x \in S$, $\Pr(x)>0$, and $\sum_{x\in S}\Pr(x)=1$. The set $S$ is called the \textit{sample space}, and the elements of $S$ are called \emph{outcomes}. The function $\Pr$ is called the \textit{probability distribution function}. 
+
+Where do these defintions come from? It's all about predictions. The sample space $S$ is supposed to represent a set of atomic outcomes---that is, the set of all things that can happen. All these outcomes are mutually exclusive.
+
+An \textit{event} is a subset of the sample space $S$, containing some atomic outcomes. For example, if I flip a coin 3 times, the outcomes are HHH, TTT, \dots, so the sample space is $S=\{ \text{HHH}, \text{TTT}, \text{TTH}, \dots \}$, with $2^3=8$ outcomes. An event can be: \textit{We see exactly 1 H}, which we view as a set of outcomes $\{\text{HTT}, \text{THT}, \text{TTH}\}$. An event can also be the empty set: for example, the event \textit{We see 4 Hs} is the empty set, since it is not a possible outcome (it does not correspond to anything in the sample space). Similarly, the event \textit{We see an elephant} is the empty set for this probability space.
+
+How many different events can the above sample space have? Since each event is a subset of the sample space, the number of events is equal to the number of possible subsets, which here is $2^8$ (since the sample space has 8 elements).
+
+To understand the probability distribution function, let's think about our sample space as a box of area 1. Then, each outcome occupies a certain amount of \textit{area} within the sample space. That is, the area is \textit{distributed} among the outcomes according to the probability distribution function! The larger the area, the more likely the outcome is.
+
+\includegraphics[scale=.7]{probability.png}
+
+In this example, we have that each outcome occupies the same amount of area in the box---each is equally likely. Because we have 2 outcomes, we have that the probability of each outcome is $\frac{1}{2}$. 
+
+Let's take a look at another way we could divide up the area of the box among the outcomes. 
+
+\includegraphics[scale=.7]{probability2.png}
+
+Here, the probability of it raining is $\frac{3}{4}$, so this outcome takes up $\frac{3}{4}$ of the area within the box. The remaining amount of area is $\frac{1}{4}$, which becomes the probability that it doesn't rain. 
+
+\textbf{Task 5}
+\begin{22enumerate}
+  
+\item If we have $n$ outcomes in $S$, and $\Pr$ assigns each outcome an equal amount of area within our box, what is the probability of a particular outcome? 
+
+\note{Such a division of the space is called a \textit{uniform distribution}!}
+
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\item Consider $S = \{\text{It's sunny}, \text{It's raining}\}$, where the probability distribution is 0.8 and 0.2, respectively. Under what constraints on the world is this sample space reasonable?
+
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\item Is the following probability distribution valid? Experiment: flipping a biased coin. $S=\{H,T\}$, $\Pr(H)=1/3$, $\Pr(T)=1/3$.
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\end{22enumerate}
+
+\subsection*{The Relationship Between Counting and Probability}
+
+Questions about probability are often closely tied to questions about counting. Often, we need to count two things---the set of outcomes in our event, and the set of total possible outcomes. In a uniform distribution, the probability of getting an event $E$ is simply $\Pr(E) = |E|/|S|$.
+
+\textbf{Task 6}
+\begin{22enumerate}
+  
+\item Suppose $S$ is the set of all binary strings of length $n$, and $\Pr$ is a uniform distribution. What is the probability of getting a string with $k$ ones (where $0 \leq k \leq n)$? 
+
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\item For what value(s) of $k$ is the probability of getting a string with $k$ ones the largest? Try it out for some values and see if you find a pattern.
+
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+\item Explain how we can use $n$-ary (not just binary) strings to help us with other problems that involve, say, flipping a fair coin $m$ times, or rolling a die $m$ times. 
+
+\begin{mdframed} \vspace{2cm} \end{mdframed}
+
+\end{22enumerate}
+
+\subsection*{Checkoff — call over a TA!}
+
+\end{document}
