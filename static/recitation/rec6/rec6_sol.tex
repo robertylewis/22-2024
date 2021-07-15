@@ -1,0 +1,514 @@
+\documentclass[12pt,letterpaper]{article}
+
+%Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+%\usepackage[]{mcode}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{automata,arrows}
+
+%Page formatting
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+
+% Common Commands
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% 22 style
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em}{\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}%
+  \lhead{\textbf{CSCI 0220}}%
+  \chead{\textbf{Discrete Structures and Probability}}%
+  \rhead{Littman}%
+}
+
+\pagestyle{fancyplain}
+
+\newcommand\EX{\mathds{E}}
+\newcommand\PR{\mathds{P}}
+\newcommand\zlam{Z_\lambda}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%%%%%%%%%%%%%%% COMPILE WITH \soltrue or \solfalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifsol
+\soltrue  % SOLUTIONS
+% \solfalse % NO SOLUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% solution help %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\solu}[2]{ \begin{mdframed} \ifsol #2 \else \vspace{#1} \fi \end{mdframed} }
+\newcommand{\solt}{ \ifsol (T) \fi }
+\newcommand{\solf}{ \ifsol (F) \fi }
+\newcommand{\solm}[1]{\ifsol \textit{(#1)} \fi}
+
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\large \textbf{Recitation 6}}
+    
+    {\large Number Theory}
+  \end{center}
+  
+  
+   \section*{Number Theory}	
+	
+	\textbf{Defn 1:} We say that $a \mid b$ ($a$ divides $b$) when $b = ka$ for some $k \in \Z$. 
+	
+	\textbf{Defn 2:} The division theorem says that any integer $n$ with respect to some $d$ can be written as $n = qd + r$, where $0 \leq r \leq d-1$.
+	
+	The function $\text{qcnt}(n,d)$ 
+	% $n \text{ DIV } d$ 
+	returns $q$. The function 
+    $\text{rem}(n, d)$
+	% $n \text{ MOD } d$ 
+	returns $r$.
+ 
+	\subsection*{Task 1}
+
+	\begin{enumerate}[a.]
+	    \item Using the division theorem, provide $q$ and $r$ for the following numbers:
+	    
+	    \begin{enumerate}[i.]
+	        \item $n = 10$, $d = 5$
+	        \solu{1 cm}{$10 = 2 \cdot 5 + 0$, $q = 2$, $r = 0$}
+	        
+	        \item $n = 10$, $d = 6$
+	        \solu{1 cm}{$10 = 1 \cdot 6 + 4$, $q = 1$, $r = 4$}
+	        
+	        \item $n = 10$, $d = 11$
+	        \solu{1 cm}{$10 = 0 \cdot 11 + 10$, $q = 0$, $r = 10$}
+	    \end{enumerate}
+	    
+	    \item Determine the output of the following:
+	    
+	    \begin{enumerate}[i.]
+	        \item  $\text{qcnt}(52,13)$  % 52 DIV 13
+	        \solu{1 cm}{4}
+	        
+	        \item  $\text{rem}(15,4)$  % 15 MOD 4
+	        \solu{1 cm}{3}
+	        
+	        \item  $\text{rem}(93812129481,2)$
+	        \solu{1 cm}{1}
+	        
+	        \item  \textit{Optional:} $\text{qcnt}(24912,5)$  % 24912 DIV 5
+	        \solu{1 cm}{4982 (solving for $r = 2$ first will make this easier)}
+	    \end{enumerate}
+	    
+	    \item
+	    Recall the linear combination (aka water jug) theorem from lecture: let $x$, $y$, and $z$ be integers. If $x \mid y$ and $x \mid z$, then $x \mid (sy + tz)$ for any integers $s$ and $t$.
+	    
+	    Given $3 \mid 9$ and $3 \mid 33$, use this theorem to show that $3 \mid 57$.
+	    \solu{2 cm}{We can re-write $57$ as a linear combination of $9$ and $33$; for example, $9\cdot(-1)+33\cdot 2=57$. Thus, $3 \mid 57$ by the water jug theorem.}
+	    
+	     \item
+	     Use the water jug theorem to prove that we cannot write 4 as a linear combination of 9 and 15. 
+	     
+	     \solu{2cm}{
+	     Assume for the sake of contradiction that there exists $s, t$ such that $4 = 9s + 15t$. We know that $3 \mid 9$ and $3 \mid 15$, so by the water jug theorem, $3 \mid 9s + 15t$. However, $3 \nmid 4$, so this is a contradiction.
+	     }
+	\end{enumerate}
+	
+	\subsection*{Modular Congruence}
+	
+	So far, we've worked with rem as a \textit{function} that outputs the remainder. Now, we will look at the concept of remainders as a relation. We say that two numbers are related (mod $m$) if they have the same remainder when divided by $m$. We denote this relation with $\pmod m$.
+
+    \textbf{Defn 3:} If $m$ is a positive integer, we say the integers $a$ and $b$ are congruent modulo $m$, and write $a \equiv b \pmod m$, iff they have the same remainder on division by $m$.
+    
+    For instance, $5 \equiv 2 \pmod 3$, since their remainders are both 2 when divided by 3.
+    
+	\textbf{Defn 4:} $a \equiv b \pmod m$ if and only if $m \mid (b-a)$. In other words, $a$ and $b$ have the same remainder upon division by $n$. Proving this is an optional task below!
+	
+	When you are working on number-theory problems, start by writing out what you know. If you have that two numbers are equivalent mod another, write that out in terms on divisibility, and write out what the divisibility means. It will often be easier to work this way.
+	
+	\subsection*{Task 2}
+	
+	\begin{enumerate}[a.]
+	    \item What is 4 congruent to in the$\pmod 2$ relation? Write out three solutions for $a \equiv 4 \pmod 2$.
+	    \solu{1 cm}{\{..., -4, -2, 0, 2, 4,...\}}
+	    
+	    \item 
+	    Write out three solutions for $a \equiv 9 \pmod 5$.
+	    
+	    \solu{1 cm}{\{..., -6, -1, 4, 9, 14,...\}}
+	    
+	    \item \textit{Optional:} Write out three solutions for $a \equiv -3 \pmod 7$.
+	    \solu{1 cm}{\{..., -10, -3, 4, 11, 18...\}}
+	    
+	    \item \textit{Optional:} Prove that definition 4 above is true; that is, $a \equiv b \pmod m$ if and only if $m \mid (b-a)$.
+	    
+	    \solu{3cm}{
+	    We break the proof into two parts for the biconditional: 
+	    
+	    If $a \equiv b \pmod m$, then there are integers $q$, $q'$ and $r$, with $a=qm+r$ and $b=q'm+r$. So, $b-a=(q'm+r)-(qm+r)=(q'-q)m$, which means $m\mid b-a$.
+    
+        If $m \mid (b-a)$, then there is an $x$ with $b-a=xm$; that is, $b=a+xm$. We can write $a$ in its divisibility algorithm form as $a = qm + r$. Substitute this and we have $b = qm + r + xm = m(q+x) + r$. This shows that $b$ has the same remainder as $a$ when divided by $m$, so we have shown that $a \equiv b \pmod m$ if $m \mid (b-a)$.}
+        
+        \item \textit{Optional Challenge:} Solve for $x$ in $2x \equiv 1 \pmod 5$. Are there multiple answers?
+        
+        Then, try solving it again with $4y \equiv 1 \pmod 7$.
+        
+        \solu{2cm}{
+        $x = \{\ldots, 3, 8, 13, \ldots\}$
+        $y = \{\ldots, 2, 9, 16, \ldots\}$
+        }
+    \end{enumerate}
+
+\newpage
+\subsection*{Pseudo-Random Generators}
+Many computer applications use random numbers. However, truly random numbers are not actually that easy to generate. As a substitute for random numbers, computers use functions called pseudo-random number generators that produce numbers having many of the statistical properties of random numbers but are in fact deterministically generated. Devising good pseudo-random number generators is an on-going research topic in computer science. Meanwhile, there are a variety of pseudo-random number generators that are regularly used in practice.
+
+One of the oldest and best known pseudo-random number generators is the linear congruential generator. The linear congruential generator starts with an initial value $X_0$ and generates each subsequent value as a function of the previous value according to the function
+\begin{equation*}
+    X_{n+1}=aX_n+c \pmod m
+\end{equation*}
+The parameters $c, a,$ and $m$ are chosen for efficiency and performance based on statistical tests. Each number generated lies in the range $0$ through $m - 1$ and can be scaled if a different range is desired.
+
+\subsection*{\textit{Optional:} Task 3}
+
+\item Let $a=2$, $c=7$, $m=13$, $X_0 = 9$. Find the first five pseudo-random integers $X_1$ to $X_5$.
+
+\solu{4cm}{
+We will use $X_{n+1}=2X_n+7 \pmod{13}$ to find $X_1...X_5$, where $X_0=9$.
+
+$X_1 = 2\cdot 9+7 \pmod{13} = 12$
+
+$X_2 = 2\cdot 12+7 \pmod{13} = 5$
+
+$X_3 = 2\cdot 5+7 \pmod{13} = 4$
+
+$X_4 = 2\cdot 4+7 \pmod{13} = 2$
+
+$X_5 = 2\cdot 2+7 \pmod{13} = 11$
+}
+
+\textbf{Checkpoint 1 - Call a TA over!}
+
+\newpage
+   \section*{More Properties and Theorems}
+	
+	\textbf{Defn 5:} Two integers $a$ and $b$ are relatively prime if $gcd(a, b) = 1$, i.e., their largest common factor is 1.
+	
+	\textbf{Euler Phi Function:} Euler’s $\phi$ function is defined over $n \in \Z+$ such that 
+	\[ \phi(n) = |\{k \in Z|  1 \leq k \leq n, \gcd(n, k) = 1\}|. \]
+    
+    \begin{quote}
+    In essence: The $\phi$ function captures the number of integers between 1 and $n$ that are relatively prime to
+    $n$. The function can be pretty burdensome to calculate for large $n$; however, if $n$ is of
+    the form $n = pq$, where $p$ and $q$ are primes, then we know $\phi(n) = (p-1)(q-1)$.
+    \end{quote}
+
+\textbf{Properties of Congruence Relations:}
+
+For $a,b \in \mathbb{Z}^+$, if $a \equiv b \mod{m}$, then
+\begin{itemize}
+    \item $a + c\equiv b + c\mod{m}$ for $c \in \mathbb{Z}$
+    \item $ac \equiv bc \pmod{m}$ for $c \in \mathbb{Z}$
+    \item $a^n \equiv b^n \mod{m}$ for $n \in \mathbb{Z^+}$ 
+\end{itemize}
+If we also have $c \equiv d \pmod{m}$, then
+\begin{itemize}
+    \item $a + c\equiv b + d\mod{m}$
+    \item $ac\equiv bd\mod{m}$
+\end{itemize}
+
+\textbf{Theorem 1:} For any $a,b \in \Z$, there exists $u,v \in \Z$ such that $au + bv = gcd(a,b)$. In words, we say that the gcd can always be written as a linear combination of $a$ and $b$.
+
+\textbf{Theorem 2:} The congruence $ax \equiv c \pmod{m}$ has a solution if and only if the gcd$(a,m)$ divides $c$. 
+\[
+\gcd(a,m) \mid c.
+\]
+
+\textbf{Theorem 3:} (Fermat’s Little Theorem) Let $p$ be a prime. If $gcd(a, p) = 1$, then $a^{p-1} \equiv 1$ (mod $p)$.
+
+\textbf{Theorem 4:} (Euler-Fermat Theorem) If $gcd(a,$ $m) = 1$, then $a^{\phi(m)} \equiv 1$ (mod $m$).
+
+\pagebreak
+	\subsection*{Task 4}
+
+	\begin{enumerate}[a.]
+		\item Given $a \equiv b \pmod{m}$, prove $a + c\equiv b + c\pmod{m}$ for $c \in \mathbb{Z}$.
+
+		\solu{2.8cm}{
+		$a \equiv b \pmod{m} \implies m | (b - a) \implies m \cdot k = b - a$ for some integer $k$ \\
+		$b - a = b - a + (c - c) = (b + c) - (a + c)$, so $m \cdot k = (b + c) - (a +c)$ \\
+		Thus, as $(b + c) - (a + c)$ is $m$ times some integer, $m | ((b + c) - (a + c)) \implies a + c\equiv b + c\pmod{m}$}
+
+
+		\item Given $a \equiv b \pmod{m}$, prove $ac\equiv bc\pmod{m}$ for $c \in \mathbb{Z}$.
+
+		\solu{3.8cm}{
+		$a \equiv b \pmod{m} \implies m | (b - a) \implies m \cdot k = b - a$ for some integer $k$ \\
+		$m \cdot k = b - a \implies m \cdot k \cdot c = c(b - a) \implies m \cdot k \cdot c = bc - ac$ \\
+		As the integers are closed under addition, $k \cdot c$ is an integer, so $bc - ac$ is $m$ times some integer. \\
+		Thus, $m | bc - ac \implies ac \equiv bc \pmod{m}$}
+
+
+		\item \textit{Optional: }Given $a \equiv b \pmod{m}$, prove $a^2\equiv b^2\pmod{m}$.
+
+		\solu{4cm}{
+		$a \equiv b \pmod{m} \implies m | (b - a) \implies m \cdot k = b - a$ for some integer $k$ \\
+		$\implies m \cdot k \cdot (a + b) = (b - a) \cdot (b + a)$ \\
+		$\implies m \cdot k \cdot (a + b) = b^2 - a^2$ \\
+		As $k, a,$ and $b$ are integers, so is $k *  (a + b)$. Then $b^2 - a^2$ is $m$ times some integer. \\
+		Thus, $m | b^2 - a^2 \implies a^2 \equiv b^2 \pmod{m}$}
+
+
+		\item \textit{Optional: }For every odd integer $n$, prove that $n^4 -1$ is divisible by 8.
+		
+		\solu{4cm}{
+		$n^4 -1 = (n^2 -1)(n^2 + 1) = (n -1)(n+1)(n^2+1)$ \\
+		$n$ is odd $\implies n=2k+1$ for some integer $k$ \\
+		$n^4 -1 = ((2k+1)-1)((2k+1)+1)((2k+1)^2+1) = 2k\cdot(2k + 2)(4k^2+4k+1+1)
+		= 2k\cdot 2(k + 1)(4k^2+4k+2)= 4k(k+1) \cdot 2(2k^2+2k+1) = 8k(k+1)(2k^2+2k+1)$ \\
+		$k(k+1)(2k^2+2k+1)$ is an integer, so $8 | n^4 -1$}
+	\end{enumerate}
+	
+    \pagebreak
+    \subsection*{Task 5}
+    \textbf{GCD Practice}
+    
+    In lecture, we discussed using both prime factorization and the Euclidean algorithm as two methods to calculate the gcd. We will practice using these two methods to find $\gcd(44, 96)$.
+    
+    \begin{enumerate}[a.]
+    \item Write out the prime factorization of 44 and 96.
+    
+    \textit{Example:} $36 = 2^2 \cdot 3^2$
+    \solu{1cm}{$44 = 2^2 \cdot 11$
+    
+    $96 = 2^5 \cdot 3$}
+    
+    \item Use the prime factorization of $44$ and $96$ to find $\gcd(44, 96)$.
+    \solu{1cm}{
+    The gcd involves all shared primes with the minimum multiplicity, thus, $\gcd(44, 96) = 2^2=4$.
+    }
+    \item Use the Euclidean algorithm to find $\gcd(44, 96)$.
+    
+    Hint: Recall that $\gcd(x, y) = \gcd(\text{rem}(y, x), x)$.
+    
+    \solu{2cm}{
+    \begin{align*}
+        96 &= 2 \cdot 44 + 8\\
+        44 &= 5 \cdot 8 + 4\\
+        8 &= 2 \cdot 4 + 0
+    \end{align*}
+    Thus, $\gcd(44, 96) = 4$.
+    }
+    \item Use your equations from part (c) to write $\gcd(44, 96)$ as a linear combination of $44$ and $96$. Doing so involves substituting remainders from one equation into where it appears in another, until the gcd is in the same equation as 44 and 96.
+    
+    \solu{2cm}{
+    From parts $a$ and $b$, we found that $\gcd(44, 96)$. We can use the extended Euclidean Algorithm to write $4$ as a linear combination of $44$ and $96$. 
+    \begin{align*}
+        4 &= 44 - 5 \cdot 8\\
+        4 &= 44 - 5 \cdot (96 - 2 \cdot 44)\\
+        4 &= 44 - 5 \cdot 96 + 10 \cdot 44\\
+        4 &= 11 \cdot 44 - 5 \cdot 96
+    \end{align*}
+    
+    Alternatively, starting from the first equation:
+    \begin{align*}
+        8 &= 96 - 2 \cdot 44 \\
+        44 &= 5 \cdot (96 - 2 \cdot 44) + 4\\
+        44 &= 5 \cdot 96 - 10 \cdot 44 + 4\\
+        4 &= 11 \cdot 44 - 5 \cdot 96
+    \end{align*}
+    
+    }
+    \end{enumerate}
+    
+    \textbf{Checkpoint 2 - Call a TA over!}
+    
+    \pagebreak
+	\section*{Mutiplicative Inverses}
+
+	Say we are trying to solve for $x$ in the equation $8x = 2$, how would we do so?
+
+	Answer: We would multiply both sides by $8^{-1} = \frac{1}{8}$. It is called the multiplicative inverse of 8.
+	\begin{align*}
+		&\frac{1}{8}\cdot 8 \cdot x  = \frac{1}{8} \cdot 2 \\
+		&\Rightarrow x = 0.25
+	\end{align*}	
+
+	And, in general, if we are trying to solve for $x$ in the equation $ax = c$, we simply multiply both sides by $a^{-1} = \frac{1}{a}$. 
+
+	The $a^{-1}$ notation indicates that $a^{-1}\cdot a = 1$. 
+
+	However, it is not so simple when we are working with congruence relations. Not every congruence relation of the form $ax \equiv c \pmod{m}$ has a solution.
+
+	For example, there is \textbf{no solution} for $x$ in the equation $8x \equiv 2 \pmod{12}$.
+	
+	Why does that happen? Well, 12 is a multiple of 4. For a number to be congruent to 2 mod 12, it must be 2 greater than some multiple of 12 (which is a multiple of 4). However, any $8x$ will be an exact multiple of 4. We can't have a multiple of 4 that is 2 larger than another multiple of 4 — they must be at least 4 apart.
+	
+	Some equations will have solutions though. For instance, a solution for $x$ in the equation $5x \equiv 2 \pmod{12}$ is $x=10$. It was possible for there to be a multiple of 5 that is 2 greater than a multiple of 12.
+	
+	In general, $ax \equiv c \pmod{m}$ has a solution if and only if $\gcd(a,m) \mid c$. (In English: if and only if the gcd of $a$ and $m$ divides $c$.)
+	
+	We'll prove this fact in the next part of this recitation.
+    
+    \pagebreak
+
+	\subsection*{Finding Solutions}
+
+    \subsection*{Task 6}
+	    \begin{enumerate}[a.]
+		\item Goal: If $d = \gcd(a, m)$, prove that if $d \mid c$, $ax \equiv c \pmod{m}$ has a solution.
+		
+		\begin{enumerate}[i.]
+		    \item Come up with two different equations that involve $d$. One should come from Definition 1, and the other comes from Theorem 1.
+		    \solu{1cm}{$c = kd$ for some $k \in \Z$ (divisibility)
+		    
+		    $d = au + mv$ for some $u, v \in \Z$ (the gcd can be written as a linear combination of the two numbers)} 
+		    
+		    \item Write $ax \equiv c \pmod m$ in another equivalent form. Definitions 1 or 4 may help here.
+		    \solu{1cm}{$m \mid c-ax$, or equivalently $c-ax = qm$ for some $q \in \Z$}
+		    
+		    \item Use your two equations from part (i) to find a solution to $x$ from part (ii).
+		    \solu{2cm}{
+		    Substituting, we have $c = k(au + mv)$. Rearranging, we get $c - auk = mvk$. Let $x=uk$ and $q = vk$, which forms a solution.
+		    }
+		\end{enumerate}
+		
+
+		\item Use the strategy you found above to solve for $4x \equiv 6 \pmod{14}$.
+
+        You can use the linear combination $4\cdot 4 + (-1)\cdot 14 = 2$.
+
+		\solu{6cm}{
+		$\gcd(4, 14) = 2$, and $4\cdot 4 + (-1)\cdot 14 = 2$. $2 \mid 6$ since $2 \cdot 3 = 6$, so we can use the strategy.
+		
+		So $k=3$, $u=4$, $v=-1$. By part a, $x=k\cdot u=3\cdot 4=12$
+		
+		To verify: $14 | (6 - 4 \cdot 12) \implies 14 | (6 - 48) \implies 14 | -42$ which is true.
+		}
+	
+	    \end{enumerate}
+        
+        \pagebreak
+        
+		\subsection*{Multiplicative Inverses Explained}
+
+		A multiplicative inverse for $a$ mod $m$ is a number $a^{-1}$ such that $a \cdot a^{-1} \equiv 1 \pmod{m}$.
+
+		In other words, a multiplicative inverse for $a$ mod $m$ is the $x$ that solves $ax \equiv 1 \pmod{m}$.
+
+		\begin{enumerate}[a.]
+		\setcounter{enumi}{2}
+			\item If $a$ has a multiplicative inverse mod $m$ then what is $\gcd(a,m)$?
+			\solu{1cm}{1}
+
+		\end{enumerate}
+
+		A multiplicative inverse is extremely helpful in solving equations $ax \equiv b \pmod{m}$.
+
+		If $a$ has a multiplicative inverse mod ${m}$ then $x \equiv a^{-1}b \pmod{m}$.
+
+		
+		\begin{enumerate}[a.]
+					\setcounter{enumi}{3}
+			\item Use the technique from part (a) to find the multiplicative inverse of $4 \pmod 9$.
+
+			\hint Use the fact that $28 - 27 = 1$.
+			
+			\solu{3cm}{
+			$28-27 = 1 \implies 4 \cdot 7 + 9 \cdot (-3) = 1$, so $u=7$ and $v=-3$ \\
+			Here, $k=1$ since $c$ and $d$ are both 1. \\
+			Then $x = k \cdot u = 1 \cdot 7 = 7$ \\
+			To verify, $4 \cdot 7 = 28$ and $9 | (1 - 28)$ \\
+		    So, $4^{-1}=7$}
+
+			\item Use $4^{-1}$ to solve for $x$ in the equation $4x \equiv 3 \pmod{9}$. Verify your answer.
+
+			\solu{3cm}{
+			We know $4 \cdot 7 \equiv 1 \pmod{9}$. Using what we proved in the warmup, $4 \cdot 7 \cdot 3 \equiv 3 \pmod{9}$, so $x = 7 \cdot 3 = 21$. \\
+			$4 \cdot 21 = 84$, $3 - 84 = -81 = 9 \cdot (-9)$ so it is true $9 | (3 - 4 \cdot 21)$.
+			}
+			
+		\end{enumerate}
+		
+		In lecture, we also talked about using Fermat's Little Theorem and the Euler Phi Function to find multiplicative inverses. They aren't covered in this recitation, but they are very much related, so keep them in mind.
+
+\pagebreak
+
+		\subsection*{\textit{Optional: }The Threes Trick}
+
+		Here is a trick to determine if a number $n$ is divisible by 3:
+		
+		\textit{``If the sum of the digits of $n$ is divisible by 3, so is $n$."}
+
+		For example, 261 is divisible by 3 since $2+6+1 = 9$.
+
+		You are going to prove this fact.
+
+		\begin{enumerate}[a.]
+			\item For any $k \in \N$, what is $10^k$ congruent to mod 3?
+			
+			\textit{Hint:} See the third property of modular congruence.
+
+			\solu{1cm}{
+			$10 \equiv 1 \pmod{3}$, and if we raise both sides to the $k$ congruence still holds $\implies 10^k \equiv 1^k \pmod{3} \implies 10^k \equiv 1 \pmod{3}$
+			}
+
+			\item For any $k \in \N$, what is the multiplicative inverse of $10^k$ mod 3?
+
+			Recall the multiplicative inverse is the $x$ that solves $10^k x\equiv 1 \pmod 3$.
+
+			\solu{1cm}{1}
+
+			\item Prove the ``Threes trick" by expanding a number in terms of its digits. That is, represent the number $792$ as $7 \cdot 10^2 + 9 \cdot 10^1 + 2 \cdot 10^0$.
+			
+			\solu{4cm}{
+			Consider the integer $a_m \cdot 10^m + a_{m-1} \cdot 10^{m-1} + ... + a_1 \cdot 10^1 + a_0 \cdot 10^0$.
+			As for any positive integer $k$, $10^k \equiv 1 \pmod{3}$, by what was proven in warmup $a_k \cdot 10^k \equiv a_k$. \\
+			Adding it all up as we also proved was possible in the warmup, $a_m \cdot 10^m + a_{m-1} \cdot 10^{m-1} + ... + a_1 \cdot 10^1 + a_0 \cdot 10^0 \equiv a_m + a_{m-1}+ ... + a_1 + a_0 \pmod{3}$. So, if the sum of the digits is divisible by 3, aka congruent to 0 $\pmod 3$, so will the full number.}
+
+
+			\item Can we do a similar trick for other numbers when working in base 10? Does the Threes trick work when we are not in base 10? What numbers does it apply for in base $b$?
+			
+			\solu{1cm}{
+			The trick works for $a$ in base $b$ when $b \equiv 1 \pmod{a}$.}
+			
+		\end{enumerate}
+
+   \subsection*{Checkoff - Call a TA over!}
+\end{document}
