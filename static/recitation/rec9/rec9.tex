@@ -1,0 +1,388 @@
+\documentclass[12pt,letterpaper]{article}
+
+%Packages
+\usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{mathtools}
+%\usepackage[]{mcode}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{automata,arrows}
+
+%Page formatting
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+
+% Common Commands
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+% 22 style
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em}{\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}%
+  \lhead{\textbf{CSCI 0220}}%
+  \chead{\textbf{Discrete Structures and Probability}}%
+  \rhead{Littman}%
+}
+
+
+
+\pagestyle{fancyplain}
+
+\newcommand\EX{\mathds{E}}
+\newcommand\PR{\mathds{P}}
+\newcommand\zlam{Z_\lambda}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%%%%%%%%%%%%%%% COMPILE WITH \soltrue or \solfalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifsol
+\soltrue  % SOLUTIONS
+%\solfalse % NO SOLUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% solution help %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\solu}[2]{ \begin{mdframed} \ifsol #2 \else \vspace{#1} \fi \end{mdframed} }
+\newcommand{\solt}{ \ifsol (T) \fi }
+\newcommand{\solf}{ \ifsol (F) \fi }
+\newcommand{\solm}[1]{\ifsol \textit{(#1)} \fi}
+
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\large \textbf{Recitation 9}}
+    
+    {\large Probability}
+
+  \end{center}
+
+\subsection*{Conditional Probability and Independence}
+
+We sometimes want to know what the probability of something is, given that we know an outcome from certain subset of outcomes has happened (that is, no outcome outside that subset can happen).
+
+\textbf{Warmup}
+
+Prof.\ Littman has 2 coins: one fair, and one double heads. He picks one uniformly at random (that is, each coin has probability of 1/2 of being picked), but he doesn't tell us which one he picks. Prof.\ Littman then flips the coin he picks, and he then shouts out the result.
+
+Suppose Prof.\ Littman shouts out ``Heads.'' What is the probability he flipped the fair coin, given that we know the coin flip resulted in heads ($H$)?
+
+\textit{Hint}: How many ways can the coin flip result in heads, and how many of them start with the fair coin?
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+
+We can generalize our work here. Given two events $A,B \subseteq S$ (the sample space) where $\Pr(B) > 0$, we define the \textit{conditional probability of $A$ given $B$} as $$
+\Pr(A\mid B) = \frac{\Pr(A \cap B)}{\Pr(B)}.
+$$
+
+% Prof. Haddadan has a deck of 10 cards: there are six blue cards with the values 1, 2, 3, 4, 5, 6, and four red cards with the values 1, 2, 3, 4. Suppose she takes 2 cards uniformly at random from this deck, without replacement. What is the probability that she has a 1 (of any color) in her hand?
+
+% \solu{1cm}{1/5}
+
+% Suppose Prof. Haddadan says both cards are red. What is the probability of this?
+% \solu{1cm}{1/6}
+
+
+% Suppose she says both cards are blue. What is the probability of this?
+% \solu{1cm}{1/4}
+
+We know that the only possible outcomes are those in $B$ (since $B$ is supposed to have happened). We therefore make $\Pr(B)$ our denominator to \textit{renormalize} our universe. 
+
+Looking at this formula, we also get a general definition for $Pr(A \cap B)$:
+$$\Pr(A \cap B) = \Pr(A)\Pr(B | A) = \Pr(B)\Pr(A | B)$$
+
+This is a derivation of \textbf{Bayes' Theorem}, and it will be your friend in the probability unit.
+
+There are certain special situations where $\Pr(B | A) = \Pr(B)$; that is, where the fact that $A$ happened does not affect the probability of $B$ happening. We have a name for this situation.
+
+\textbf{Definition}: Two events $A,B \subseteq S$ are \textit{(pairwise) independent} if $$\Pr(A|B)=\Pr(A)$$
+If $\Pr(B)=0$, $B$ and any other event are independent.
+
+Equivalently, $A$ and $B$ are independent if
+\[
+\Pr(A \cap B) = \Pr(A)\Pr(B).
+\]
+
+Note that these two definitions are equivalent---try to convince yourself by substituting the definition of conditional probability!
+
+\textbf{Task 1}
+\begin{22enumerate}
+    \item If two events $A$ and $B$ have an empty intersection, what is the probability of $A$ AND $B$?
+
+    \begin{mdframed} \vspace{0.5cm} \end{mdframed}
+
+    \item For each of the following pairs of events $A$ and $B$, identify whether they are independent, and justify why or why not.
+
+    \begin{enumerate}[i.]
+
+        \item Suppose we roll a fair die, and suppose $A$ = rolling an even number, and $B$ = rolling a number greater than three.
+        \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+    
+        \item \textit{Optional:} Suppose we flip a fair coin three times, and suppose $A$ = the last coin is a tails, and $B$ = there is a run of exactly two tails (that is, two, but not three, tails are flipped in a row). 
+        \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+
+    \end{enumerate}
+    
+    \item \textit{Optional:} If two events $A$ and $B$ are \textit{mutually exclusive}, are they \textit{independent}? You can assume $\Pr(A)$ and $\Pr(B)$ are nonzero.
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+\end{22enumerate}
+
+\subsection*{Random Variables}
+
+From a probability space $(S, p)$, we can create a new probability space $(S', p')$, where $S'$ is a partition of $S$, that is, $S' = \{P_1, P_2, ... P_n\}$, and where $p' = \Pr(P_i)$ for all $i$. 
+
+Visually, we can take a box partitioned into $m$ outcomes, and then partition these $m$ outcomes into $n$ groups. The amount of area each group takes up is just the sum of the outcomes within the group, so this box with $m$ groups is just like having a probability space with $m$ outcomes. 
+
+This leads us to one of the biggest, most famous misnomers in all of mathematics: random variables. A \textbf{random variable} is a function from a set of outcomes $S$ to $\R$ or $\Z$. We can think of this random variable as partitioning $S$, where each group is a set of outcomes that are all assigned the same value. We can also think of the random variable as assigning each group a different value. This diagram shows what we mean:
+
+\begin{center}
+\includegraphics[scale=.13]{rv.png}
+\end{center}
+
+Here, $o_1, \dots, o_5$ are outcomes in $S$. Our random variable assigns two of them to 1730, one of them to 3.14, and two of them to 22. Thus, the random variable partitions the outcomes into 3 groups. Let's walk through some other more concrete examples of random variables. 
+
+\textbf{Task 2}
+
+Let random variable $X$ be on the coin flip sample space $\{H, T\}$, where $X(H) = 1$, and $X(T) = 0$.
+(This random variable is also known as the indicator random variable of event $H$.)
+
+\begin{22enumerate}
+    \item If $\Pr(H) = 1/2$, and $\Pr(T) = 1/2$, then what is $\Pr(X = 1)$? How about $\Pr(X = 0)$? 
+
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+    \item We could also have the random variable $Y$, where the domain of $Y$ is $S$, all sequences of coin flips of length $n$, and where $Y(s)$ = the number of heads in $s$.  
+
+    If $S$ is uniformly distributed, then what is $\Pr(Y = k)$, where $0 \leq k \leq n$?
+    
+    \textit{Hint:} You computed this value in last week's recitation.
+
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item Let $C_i$ be a random variable for the $i$th coin flip, $s_i$, in our sequence, $s$, of coin flips of length $n$, where $C_i(H) = 1$ and $C_i(T) = 0$. Let $C(s) = C_1(s_1) + C_2(s_2) + ... C_n(s_n)$. Explain why $C(s) = Y(s)$.
+
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+    \item \textit{Optional:} Explain why $\Pr(C = k) = \binom{n}{k}\Pr(C_i = 1)^k \Pr(C_i = 0)^{n - k}$. 
+
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+    \item \textit{Optional:} Given an expression for $\Pr(C \geq k)$. 
+
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+    \item \textit{Optional:} Compute $\Pr(C = k | C_1 = 1)$. 
+
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+\end{22enumerate}
+
+\textbf{Checkpoint 1 — Call over a TA!}
+
+\newpage
+\subsection*{Expected Value}
+Intuitively, the expected value is the weighted average of values, kind of a mass center of the probability distribution.
+
+More formally, the \emph{expected value} of a random variable is denoted $\mathbb{E}[X]$ and is defined as 
+$$\mathbb{E}[X] = \sum\limits_{s \in S}X(s)\Pr(s)=\sum\limits_{r \in X(S)}r\Pr(X = r).$$
+
+We define the \emph{conditional expected values} as follows:
+Given that event $E$ has occurred, the expectation of random variable $X$ is \begin{equation}\label{eq:conditional}
+\mathbb{E}[X \mid E]=\sum_{r\in X(S)}r\Pr(X=r\mid E).
+\end{equation}
+
+Moreover, the $\textit{linearity of expectation}$ can be very useful in calculating expected value: Given that $Z$, $X$, $Y$ are three random variables defined on a sample space $S$ and $a$ and $b$ are two real numbers such that $Z = aX + bY$, we know that $\mathbb{E}[Z] = a\mathbb{E}[X] + b\mathbb{E}[Y]$ must be true.
+
+Let's practice this through a task:
+
+\textbf{Task 3}
+
+Mercury and Jupiter are playing a game. They flip a fair coin $3$ times. When the coin is heads, Jupiter pays $\$1$ to Mercury; and when the coin is tails, Mercury pays $\$1$ to Jupiter.
+
+\begin{22enumerate}
+    \item Let $G_i$ be a random variable representing what Mercury gains on the $i$-th round. For instance, $G_3=-1$ if the coin is tails.
+    
+    What is the expected value of $G_i$?
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+
+    \item Let $G$ be a random variable that represents Mercury's \textit{total} gain in this game. What is the expected value of $G$?
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item What is the expected value of $G$ if the coin is biased and the probability of heads is $p$? in other words, generalize your solution from part b in terms of $p$.
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item Mercury and Jupiter are still using the biased coin from part c. Let $H_1$ be the event that the first coin is heads. What is $\mathbb{E}[G| H_1]$?
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item \textit{Optional:} Use your answers to calculate $\mathbb{E}[G]$ and $\mathbb{E}[G\mid H_1]$ when $p = 0.7$.
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    % \item Assume that $p = 0.7$ as in part c. What is Mercury's expected gain when the coin being flipped $10$ times?
+    % \solu{1cm}{$\mathbb{E}[G] = (2p - 1) \cdot 10 = (2 \cdot 0.7 - 1) \cdot 10 = 4$}
+    \item \textit{Optional:} Assume that $p = 0.7$ and let's say we want to change the game to make it ``fair.'' If the flip is tails, then Mercury pays a dollar to Jupiter---how much should Jupiter pay Mercury on Heads so that for any number of flips we know $\mathbb{E}[G]=0$?
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+\end{22enumerate}
+
+\textbf{Task 4}
+
+Mercury and Jupiter are now playing a similar, but different, game. This time they flip a coin \textbf{2 times}. Let $X$ be the random variable that is equal to the number of heads and $Y$ the random variable that is equal to the number of tails. At the end of the game, Jupiter pays Mercury $X^2$ dollars. Once again, let $G$ be the random variable for Mercury's gain.
+\begin{22enumerate}
+    \item Calculate $\mathbb{E}[X]^2$ when the probability of  heads is $p = 0.7$.
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item Calculate $\mathbb{E}[G]$ when $p = 0.7$.
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item Does $\mathbb{E}[G]=\mathbb{E}[X]^2$? 
+    \begin{mdframed} \vspace{1cm} \end{mdframed}
+    
+    \item \textit{Optional:} Find an example that shows that $\mathbb{E}[XY] = \mathbb{E}[X]\mathbb{E}[Y]$ does not hold where $X$ and $Y$ are not independent variables.
+    
+    Hint: Try $X$ and $Y$ as defined above.
+    \begin{mdframed} \vspace{2cm} \end{mdframed}
+    
+    \item \textit{Optional:} Prove that if $X$ and $Y$ are two independent random variables, then $\mathbb{E}[XY]=\mathbb{E}[X]\mathbb{E}[Y]$.
+    \begin{mdframed} \vspace{2cm} \end{mdframed}
+\end{22enumerate}
+
+\newpage
+
+\subsection*{Bayes Rule}
+The Bayes Rule can be summarized as
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+where $A$ and $B$ are events and $P(B) \neq 0$.
+
+\textbf{Task 5}
+\renewcommand{\neg}{\textrm{NOT }}
+
+
+Assume Brown's CS department has an evaluation system for CS courses based on student evaluations. In any class, the students can fill the evaluation form and give a score of $0,1,$ or $2$ to the course.
+Let $X$ be the random variable of this score. The students of CS0220 either like the course with probability $3/4$ (Event $L$) or they do not like the course with probability $1/4$ (Event $\neg L$).
+
+Assume that the conditional probability distribution of $X$ given $L$ is $$\Pr(X=0\mid L)=1/8$$ $$\Pr(X=1\mid L)=1/4$$ $$\Pr(X=2\mid L)=5/8$$ and given that they do not like the course ($\neg L$) it is $$\Pr(X=0\mid\neg L)=9/10$$ $$\Pr(X=1\mid \neg L)=1/10$$ $$\Pr(X=2\mid \neg L)=0.$$
+\begin{22enumerate}
+    \item If a student has given score of 0 to CS0220, what is the probability that they do not like the course?
+    \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+
+    \item  Use the definition of conditional expected value (Equation \ref{eq:conditional}) and find $\mathbb{E}[X\mid \neg L]$ 
+    \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+    
+    \item \textit{Optional:} Find $\mathbb{E}[X]$.
+    \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+
+\end{22enumerate}
+
+\textbf{Checkpoint 2 — Call over a TA!}
+
+\newpage
+
+\textbf{Task 6}
+% \subsubsection*{Simpson's Paradox}
+
+    The Brown Review is a test-prep company that publishes books helping high school students prepare for the upcoming Accelerated Placement tests. Recently, they published a study with $20000$ students nationwide showing that using their books to prepare for the AP Statistics exam resulted were 5\% more likely to pass than those who studied using their rival, Karron's. However, The Brown Review did not publish all of their data, and you uncover the following data table:
+    \begin{center}
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{| c | c | c | c |}
+        \hline  & The Brown Review & Karron's & Total\\ 
+        \hline Took a statistics class & $\frac{8550}{9000} = 95\%$ & $\frac{4450}{4500} = 99$\% & $\frac{13000}{13500} = 96 \%$\\
+        \hline Did not take a statistics class & $\frac{750}{1000} = 75\%$ & $\frac{4350}{5500} = 79\%$ & $\frac{5100}{6500} = 78\%$\ \\
+        \hline Total & $\frac{9300}{10000} = 93\%$ & $\frac{8800}{10000} = 88$\% & $\frac{18100}{20000} = 90\%$ \\
+        \hline 
+    \end{tabular}
+
+    
+    \renewcommand{\arraystretch}{1}
+    \end{center}
+    % \textbf{QUESTION:} How does this example differ from the last example? What makes this one more complicated?\\
+    \begin{enumerate}[a.]
+    \item Make an argument as to why The Brown Review appears to be a better choice for test prep.\\
+    \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+    
+   \item Make an argument as to why Karron's is the better choice.\\
+   
+    \begin{mdframed} \vspace{1.5cm} \end{mdframed}
+    
+   \item  Given that it is very likely that a student who takes a class before the exam succeeds more often than students who did not take a class, how could the Brown Review manipulate sample sizes such that their final percentage looks higher?\\
+   
+   \begin{mdframed} \vspace{3cm} \end{mdframed}
+   
+   This contradiction of conclusions is known as Simpson's Paradox, which you can read more about \href{https://towardsdatascience.com/simpsons-paradox-how-to-prove-two-opposite-arguments-using-one-dataset-1c9c917f5ff9}{here}. This occurs when comparisons of two variables in separate groups yield one conclusion, but comparisons of the variables overall yield a different result due to a more significant trend working in the background, like how students taking or not taking the class determines outcomes.
+   
+   \item It is very common for news services to read the conclusion of a scientific study and report the final results directly. It is also extremely common for readers to look at a news headline and not read the article. How do these practices encourage misinformation? Why do details of a study matter?
+   
+   \begin{mdframed} \vspace{3cm} \end{mdframed}
+   
+   \item With the growing popularity of data analysis and machine learning, our society increasingly relies on statistical tools to explain the world we live in. Why is it extremely important to never take any conclusions we garner from these methods at face value? What are the dangers in becoming over-reliant on these methods to solve complex problems such as policing or policymaking?
+   
+ \begin{mdframed} \vspace{3cm} \end{mdframed}
+   \end{enumerate}
+
+\newpage
+
+\textbf{Task 7}
+
+The following two problems are more challenging, perhaps even $\sim$\textit{mindbending}$\sim$. Please \textbf{choose one of the two questions} to complete (or both, we promise they're fun!).
+
+\textbf{Option 1.} Suppose that, in a certain family, the probability of each child being born with a cat allergy is $1/2$. You can assume one of the parents have it and it gets inherited with 1/2 probability. Assume this family has two children, Kyran and Alyssa\footnote{You can also ask the real Kyran and Alyssa TAs in real life about their cat allergies. They aren't related, though.}. 
+
+\begin{22enumerate}
+\item What is the probability that both Kyran and Alyssa have a cat allergy?
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+\item Consider a scenario where you go to the family's house and meet one of the children. They tell you they have a cat allergy, but not their name. What is the probability the other child is allergic?
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+\item The child you meet says their name is Kyran. Does the probability of the other child being allergic change?
+\begin{mdframed} \vspace{1cm} \end{mdframed}
+\item Given that at least one of the children is allergic and was born on a Tuesday, what is the probability the family has 2 allergic children? You may assume that the probability a child is born on a given day of the week is $1/7$. 
+\begin{mdframed} \vspace{3cm} \end{mdframed}
+\end{22enumerate}
+
+\newpage
+\textbf{Option 2.} Mars goes to PVDonuts and gets four boxes of donuts for everyone. One box has two chocolate donuts, two boxes have one chocolate and one glazed, and one box has two glazed donuts.
+
+\begin{22enumerate}
+\item Mars picks a box at random, and gives a random donut to Mercury. If that donut is chocolate, what is the probability the other donut in the box is glazed?
+\begin{mdframed} \vspace{3cm} \end{mdframed}
+
+\item Let's consider another scenario, where Mercury picks a donut box at random. Before he opens it, Mars tells him one of the donuts in the box is chocolate.
+
+What is the probability the other donut is glazed?
+
+\textit{Hint:} Your answer should be different from part a.
+
+\begin{mdframed} \vspace{3cm} \end{mdframed}
+\end{22enumerate}
+
+\textbf{Checkoff — Call over a TA!}
+
+\end{document}
