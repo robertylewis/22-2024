@@ -1,0 +1,215 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage[letterpaper,voffset=-.5in,bmargin=3cm,footskip=1cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\allowdisplaybreaks
+\headheight 15pt
+\headsep 10pt
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+\newcommand\R{\mathbb R}
+\newcommand\Q{\mathbb Q}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand\setbuilder[2]{\ensuremath{\left\{#1\;\middle|\;#2\right\}}}
+\newcommand\E{\operatorname{E}}
+\newcommand\V{\operatorname{V}}
+\newcommand\Pow{\ensuremath{\operatorname{\mathcal{P}}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand\hint[1]{\textbf{Hint}: #1}
+\newcommand\note[1]{\textbf{Note}: #1}
+\newcounter{enum22i}
+\newenvironment{22enumerate}{\begin{enumerate}[a.]\itemsep0em\setcounter{enumi}{\value{enum22i}}}{\setcounter{enum22i}{\value{enumi}}\end{enumerate}}
+\newenvironment{22itemize}{\begin{itemize}\itemsep0em}{\end{itemize}}
+\fancypagestyle{firstpagestyle} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{\textbf{Discrete Structures and Probability}}
+  \rhead{M. Littman}
+}
+
+\fancypagestyle{fancyplain} {
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{\textbf{CSCI 0220}}
+  \chead{Midterm Review}
+  \rhead{\textit{Never}}
+}
+\pagestyle{fancyplain}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \thispagestyle{firstpagestyle}
+  \begin{center}
+    {\huge \textbf{Final Review}}
+  \end{center}
+
+\section*{Number Theory}
+
+\subsection*{Problem 1}
+{
+{\setcounter{enum22i}{0}
+
+      In each of the following, find a value of $x$ that satisfies the given congruence, or argue that no such $x$ exists. Show how you found $x$.
+
+      \begin{22enumerate}
+          \item $4(x-3) \equiv 8x-3 \pmod{41}$
+          \item $7(x+5) \equiv 2x \pmod{14}$
+      \end{22enumerate}
+    
+}
+}
+
+\subsection*{Problem 2}
+{
+{\setcounter{enum22i}{0}
+	The value of the Euler $\phi$ function at the positive integer $n$ is defined to be  the number of positive integers less than or equal to $n$ that are relatively prime to $n$.
+	\begin{22enumerate}
+	\item Find the following values:
+	\subitem(i) $\phi(8)$
+	\subitem(ii) $\phi(7)$
+	\subitem(iii) $\phi(15)$
+	 \item Prove that $n$ is composite iff $\phi(n)<n-1$.
+	\end{22enumerate}
+
+
+}
+}
+
+
+\subsection*{Problem 3}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+	Suppose $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$. 
+	    Let $n \in \Z^+$. Use the definition of mod to prove the following statements:
+			\begin{22enumerate}
+				\item $ac \equiv bd \pmod{m}$.
+				\item $a^{n} \equiv b^{n} \pmod{m}$.
+				
+				\hint{Try induction on $n$.}
+			\end{22enumerate}
+
+}
+}
+
+
+\section*{Counting}
+
+\subsection*{Problem 1}{{\setcounter{enum22i}{0}
+Consider a finite set $S$. Count the number of subset pairs for which the two pairs do not overlap, justifying your answer. In other words, subsets $s_1,s_2 \in S$ form the valid pair $\{s_1,s_2\}$ iff $s_1 \cap s_2 \neq \varnothing$.
+
+\note{The order within the pair does not matter.}
+}
+}
+
+\subsection*{Problem 2}{{\setcounter{enum22i}{0}
+
+Consider $n$ distinct objects. How many distinct sequences are there of these $n$ non-repeating items (any length)?
+}
+}
+
+\subsection*{Problem 3}{{\setcounter{enum22i}{0}
+	How many different ways are there to list the numbers $1,
+	2, \ldots, 2n$ such that the even numbers appear in increasing order
+	and the odd numbers appear in decreasing order?
+}
+}
+
+\newpage
+
+\section*{Probability}
+
+\subsection*{Problem 1}{{\setcounter{enum22i}{0}
+Consider a line of $n$ aliens at a spaceport looking to board a rocket containing $n$ free seats. Each of them has a ticket, and the $i^{th}$ alien is assigned to the $i^{th}$ seat.
+
+The first alien in line enters the rocket, and instead of looking at its ticket for its assigned seat, sits uniformly at random. Every following alien that enters chooses its assigned seat if it is available, otherwise chooses one of the remaining seats uniformly at random. What is the probability that the $n^{th}$ alien sits down in its assigned seat?
+}
+}
+
+\subsection*{Problem 2}
+{
+\nopagebreak 
+
+{\setcounter{enum22i}{0}
+  Of 100 coins on a table, 99 of them are fair and 1 of them has H on both sides.
+  
+  \begin{22enumerate}
+    \item You choose a coin uniformly at random, and flip it. Let $X$ be a random variable where $X=1$ if you get heads, and $X=0$ if you get tails. What is $\mathbb{E}[X]$?
+    \item You reset the coins and choose a coin again uniformly at random, flip it, record the result, and put the coin back. You repeat this experiment 9 more times (for a total of 10). Let $X$ be a random variable denoting the total number of heads you get. What is $\mathbb{E}[X]$?
+      \item You reset the coins and choose a coin again uniformly at random, but flip this \textit{same coin} 10 times. If you get heads every time, what is the probability you will also get heads the 11th time?
+  \end{22enumerate}
+}
+}
+
+\subsection*{Problem 3}{{\setcounter{enum22i}{0}
+Flip a coin repeatedly and consider the sequence of heads or tails you land. Stop flipping as soon as you get an $HHT$ or an $HTT$. Which one is more likely to cause you to stop? 
+}
+}
+
+\newpage
+
+\section*{Graph Theory}
+
+\subsection*{Problem 1}
+{
+{\setcounter{enum22i}{0}
+ Show that, in any graph $G$, if there is a vertex $v$ of odd degree, then there is a path from $v$ to some other vertex of odd degree.
+}
+}
+
+\subsection*{Problem 2}
+{
+{\setcounter{enum22i}{0}
+
+      Prove that by joining together any $n\geq2$ connected graphs that have connected Eulerian tours the resulting graph will also have a Eulerian tour. In this problem, we define joining as merging any two
+      vertices together into a single new vertex, as depicted in the image below:
+      \begin{center}
+      \includegraphics[scale=0.4]{graph_merge.png}
+      \end{center}
+    
+}
+}
+
+\subsection*{Problem 3}
+{
+\newcommand\Cube{\textsf{Cube}}
+{\setcounter{enum22i}{0}
+
+     Pluto is visiting some friends around the solar system. There exists spaceflights between friends in Pluto's group. In fact, there are enough for Pluto's group to be `connected'; it is possible to go from any friend to any other friend through some sequence of spaceflights.
+     
+     A fanatic of rockets, Pluto looks to begin the trip from its home and take every possible spaceflight. Consider the connected graph $G = (V,E)$, where $V$ is the set of Pluto's friend group, and $E$ is the set of spaceflights between them (the graph is undirected; we assume that if a spaceflight exists between two friends, it exists in both directions).
+     
+    To keep things cheap, Pluto will attempt its plan to take every spaceflight if and only if there exists a Eulerian tour through them. You will now work to prove that Pluto will attempt the trip if and only if each of its friends have an even number of spaceflights connecting them to other friends in the group.
+
+      \begin{22enumerate}
+        \item Prove that if $G$ has a Eulerian tour, then every vertex $v \in V$ has even degree. (This result was given in lecture, but try it for yourself!)
+
+        \item Prove, by induction on the number of edges, that if every vertex $v \in V$ has even degree, then $G$ has an Eulerian tour.
+
+        \note{You should use \textbf{build-down} induction!}
+        
+        %In other words, when you are trying to prove that your claim is true for a graph on $n+1$  edges, do not start with a graph on $n$ edges and add one more: it's very difficult to cover \emph{all} graphs on $n+1$ edges this way. Instead, start with an \emph{arbitrary} graph on $n+1$ edges, then find a way to remove one or more edges to form a subgraph on fewer than $n+1$ edges, to which the inductive hypothesis applies. From there, conclude that the property still holds when re-inserting the edge(s) to form the original graph. Also, keep in mind that removing edges can leave a graph disconnected!
+        
+      \end{22enumerate}
+
+    
+}
+}
+\end{document}
