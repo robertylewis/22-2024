@@ -9,6 +9,13 @@
 \usepackage{mdframed}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
 \usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
 \usepackage[margin=3cm]{geometry}
 \setlength{\parindent}{0.0in}
@@ -995,7 +1002,6 @@ Many graph theory questions involve induction. When doing induction on graphs, w
 
 Note that build down induction can be used outside of graph theory.
 
-\begin{mdframed}
 \textbf{Exercises:}
 \begin{enumerate}
 
@@ -1003,12 +1009,54 @@ Note that build down induction can be used outside of graph theory.
 \[
 \sum_{k=1}^{n}k =\binom{n+1}{2}.
 \]
+\begin{mdframed}
+Consider the set $A = \{1, 2, 3, ..., n+1\}$. We will prove that $\sum_{k=1}^{n}k =\binom{n+1}{2}$ by showing that both the LHS and RHS count the number of subsets of $A$ that contain exactly two elements.
+
+The RHS counts this directly. Since we are choosing $2$ elements from $n+1$ choices, there are $n+1 \choose 2$ subsets.
+
+The LHS counts this one element at a time. We can first consider what the larger of the two elements in the subset is. The larger element can't be 1, since we need at least one element smaller than it.
+
+If the larger element is 2, then there is 1 choice for the smaller element (1).
+
+If the larger element is 3, then there are 2 choices for the smaller element (1, 2).
+
+If the larger element is 4, then there are 3 choices for the smaller element (1, 2, 3).
+
+So, when the larger element is $n+1$, there are $n$ choices for the smaller element. Since each two element subset must fall into exactly one of these cases, then the total number of two element subsets is $1+2+3+...+n$.
+
+Therefore, the LHS and RHS count the same thing, so $\sum_{k=1}^{n}k =\binom{n+1}{2}$.
+\end{mdframed}
 
 \item Consider a graph $G$ on six vertices. Prove that at least one of the following is true:
 \begin{enumerate}
 \item There exists a 3-cycle.
 \item There exists three vertices with no edges between any two of them.
 \end{enumerate}
+\begin{mdframed}
+Consider an arbitrary vertex $v_i$. Then, there is either an edge or no edge between $v_i$ and each of the other five vertices. By the pigeonhole principle, there are either three vertices that share an edge with $v_i$ (this is when the degree of $v_i$ is at least 3) or three vertices that do not share an edge with $v_i$ (this is when the degree of $v_i$ is less than 3).
+
+The proofs for these two situation are similar, but we can still split them up into cases:
+
+\begin{enumerate}
+    \item Case 1: There are three vertices (say, $v_x$, $v_y$, and $v_z$) that share an edge with $v_i$.
+    
+    If there is an edge between any two of these three vertices, then there exists a 3-cycle between $v_i$ and the two vertices that share an edge. For example, if there is an edge between $v_x$ and $v_y$, then there is a cycle between $v_i$, $v_x$, and $v_y$.
+    
+   If there is no edge between any two of these three vertices (no edge between $v_x$ and $v_y$, $v_x$ and $v_z$, and $v_y$ and $v_z)$), then we have found three vertices with no edges between any two of them.
+   
+   
+   \item Case 2: There are three vertices (say, $v_x$, $v_y$, and $v_z$) that do not share an edge with $v_i$.
+   
+   If there is no edge between any two of these three vertices, then we have found three vertices with no edges between any two of them because we know that there is no edge between $v_i$ and both of these vertices.
+   
+   If there is a pairwise edge between all of these three vertices (an edge between $v_x$ and $v_y$, $v_x$ and $v_z$, and $v_y$ and $v_z)$), then there is a cycle between these three vertices ($v_x$, $v_y$, and $v_z$).
+
+\end{enumerate}
+
+Thus, we have shown that in either case, there exists either a 3-cycle or three vertices with no edges between any two of them.
+
+\textit{Also watch \href{https://www.youtube.com/watch?v=xdiL-ADRTxQ&ab_channel=Numberphile}{this video} to see a visual explanation of the proof!}
+\end{mdframed}
 
 \item Suppose a graph $G$ on $n \geq 4$ vertices has $\lceil\frac{n}{2}\rceil^2 + 1$ edges. Prove that $G$ is not 2-colorable.
 
@@ -1016,7 +1064,15 @@ Note that build down induction can be used outside of graph theory.
 
 \underline{Hint:} If it helps, you may assume that the product $nm$ for $n,m \in \Z$ is maximal when $n = m$.
 
-\end{enumerate}
+\begin{mdframed}
+Assume for sake of contradiction that $G$ has $\lceil\frac{n}{2}\rceil^2 + 1$ edges and is 2-colorable. Since $G$ is 2-colorable, this means that $G$ is bipartite; that is, the vertices of $G$ can be divided into two disjoint and independent sets $A$ and $B$ such that every edge connects a vertex in $A$ to one in $B$.
+
+The maximum number of edges that $G$ can then have is $|A| \cdot |B|$. This is because we cannot have an edge between two vertices in the same set, so the maximum number of edges is when all of the vertices in $A$ is connected to an edge in $B$, which results in $|A| \cdot |B|$ edges. Recall the second hint, which states that the product $xy$ for $x, y \in \Z$ is maximal when $x=y$. And so, when $n$ is even, consider a bipartite graph with sets $|A| = |B|$ since this produces the maximum number of edges, and when $n$ is odd, this occurs when  $|A| = |B| + 1$ (or $|A| = |B| - 1$). In either case, we can conclude that $|A| = |B| \leq \lceil \frac{n}{2}\rceil$ since we also know that $|A| + |B| = n$.
+
+Therefore, the maximum number of edges that our graph $G$ can have is $\lceil \frac{n}{2}\rceil \cdot \lceil \frac{n}{2}\rceil = \lceil \frac{n}{2}\rceil^2$, which is when there exists an edge between each of the $\lceil \frac{n}{2}\rceil$ vertices in $A$ and each of the $\lceil \frac{n}{2}\rceil$ vertices in $B$. However, we have reached a contradiction, since we have assumed that $G$ has $\lceil\frac{n}{2}\rceil^2 + 1$ edges.
+
+Therefore, we can conclude that a graph on $n \geq 4$ vertices that has $\lceil\frac{n}{2}\rceil^2 + 1$ edges is not 2-colorable.
 \end{mdframed}
+\end{enumerate}
 
 \end{document}
