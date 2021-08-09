@@ -144,6 +144,7 @@ As always, please do not include any identifying information about yourself in t
       \end{figure}
 
       Take two integers $a,b \in \Z^+$ such that $a < b$, and create a bipartite graph where the vertex sets are $L=R=\{n \in Z \;|\; n \in [0, b-1]\}$. (We're imagining that the $0$ node in $L$ is distinct from the $0$ node in $R$, but they have the same name for easy reference.)
+
       Using edges, connect $i \in L$ to both $i \in R$ and $\mathrm{rem}(i+a,b) \in R$. An example is given below for $a=2$, $b=3$.
       
       \begin{figure}[h!]
@@ -155,7 +156,7 @@ As always, please do not include any identifying information about yourself in t
       \begin{22enumerate}
           \item Under what conditions will there be a path from $0 \in L$ to $1 \in R$ and what will the minimal path length be, if it exists? Justify your answer.
 
-          \item Consider now the graph where we connect edge $i \in L$ to $\mathrm{rem}(i+ka,b) \in R$ for all $k \in \Z$. If we let $a=1$, find the expected distance between two distinct, randomly selected vertices with respect to $b$, justifying your answer. No need to simplify your expression.
+          \item Consider now the graph where we connect vertex $i \in L$ to $\mathrm{rem}(i+ka,b) \in R$ for all $k \in \Z$. If we let $a=1$, find the expected minimal distance between two distinct, randomly selected vertices with respect to $b$, justifying your answer. No need to simplify your expression.
           
       \end{22enumerate}
      
