@@ -117,11 +117,10 @@ As always, please do not include any identifying information about yourself in t
 	\end{enumerate}
 	\end{center}
 
-	For all $0 < k < n$ define $S(n,k)$ to be the number of partitions of an $n$-element set into $k$ blocks.
+	For all $0 < k \leq n$ define $S(n,k)$ to be the number of partitions of an $n$-element set into $k$ blocks.
 	\begin{22enumerate}
-	 \item Argue via counting argument that the following recurrence identity holds for integers $n \geq 2, k \geq 2$:
+	 \item Argue via counting argument that the following recurrence identity holds for integers $0 < k < n$ such that $n > 2, k \geq 2$:
 	$$S(n,k) = kS(n-1,k) + S(n-1,k-1).$$
-	
 	\hint{Consider an arbitrary element. Where in the partition can this element be?}
 	
 	\item How many surjective functions from an $n$-element set to a $k$-element set are there in terms of $S(n,k)$, $n$, and $k$? Note that here $0 < k < n$. Justify your answer.
