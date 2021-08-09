@@ -87,9 +87,9 @@ As always, please do not include any identifying information about yourself in t
 
 	\begin{22enumerate}
 
-	\item Given a relation $R$, prove whether or not the transitive closure of the symmetric closure of the reflexive closure of $R$ is an equivalence relation. (That is, if one took the reflexive closure of $R$, and then the symmetric closure of the result, and then took the transitive closure of that, is it an equivalence relation?)
+	\item Given a relation $R$, prove whether or not the transitive closure of the symmetric closure of the reflexive closure of $R$ is an equivalence relation. (That is, if one took the reflexive closure of $R$, and then the symmetric closure of the result, and then took the transitive closure of that, is the result an equivalence relation?)
 
-	\item Provide a counterexample to show that, given a relation $R$, the reflexive closure of the symmetric closure of the transitive closure of $R$ is not always an equivalence relation. (That is, find an $R$ such that if one took the transitive closure of $R$, and then the symmetric closure of the result, and then took the reflexive closure of that, it is not an equivalence relation.)
+	\item Provide a counterexample to show that, given a relation $R$, the reflexive closure of the symmetric closure of the transitive closure of $R$ is not always an equivalence relation. Justify your answer. (That is, find an $R$ such that if one took the transitive closure of $R$, and then the symmetric closure of the result, and then took the reflexive closure of that, the result is not an equivalence relation.)
 	
 	\hint{$|R|=2$ suffices to create a counterexample.}
 
@@ -98,9 +98,7 @@ As always, please do not include any identifying information about yourself in t
 }
 }
 
-
 \newpage
-
 \subsection*{Problem 2}
 {
 \nopagebreak 
@@ -124,6 +122,8 @@ As always, please do not include any identifying information about yourself in t
 	 \item Argue via counting argument that the following recurrence identity holds for integers $n \geq 2, k \geq 2$:
 	$$S(n,k) = kS(n-1,k) + S(n-1,k-1).$$
 	
+	\hint{Consider an arbitrary element. Where in the partition can this element be?}
+	
 	\item How many surjective functions from an $n$-element set to a $k$-element set are there in terms of $S(n,k)$, $n$, and $k$? Note that here $0 < k \leq n$. Justify your answer.
 	
 	\end{22enumerate}
@@ -131,21 +131,20 @@ As always, please do not include any identifying information about yourself in t
 
 }
 }
-
 \newpage
-
 \subsection*{Problem 3}
 {
 {\setcounter{enum22i}{0}
 
     A \textit{bipartite graph} is a graph whose vertices can be partitioned into two disjoint vertex sets, $L$ and $R$, such that every edge has one endpoint in $L$ and the other in $R$. See the figure below for an example.
       \begin{figure}[h!]
-        \caption{Three vertex set $L$ (left) and two vertex set $R$ (right)}
+        \caption{Three-vertex set $L$ (left) and two-vertex set $R$ (right)}
         \centering
           \includegraphics[scale = 0.3]{bipartite_graph.png}
       \end{figure}
 
-      Take two integers $a,b \in \Z^+$ such that $a < b$, and create a bipartite graph where the vertex sets are $L=R=\{n \in Z \;|\; n \in [0, b-1]\}$. Create edges in the following manner: connect with an edge $i \in L$ to both $i \in R$ and $\mathrm{rem}(i+a,b) \in R$. An example is given below for $a=2$, $b=3$.
+      Take two integers $a,b \in \Z^+$ such that $a < b$, and create a bipartite graph where the vertex sets are $L=R=\{n \in Z \;|\; n \in [0, b-1]\}$. (We're imagining that the $0$ node in $L$ is distinct from the $0$ node in $R$, but they have the same name for easy reference.)
+      Using edges, connect $i \in L$ to both $i \in R$ and $\mathrm{rem}(i+a,b) \in R$. An example is given below for $a=2$, $b=3$.
       
       \begin{figure}[h!]
         \caption{Example for $a=2$ and $b=3$.}
@@ -172,18 +171,18 @@ As always, please do not include any identifying information about yourself in t
 {\setcounter{enum22i}{0}
 Jupiter spotted this false proof of the `Graph Pigeonhole Principle.'\\
 
-\textbf{Claim:} For $n\ge 4$, if an $n$ vertex graph has at least $n+1$ edges, it must contain a subgraph that is a triangle (a simple cycle of length $3$).
+\textbf{Claim:} For $n\ge 4$, if an $n$-vertex graph has at least $n+1$ edges, it must contain a subgraph that is a triangle (a complete graph on $3$ vertices).
 
 \textbf{Proof:}
 
 Define $P(n)$: For every graph on $n$ vertices, if the graph has at
 least $n+1$ edges, it contains a subgraph that is a triangle. 
 
-Consider the base case $P(4)$. The complete graph $K_4$ has 6 edges and vertices $\{v_1, v_2, v_3, v_4\}$. We're interested in a graph on these vertices with at least $n+1=5$ edges. If the graph has 6 edges, it is a complete graph and any 3 of its vertices forms a triangle. If it has 5 edges, we can assume without loss of generality that the missing edge is
+Consider the base case $P(4)$. The complete graph $K_4$ has 6 edges and vertices $\{v_1, v_2, v_3, v_4\}$. We're interested in a graph on these vertices with at least $n+1=5$ edges. If the graph has 6 edges, it is a complete graph and any 3 of its vertices forms a triangle. If the graph has 5 edges, we can assume without loss of generality that the missing edge is
 $(v_1,v_2)$. The edges $\{ v_1, v_3 \}$, $\{ v_3, v_4 \}$, and $\{
 v_1, v_4 \}$ are in the graph and form a triangle. Hence, $P(4)$ is true, which proves our base case.
 
-Assume that $P(k)$ is true for $n=k$. For the inductive step, consider a graph $G$ with $k$ vertices and at least $k+1$ edges. By our inductive hypothesis, $G$ contains a triangle. Construct a $(k+1)$-vertex graph $G'$ by adding one vertex to $G$ and at least one edge (so the number of edges is at least $k+2$). By the inductive hypothesis, $G$ contains a triangle. Since $G$ is a subgraph of $G'$, $G'$ also contains a triangle. Hence, if $P(k)$ is true, so is $P(k+1)$.
+Assume that $P(k)$ is true for $n=k$. For the inductive step, consider a graph $G$ with $k$ vertices and at least $k+1$ edges. By our inductive hypothesis, $G$ contains a triangle. Construct a $(k+1)$-vertex graph $G'$ by adding one vertex to $G$ and any number of edges needed to ensure the number of edges is at least $k+2$. By the inductive hypothesis, $G$ contains a triangle. Since $G$ is a subgraph of $G'$, $G'$ also contains a triangle. Hence, if $P(k)$ is true, so is $P(k+1)$.
 
 We have shown that $P(4)$ holds and that if $P(k)$ holds so does  $P(k+1)$. Thus, we have shown that $P(n)$ holds for all $n\ge 4$ by the principle of induction. QED.
 \begin{22enumerate}
@@ -195,7 +194,7 @@ We have shown that $P(4)$ holds and that if $P(k)$ holds so does  $P(k+1)$. Thus
     
     \item Repair the theorem by showing that a graph with $n$ vertices where the minimum degree is more than $n/2$ must contain a triangle.
     
-    \hint{Use the actual Pigeonhole Principle!}
+    \hint{Use the actual Pigeonhole Principle! Consider two connected vertices and their minimal degree.}
     
 \end{22enumerate}
 }
