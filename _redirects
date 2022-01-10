@@ -1,0 +1,9 @@
+# Redirects for Netlify
+
+# From Netlify subdomain to our own domain
+https://cs22.netlify.app/* https://cs22.cafe/:splat 301
+http://cs22.netlify.app/* https://cs22.cafe/:splat 301
+
+# From our own domain alias to themed domain
+https://cs22.io/* https://cs22.cafe/:splat 301
+http://cs22.io/* https://cs22.cafe/:splat 301
