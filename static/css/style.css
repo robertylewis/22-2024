@@ -259,7 +259,8 @@ span.nav-link {
 }
 
 span.nav-link > a {
-    font-family: "Bitter", Georgia, serif;
+    /*font-family: "Bitter", Georgia, serif;*/
+    font-family: Courgette;
     font-weight: 700;
     font-size: var(--fs-md);
     text-decoration: none;
@@ -360,6 +361,16 @@ h1.landing-title {
     border-bottom: 4px solid var(--border-color-1);
     margin: 0;
     margin-bottom: 10px;
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
 
 h2.landing-subtitle {
