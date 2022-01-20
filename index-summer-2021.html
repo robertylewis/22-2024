@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- METADATA -->
+    <title>CSCI 0220 - Discrete Structures and Probability</title>
+    <link rel="shortcut icon" type="image/png" href="static/img/planets/planet_22.png" />
+    <meta property="og:image" content="static/img/preview.png" />
+    <meta name="author" content="CSCI 0220 Course Staff" />
+    <meta name="description" content="Brown University CSCI 0220 - Discrete Structures and Probability, Summer 2021" />
+    <meta name="keywords"
+        content="cs, computer science, computer, science, brown, brown university, university, college, school, education, math, discrete math" />
+    <meta charset="utf-8">
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- CSS/JS -->
+    <link href="static/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <script defer src="static/js/jquery.min.js"></script>
+    <script defer src="static/js/script.js"></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&family=Roboto+Slab:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- PLANETS -->
+    <img loading="lazy" class="planet planet-sun orbit-1" src="static/img/planets/sun.png" alt="sun" />
+    <img loading="lazy" class="planet planet-mercury orbit-3" src="static/img/planets/mercury.png" alt="mercury" />
+    <img loading="lazy" class="planet planet-venus orbit-2" src="static/img/planets/venus.png" alt="venus" />
+    <img loading="lazy" class="planet planet-earth orbit-4" src="static/img/planets/earth.png" alt="earth" />
+    <img loading="lazy" class="planet planet-mars orbit-2" src="static/img/planets/mars.png" alt="mars" />
+    <img loading="lazy" class="planet planet-jupiter orbit-2" src="static/img/planets/jupiter.png" alt="jupiter" />
+    <img loading="lazy" class="planet planet-saturn orbit-1" src="static/img/planets/saturn.png" alt="saturn" />
+    <img loading="lazy" class="planet planet-uranus orbit-3" src="static/img/planets/uranus.png" alt="uranus" />
+    <img loading="lazy" class="planet planet-neptune orbit-1" src="static/img/planets/neptune.png" alt="neptune" />
+    <img loading="lazy" class="planet planet-pluto orbit-4" src="static/img/planets/pluto.png" alt="pluto" />
+
+
+    <!-- NAVBAR -->
+    <nav>
+        <!-- REGULAR NAV -->
+        <div class="nav-nav">
+            <div class="nav-holder nav-left">
+                <img loading="lazy" class="nav-logo shake" src="static/img/planets/planet_22.png" draggable="false"
+                    alt="logo" />
+                <span class="nav-link nav-link-main">
+                    <a class="ul ul-1" href="#">CSCI 0220</a>
+                </span>
+            </div>
+            <div class="nav-holder nav-right">
+                <span class="nav-link">
+                    <a class="ul ul-2" href="#assignments">Assignments</a>
+                </span>
+                <span class="nav-link">
+                    <a class="ul ul-3" href="#lectures">Lectures</a>
+                </span>
+                <span class="nav-link">
+                    <a class="ul ul-4" href="#calendar">Calendar</a>
+                </span>
+                <span class="nav-link">
+                    <a class="ul ul-5" href="#resources">Resources</a>
+                </span>
+                <span class="nav-link">
+                    <a class="ul ul-6" href="#staff">Staff</a>
+                </span>
+            </div>
+        </div>
+
+        <!-- MOBILE NAV -->
+        <div id="navholder-mobile" class="navholder-mobile">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">☰</a>
+            <div class="navholder-content">
+                <a class="ul ul-1" onclick="closeNav()" href="#">CSCI 0220</a>
+                <a class="ul ul-2" onclick="closeNav()" href="#assignments">Assignments</a>
+                <a class="ul ul-3" onclick="closeNav()" href="#lectures">Lectures</a>
+                <a class="ul ul-4" onclick="closeNav()" href="#calendar">Calendar</a>
+                <a class="ul ul-5" onclick="closeNav()" href="#resources">Resources</a>
+                <a class="ul ul-6" onclick="closeNav()" href="#staff">Staff</a>
+            </div>
+        </div>
+
+        <!-- MOBILE NAV BUTTON -->
+        <span class="hamburger" onclick="openNav()">☰</span>
+    </nav>
+
+
+
+    <!-- MAIN BODY -->
+    <main>
+        <!-- LANDING -->
+        <section id="landing">
+            <div class="landing-container">
+                <div>
+                    <h1 class="landing-title">CSCI 0220</h1>
+                    <h2 class="landing-subtitle">Discrete Structures and Probability</h2>
+                    <p>
+                        CSCI 0220 meets Mondays, Wednesdays, and Fridays from 1:00 - 1:50 pm.
+                    </p>
+                    <p>
+                        I don't know about you, but we're feeling 22!
+                        This class gives you the tools to explore interesting questions and convince
+                        yourself and others of their answers. You'll be introduced to new worlds of ideas and ways of
+                        thinking.
+                        We'll learn about Set Theory, Logic, Number Theory, Combinatorics, Graph Theory, and
+                        Probability.
+                        If these topics sound unfamiliar, not to fear: you're in exactly the right place! This course
+                        assumes
+                        no prior experience with these topics.
+                    </p>
+                    <p><strong><a href="https://brown.zoom.us/j/93078244888">Lecture Zoom link</a></strong></p>
+                </div>
+                <div class="ring">
+                    <div class="ring">
+                        <div class="ring">
+                            <img loading="lazy" id="astronaut" class="landing-logo shake"
+                                src="static/img/planets/astronaut.png" draggable="false" alt="astronaut" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ASSIGNMENTS -->
+        <section id="assignments" class="anchor">
+            <h1 class="ul ul-2">Assignments</h1>
+
+            <h2>Homework</h2>
+            <div class="lightbox">
+                <p>
+                    All times listed are in EDT. Homework assignments are released on Tuesday and due at 11:59 PM on
+                    Mondays.
+                </p>
+            </div>
+            <table>
+                <tr>
+                    <th>Homework</th>
+                    <th>TeX</th>
+                    <th>Released</th>
+                    <th>Due</th>
+                    <th>Solutions</th>
+                </tr <tr>
+                <td><a href="https://forms.gle/9TQU1QJPaHBHmndk6">HW0</a></td>
+                <td>-</td>
+                <td>May 13</td>
+                <td>May 17</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW1.pdf">HW1</td>
+                    <td><a href="static/homeworks/CS22_HW1_LaTeX.tex">HW1 TeX</td>
+                    <td>May 18</td>
+                    <td>May 24</td>
+                    <td><a href="static/homeworks/CS22_HW1_Solutions.zip">HW1 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW2.pdf">HW2</td>
+                    <td><a href="static/homeworks/CS22_HW2_LaTeX.tex">HW2 TeX</td>
+                    <td>May 25</td>
+                    <td>May 31</td>
+                    <td><a href="static/documents/summerencryptedhw2solution.pdf">HW2 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW3.pdf">HW3</td>
+                    <td><a href="static/homeworks/CS22_HW3_LaTeX.tex">HW3 TeX</td>
+                    <td>June 1</td>
+                    <td>June 7</td>
+                    <td><a href="static/documents/summerencryptedhw3solution.pdf">HW3 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW4.pdf">HW4</td>
+                    <td><a href="static/homeworks/CS22_HW4_LaTeX.tex">HW4 TeX</td>
+                    <td>June 8</td>
+                    <td>June 14</td>
+                    <td><a href="static/documents/summerencryptedhw4solution.pdf">HW4 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW5.pdf">HW5</td>
+                    <td><a href="static/homeworks/CS22_HW5_LaTeX.tex">HW5 TeX</td>
+                    <td>June 15</td>
+                    <td>June 21</td>
+                    <td><a href="static/documents/summerencryptedhw5solution.pdf">HW5 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/midterm/CS22_Midterm_Practice.pdf">Midterm Practice</td>
+                    <td><a href="static/midterm/CS22_Midterm_Practice_LaTeX.tex">Practice TeX</td>
+                    <td>June 24</td>
+                    <td>-</td>
+                    <td><a href="static/midterm/CS22_Midterm_Practice_Solutions.pdf">Practice Solutions</td>
+                </tr>
+                <tr>
+                    <td><a href="static/midterm/CS22_Midterm.pdf">Midterm</td>
+                    <td><a href="static/midterm/CS22_Midterm_LaTeX.tex">Midterm TeX</td>
+                    <td>June 28 at 12:01am</td>
+                    <td>June 29 at 11:59pm</td>
+                    <td><a href="static/documents/summerencryptedmidtermsolution.pdf">Midterm Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW6.pdf">HW6</td>
+                    <td><a href="static/homeworks/CS22_HW6_LaTeX.tex">HW6 TeX</td>
+                    <td>June 30</td>
+                    <td>July 6</td>
+                    <td><a href="static/documents/summerencryptedhw6solution.pdf">HW6 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW7.pdf">HW7</td>
+                    <td><a href="static/homeworks/CS22_HW7_LaTeX.tex">HW7 TeX</td>
+                    <td>July 6</td>
+                    <td>July 12</td>
+                    <td><a href="static/documents/summerencryptedhw7solution.pdf">HW7 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW8.pdf">HW8</td>
+                    <td><a href="static/homeworks/CS22_HW8_LaTeX.tex">HW8 TeX</td>
+                    <td>July 13</td>
+                    <td>July 19</td>
+                    <td><a href="static/documents/summerencryptedhw8solution.pdf">HW8 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW9.pdf">HW9</td>
+                    <td><a href="static/homeworks/CS22_HW9_LaTeX.tex">HW9 TeX</td>
+                    <td>July 20</td>
+                    <td>July 26</td>
+                    <td><a href="static/documents/summerencryptedhw9solution.pdf">HW9 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/homeworks/CS22_HW10.pdf">HW10</td>
+                    <td><a href="static/homeworks/CS22_HW10_LaTeX.tex">HW10 TeX</td>
+                    <td>July 27</td>
+                    <td>August 2</td>
+                    <td><a href="static/documents/summerencryptedhw10solution.pdf">HW10 Solutions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="static/final/Final_Review.pdf">Final Practice</td>
+                    <td><a href="static/final/Final_Review_LaTeX.tex">Practice TeX</td>
+                    <td>June 24</td>
+                    <td>-</td>
+                    <td><a href="static/final/Final_Review_Solutions.pdf">Practice Solutions</td>
+                </tr>
+                <tr>
+                    <td><a href="static/final/CS22_Final.pdf">Final</td>
+                    <td><a href="static/final/CS22_Final_LaTeX.tex">Final TeX</td>
+                    <td>August 9</td>
+                    <td>August 10</td>
+                    <td><a href="static/documents/Final Exam Solutions.pdf">Final Exam Solutions</a></td>
+                </tr>
+            </table>
+
+            <h2>Recitation</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Released</th>
+                    <th>Solution</th>
+                </tr>
+                <tr>
+                    <td>Rec1 <a href="static/recitation/rec1.pdf">.pdf</a>, <a
+                            href="static/recitation/rec1.tex">.tex</a></td>
+                    <td>May 20</td>
+                    <td><a href="static/recitation/rec1/rec1_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec1/rec1_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec2 <a href="static/recitation/rec2/rec2.pdf">.pdf</a>, <a
+                            href="static/recitation/rec2/rec2.tex">.tex</a></td>
+                    <td>May 27</td>
+                    <td><a href="static/recitation/rec2/rec2_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec2/rec2_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec3 <a href="static/recitation/rec3/rec3.pdf">.pdf</a>, <a
+                            href="static/recitation/rec3/rec3.tex">.tex</a></td>
+                    <td>June 3</td>
+                    <td><a href="static/recitation/rec3/rec3_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec3/rec3_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec4 <a href="static/recitation/rec4/rec4.pdf">.pdf</a>, <a
+                            href="static/recitation/rec4/rec4.tex">.tex</a></td>
+                    <td>June 10</td>
+                    <td><a href="static/recitation/rec4/rec4_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec4/rec4_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec5 <a href="static/recitation/rec5/rec5.pdf">.pdf</a>, <a
+                            href="static/recitation/rec5/rec5.tex">.tex</a></td>
+                    <td>June 17</td>
+                    <td><a href="static/recitation/rec5/rec5_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec5/rec5_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Midterm Review (Optional) <a href="static/recitation/midterm_review/main.pdf">.pdf</a>, <a
+                            href="static/recitation/midterm_review/main.tex">.tex</a></td>
+                    <td>June 24</td>
+                    <td><a href="static/recitation/midterm_review/main_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/midterm_review/main_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec6 <a href="static/recitation/rec6/rec6.pdf">.pdf</a>, <a
+                            href="static/recitation/rec6/rec6.tex">.tex</a></td>
+                    <td>July 1</td>
+                    <td><a href="static/recitation/rec6/rec6_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec6/rec6_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec7 <a href="static/recitation/rec7/rec7.pdf">.pdf</a>, <a
+                            href="static/recitation/rec7/rec7.tex">.tex</a></td>
+                    <td>July 8</td>
+                    <td><a href="static/recitation/rec7/rec7_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec7/rec7_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec8 <a href="static/recitation/rec8/rec8.pdf">.pdf</a>, <a
+                            href="static/recitation/rec8/rec8.tex">.tex</a></td>
+                    <td>July 15</td>
+                    <td><a href="static/recitation/rec8/rec8_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec8/rec8_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec9 <a href="static/recitation/rec9/rec9.pdf">.pdf</a>, <a
+                            href="static/recitation/rec9/rec9.tex">.tex</a></td>
+                    <td>July 22</td>
+                    <td><a href="static/recitation/rec9/rec9_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec9/rec9_sol.tex">.tex</a></td>
+                </tr>
+                <tr>
+                    <td>Rec10 <a href="static/recitation/rec10/rec10.pdf">.pdf</a>, <a
+                            href="static/recitation/rec10/rec10.tex">.tex</a></td>
+                    <td>July 29</td>
+                    <td><a href="static/recitation/rec10/rec10_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/rec10/rec10_sol.tex">.tex</a></td>
+                </tr>
+                                <tr>
+                    <td>Final Review <a href="static/recitation/final_review/final_review.pdf">.pdf</a>, <a
+                            href="static/recitation/final_review/final_review.tex">.tex</a></td>
+                    <td>July 29</td>
+                    <td><a href="static/recitation/final_review/final_review_sol.pdf">.pdf</a>, <a
+                            href="static/recitation/final_review/final_review_sol.tex">.tex</a></td>
+                </tr>
+            </table>
+        </section>
+
+
+        <!-- LECTURES -->
+        <section id="lectures" class="anchor">
+            <h1 class="ul ul-3">Lectures</h1>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Topic</th>
+                    <th>Recording</th>
+                </tr>
+                <tr>
+                    <td>May 12</td>
+                    <td><a href="static/lectures/Lecture1_5-12.pdf">
+                            Course Intro
+                        </a></td>
+                    <td><a href="http://cs.brown.edu/~mlittman/courses/cs0220/CS22-05-12-21b.mp4">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 14</td>
+                    <td><a href="static/lectures/Lecture2_5-14.pdf">
+                            Statements, Proofs, and Contradiction
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/play/ovahg0JhQvC36SQ3lcPqOPcVae40eN7Rqb8Yh3FfGqK6u5vDQuXNNEtBJ4ppzT55IK5e_wjnD2QqrcUe.EvCAtvcJcO8B4hNm?autoplay=true&continueMode=true&startTime=1621011732000">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 17</td>
+                    <td><a href="static/lectures/Lecture3_5-17.pdf">
+                            Propositional Logic
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/play/9SC_3V0aCkgMud3PY-57wYsoWbSE1C5wHo-ipWEgAymsYpcXULoCwWY0TNNg4SKJhTY9Me11d7c-iywk.fjuxO3P30GUkHaL3?continueMode=true">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 19</td>
+                    <td><a href="static/lectures/Lecture4_5-19.pdf">
+                            Predicate Logic, Normal Forms (CNF, DNF)
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/play/igjUQ3ofevwRjR2FRNN6gJcWgOJafW_F6jfQKTTbBsYN8CJkc5d_a6FNP8-glLoIDCQDsVhHzeRIgR6X.Kjizp1UnWRI8sF7V?continueMode=true">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 21</td>
+                    <td><a href="static/lectures/Lecture5_5-21.pdf">
+                            Intro to Circuits
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/play/vrClcqzOzyA2tklouK7xHEgdMswi5RBp0RzgMLGsPtQ-h4lG_00IMtVHVZnVRmeZ2sekFL5jCgvlRnbQ.rH7zEInJ3dfomM0Q?continueMode=true">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 24</td>
+                    <td><a href="static/lectures/Lecture6_5-24.pdf">
+                            Circuits for Computing
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/play/4fUph-Rr-g-uhDC8hlN8yfIlu_iWJS40z1OhViVG57URuByi4AuTCDHe1RvtV66IWccCljlwcjqwGzzK.CMnmvJ6Xx_WRpkgd?continueMode=true">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 26</td>
+                    <td><a href="static/lectures/Lecture7_5-26.pdf">
+                            Intro to Set Theory
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/play/z0mxbt1i-EACAfJ65IUYQAKcfkkmzVIVhAt_Re1cyRA66FEEwHz7TNhq9Pot5kp-vEW93gAJt8bUHmY.QOQJx9N4jTIz2Rm8?continueMode=true">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 28</td>
+                    <td><a href="static/lectures/Lecture8_5-28.pdf">
+                            Set Equality & Quantification
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/VcipldVW5ZiNaGg4pCoMkE_VXUGToaxT1DBBlGDjnYAwrZiKRjizYPbCZy2OLs6J.wtguqv4nttMVnsgv">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>May 31</td>
+                    <td>NO CLASS - Memorial Weekend</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>June 2</td>
+                    <td><a href="static/lectures/Lecture9_6-02.pdf">
+                            Relations
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/qoVBJODjp-AQ9gSFdfO5-Jt6AdetrbvKm-hwj9IXVhTn6rInS7Q4KgOqabM3g9Hc.mryfbMjVu1e6kYVl">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 4</td>
+                    <td><a href="static/lectures/Lecture9_6-04.pdf">
+                            Binary Relations
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/whC2twI138X3YQI6w3babldXgTNmBW6zJ3sKSiGUHYzCFqW2-fHSZC6LRMFo86m7.EfbF_SRfK-ZGLajX">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 7</td>
+                    <td><a href="static/lectures/Lecture11_6-07.pdf">
+                            Equivalence Relation and Bijection Examples
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/0-5YnbJbkus9qm0TGG_mUDV8KxjAHrTsnPkKUju92igurCvZWbBGqu_bCSOXHgAU.cOvwBoa5vxAH-K1f">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 9</td>
+                    <td><a href="static/lectures/Lecture12_6-09.pdf">
+                            Induction
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/V9DG49zWSE9fc9mmLDUq-yX_dqLN3jUXnKYf0aqu92M-YThUKM0s342jJiWNVZ0v.ztrzcfZq2GmUoCuX">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 11</td>
+                    <td><a href="static/lectures/Lecture13_6-11.pdf">
+                            Induction Continued, Strong Induction
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/t0lJXRZxqVHausDrEjAnpJqA00ij1i4qUYIMecjYV1QrFRPN9H-efP-qRo_S-MT9.v8wrDfJU0-J5vFk3">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 14</td>
+                    <td><a href="static/lectures/Lecture14_6-14.pdf">
+                            Intro to Number Theory
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/VzS_3wSaMsCfuLwW73ru5jrkHoIwK8F2bD1S3u-zBPUFKcB32MLdvCU-UqVquuoS.iY8I1ZwPI8kWFpeX">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 16</td>
+                    <td><a href="static/lectures/Lecture15_6-16.pdf">
+                            Division Algorithm, Euclidean Algorithm
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/5er11B22RspbN9sXMs8g6FRQ-RwbTSzFyGGsb_U9a4wVm5Ekiw-6N4cMTVUsxzQi.D1czLNUyw2-qePNE">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 18</td>
+                    <td><a href="static/lectures/Lecture16_6-18.pdf">
+                            Backtracking, Modular Arithmetic, Multiplicative Inverse
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/fDhI5CzcFI0FaJ2191rL0VifgQWI_d7DyohnX3io96ZsyMOSixGXxKu9TIprLjbY.a7cd5FyuWExjnig_">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 21</td>
+                    <td><a href="static/lectures/Lecture17_6-21.pdf">
+                            Multiplicative Inverse, Fermat's little Theorem
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/wQff3CZhJkOa8z1mXgQHDHSvNkzRZHdsrMBcbtaJti1_5lPHi6lkn6-zsJV22_G9.UHa-LbZdRstAzmH7">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 23</td>
+                    <td><a href="static/lectures/Lecture18_6-23.pdf">
+                            Euler's Phi Function
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/9p-lt2SpXMmKv3vNl_nIvwz9ZHcsFiPWbIcBUxKoe-Tta5sLSKWeJ9vlkWRJKowW.JyZXwVuTKHMqiJMU">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 25</td>
+                    <td><a href="static/lectures/Lecture19_6-25.pdf">
+                        Message Passing, RSA Encryption
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/yha_eO-WJtZL2b2Yi1jgzz061xVbO4qXAhoPBkNzCLgr6Ej-8kYbwf24kVpgccP2.QLepJY3TZiwhgOub">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>June 28</td>
+                    <td>Midterm (No Class)</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>June 30</td>
+                    <td><a href="static/lectures/Lecture20_6-30.pdf">
+                        Intro to Counting
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/bYOLSvjkWONlND7uSjqU0ygHOuLf7pJeorKo8jmsm5OwcmQer3VnyD7M3fEDF2Db.SjburrzjAJNPPLXM">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 2</td>
+                    <td><a href="static/lectures/Lecture21_7-02.pdf">
+                        Division Rule, Counting Subsets
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/TkQtMhWz1w14q3TiqtIKD4jCNgFglc86CIUxudLyw73BeOl65awpBDDH8jQ2hbb9.UGPLFyEJgRtwXGKT">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 5</td>
+                    <td>NO CLASS - Independence Day Holiday</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>July 7</td>
+                    <td><a href="static/lectures/Lecture22_7-07.pdf">
+                        Binomial Theorem, Inclusion/Exclusion
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/Asss27tX_5jojir39hi9UOs3IL--5-AJGJiGgS898q_GPeEAtg-YS8Vk76txRobu.6CJst8OTzUm1SBYe">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 9</td>
+                    <td><a href="static/lectures/Lecture23_7-09.pdf">
+                        Pigeonhole Principle
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/TNj5FSoaCrieeX0BQsF5svsL-fpVR_VuEI4ugKdE0hwz3m0osqGaju3D8utmrFCb.ree_T0vIppFdbYwQ">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 12</td>
+                    <td><a href="static/lectures/Lecture24_7-12.pdf">
+                        Intro to Probability
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/uCKvPoQJq7kEOArVcPQmRvoi_3HyjRPlA2u7up_oM7sLOTPu42fvXY-31buLTuf9.oBODYOwrkjYPbdPw">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 14</td>
+                    <td><a href="static/lectures/Lecture25_7-14.pdf">
+                        Probability and Independence
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/fyMs-rHGeSvwAZEcvxBacA0dFVWMf2eL0-wc5ZqC0ytRLQW4mCCrq0cILScer4sz.7XJZN_DRIqpW94vA">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 16</td>
+                    <td><a href="static/lectures/Lecture26_7-16.pdf">
+                        Random Variables and Expectations
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/akaNQjMEXSjkLcx7zBPte9qCIE_d-fPb9cJcXQeXgWlE0DHITWLweJQwz1Qwrc0A.EWUSv0Fop2ntVRQ4">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 19</td>
+                    <td><a href="static/lectures/Lecture27_7-19.pdf">
+                        Conditional Expectation
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/tRBf5J2i6sv-lINodNRLLrRRXiHIaHvEYoi9yrpAOt7QcPTVgac0hPxlMR30uom_.fSYtcIS7s5FYAwv2">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 21</td>
+                    <td><a href="static/lectures/Lecture28_7-21.pdf">
+                        Linearity of Expectation
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/HfN45K6CIKu3qwoQglLaVBBwe4aQgZ27LSMmd4N-xuDb8luqMDzM0X_gvd14iNrU.s37kIe9bjfDXJ7CO">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 23</td>
+                    <td><a href="static/lectures/Lecture29_7-23.pdf">
+                        Graph Theory
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/Qfd6d7s475CNNbGVAL9_EHU2jiESk8RwnVDLdssdHCMRibRug-Cd81k_UXn0IobN.LXAwrUcESog6bWwA">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 26</td>
+                    <td><a href="static/lectures/Lecture30_7-26.pdf">
+                        Trees
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/f5nq0gI2_KECJEnDQVAjWpWWbYH7VWbYvoGjmAnCaE26V6935dVVrrU9RCV3foWB.MHg7UDwgDpNIDxZI">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 28</td>
+                    <td><a href="static/lectures/Lecture31_7-28.pdf">
+                        Counting Trees
+                        </a></td>
+                    <td><a
+                            href="https://drive.google.com/file/d/1O0TuFOGcqJ_CBzci45cXefyiQYMARNE2/view?usp=sharing">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>July 30</td>
+                    <td><a href="static/lectures/Lecture32_7-30.pdf">
+                        Random Walks on Graphs
+                        </a></td>
+                    <td><a
+                            href="https://brown.zoom.us/rec/share/cOowz9qh-YTrHNNIUSxxfjRzKo5IvAppZMPGE-2Jswm7nLBIOxPMyLdk0rUcD_wG.WuUAAfgf7m-UkzWc">
+                            Video
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>August 2</td>
+                    <td>READING PERIOD</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>August 4</td>
+                    <td>READING PERIOD</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>August 6</td>
+                    <td>READING PERIOD</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>August 10</td>
+                    <td>Final Exam</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <!-- CALENDAR -->
+        <section id="calendar" class="anchor">
+            <h1 class="ul ul-4">Calendar</h1>
+            <div class="lightbox">
+                <h2>How do hours work?</h2>
+                <p>
+                    CS22 hours are collaborative spaces for students to work together on problems, facilitated by TAs.
+                    Just hop into the Zoom chat and join the breakout room for whichever problem you want to work on.
+                    You can call a TA over for help on <a href="https://signmeup.cs.brown.edu/">Signmeup</a>. See our
+                    hours policy documentation for more
+                    information.
+                </p>
+            </div>
+            <div class="iframe-container">
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?src=c_u4eb88bah1p04tmsna6lk29j44%40group.calendar.google.com&ctz=America%2FNew_York"
+                    title="course-calendar" style="border: 0" frameborder="0" scrolling="no" SameSite=Lax></iframe>
+            </div>
+        </section>
+
+
+        <!-- RESOURCES -->
+        <section id="resources" class="anchor">
+            <h1 class="ul ul-5">Resources</h1>
+
+            <div class="lightbox">
+                <h2>Course Textbook</h2>
+                <a href="static/documents/CS22Book.pdf">
+                    Mathematics for Computer Science &mdash; Lehman, Leighton, Meyer
+                </a>
+                <p>
+                    Reading this textbook is not required, though many students in the past have found it helpful in
+                    reinforcing what's covered in lecture!
+                </p>
+
+                <h2>Course Documentation</h2>
+                <ul>
+                    <li>
+                        <a href="https://drive.google.com/file/d/1222Rp60P5FbJZqjk-ywmn2qa2MVOoFry/view?usp=sharing">Course
+                            Missive
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/file/d/1UuQpGwcKx_eJLVk1BatyNyfX_ON-KnYJ/view?usp=sharing">Collaboration
+                            Policy</a>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/file/d/1ugNvwv1D3U38-nfIYt0FSu0MCV3jL4lL/view?usp=sharing">Hours
+                            and Recitation Policy
+                        </a>
+                    </li>
+                </ul>
+
+                <h2>Important Links</h2>
+                <ul>
+                    <li><a href="https://campuswire.com/c/GA754240A">Campuswire</a></li>
+                    <li><a
+                            href="https://docs.google.com/spreadsheets/d/1b-OZNYGpsd9rMrQINIa5yhyHIETmWveYbPaPnTF5R-Y/edit#gid=0">Recitation
+                            Assignments</a></li>
+                    <li><a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSfQ3do7_irvrtC_f-1zxwq3f-Ro17K_P6lAiRa78OSeHkYoGw/viewform">Anonymous
+                            Feedback Form</a></li>
+                </ul>
+
+                <h2>Homework Resources</h2>
+                <p>
+                    For many of you, this is your first time writing proofs, and even for those who have written proofs
+                    before, what we consider a good proof in CS22 likely differs from what made a good proof wherever
+                    you
+                    were
+                    writing them before! Check out the proof virtues document below to acquaint yourself with what we
+                    consider a good
+                    proof in CS22. <b> Your proofs will be graded with respect to this document </b>, so be sure to read
+                    it
+                    carefully, and come to hours with any questions.
+                <ul>
+                    <li>
+                        <a href="static/documents/CS22ProofVirtues.pdf">Proof Virtues</a>
+                    </li>
+                </ul>
+
+                <h2>Math Resources</h2>
+                <ul>
+                    <li>
+                        <a href="static/documents/CS22Givens.pdf">What don't I have to prove?</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/sets.pdf">Set Identities</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/logic.pdf">Logical Equivalences</a>
+                    </li>
+                </ul>
+
+                <h2>Sample Proofs</h2>
+                <ul>
+                    <li>
+                        <a href="static/documents/templates/bidirectional.pdf">Bidirectional</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/bijection.pdf">Bijective Proof Sketch</a>
+                    <li>
+                        <a href="static/documents/templates/bijective_proofs.pdf">More Bijective Proof Sketches</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/bijective_strategies.pdf">Bijective Strategies</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/cases.pdf">Cases</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/contradiction.pdf">Contradiction</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/contraposition.pdf">Contraposition</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/counterexample.pdf">Counterexample</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/induction.pdf">Induction</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/more_induction.pdf">More Induction</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/probability.pdf">Probability</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/set_equivalence.pdf">Set Equivalence</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/templates/strong_induction.pdf">Strong Induction</a>
+                    </li>
+                </ul>
+
+                <h2>LaTeX Resources</h2>
+                <p>
+                    LaTeX (pronounced <em>la-tek</em>) is a program that you will be using to make your homework
+                    solutions
+                    look beautiful. The sample proofs above were written in LaTeX to give you an idea of what documents
+                    written
+                    in LaTeX look like. LaTeX allows you to incorporate mathematical notation into your proofs, and
+                    because
+                    this class involves a healthy dose of mathematical notation, LaTeX is going to be very useful! Using
+                    LaTeX is
+                    required after the 2nd homework.
+                </p>
+                <p>
+                    We don't expect you've ever done this whole LaTeX business before, and that's why we're giving you
+                    some
+                    time to learn it! To get started, we recommend creating an account on
+                    <a href="https://www.overleaf.com">Overleaf</a>, an online program for writing and compiling LaTeX.
+                    After you do that, here are some links to check out:
+                    <strong>
+                        Honestly, please use <a href="https://www.overleaf.com">Overleaf</a>.
+                        It's so much easier than installing anything on your computer. Trust me.
+                    </strong>
+                </p>
+
+                <ul>
+                    <li>
+                        <a href="static/documents/CS22_Latex_Cheat_Sheet.pdf">CS22 LaTeX Cheat Sheet</a> (start here!)
+                    </li>
+                    <li>
+                        <a href="http://cs.brown.edu/about/system/managed/latex/doc/lshort.pdf">A Not So Short
+                            Introduction to LaTeX</a>
+                    </li>
+                    <li>
+                        <a href="static/documents/symbols.pdf">LaTeX Symbols Guide</a>
+                    </li>
+                    <li>
+                        <a href="http://www.artofproblemsolving.com/wiki/index.php/LaTeX">Art of Problem Solving:
+                            LaTeX</a>
+                    </li>
+                    <li>
+                        <a href="http://en.wikibooks.org/wiki/LaTeX/Introduction">LaTeX Intro Wikibook</a>
+                    </li>
+                    <li>
+                        <a href="http://cs.brown.edu/about/system/managed/latex/">LaTeX on Brown CS Systems</a>
+                    </li>
+                </ul>
+
+                <p>
+                    In general, a really good resource for learning LaTeX is the web. When you have a question, google
+                    it,
+                    and you'll likely find someone who had the very same question!
+                </p>
+                <p>
+                    Below is a template you can use as a starting point for your homeworks.
+                </p>
+                <p>
+                    <a href="static/documents/templates/template.tex">LaTex Homework Template</a>
+                </p>
+
+                <p>If you'd like to download LaTeX on your computer, here are some resources to do that: </p>
+                <ul>
+                    <li>
+                        <a href="http://miktex.org/2.9/setup">MiKTeX</a> (Windows)
+                    </li>
+                    <li>
+                        <a href="http://www.tug.org/mactex">MacTeX</a> (Mac)
+                    </li>
+                    <li>
+                        <a href="http://www.xm1math.net/texmaker/">Texmaker</a> (Cross Platform)
+                    </li>
+                </ul>
+
+                <p>
+                    If you're using LaTeX and you just don't know what the code for some symbol is, here is a helpful
+                    list to start:
+                </p>
+                <p>
+                    <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">Common LaTeX symbols</a>
+                </p>
+
+                <p>Alternatively, this is a neat site which will return the LaTeX code based on handwritten input
+                    (although
+                    searching your question on the web is likely more efficient):
+                </p>
+                <p>
+                    <a href="http://detexify.kirelabs.org/classify.html">DeTeXify</a>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- STAFF -->
+        <section id="staff" class="anchor">
+            <h1 class="ul ul-6">Staff</h1>
+            <div class="lightbox">
+                <h2>Contact</h2>
+                <ul>
+                    <li><a href="mailto:cs0220headtas@lists.brown.edu">cs0220headtas@lists.brown.edu</a></li>
+                    <li><a href="mailto:cs0220tas@lists.brown.edu">cs0220tas@lists.brown.edu</a></li>
+                </ul>
+            </div>
+
+            <div class="staff-tiling">
+                <!-- LITTMAN -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="astronaut profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/virgo.jpg" alt="virgo constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Michael Littman</h2>
+                        <p>Professor | mlittman</p>
+                        <p>I study AI and machine learning and how they might help people more.</p>
+                        <p>👍</p>
+                    </div>
+                </div>
+
+                <!-- KYRAN -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/kflynn6.png"
+                            alt="kyran's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/scorpio.jpg" alt="scorpio constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Kyran Flynn</h2>
+                        <p>HTA | kflynn6</p>
+                        <p>he/him/his</p>
+                        <p>Hi! I'm a junior studying apma-cs — tell me if you like the homeworks</p>
+                        <p>🧋</p>
+                    </div>
+                </div>
+
+                <!-- MORLEY -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="astronaut profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/cancer.jpg" alt="cancer constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Morley Hawriluk</h2>
+                        <p>HTA | mhawrilu</p>
+                        <p>he/him/his</p>
+                        <p>After choosing Brown, didn’t think you’d end up in summer school, did ya?</p>
+                        <p>😈</p>
+                    </div>
+                </div>
+
+                <!-- WILL -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/wyang29.jpg"
+                            alt="will's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Will Yang</h2>
+                        <p>HTA | wyang29</p>
+                        <p>he/him/his</p>
+                        <p>Hi there! I'm currently most likely staring at Robinhoood, running down the bike path, or
+                            eating on a zoom call.</p>
+                        <p>🤤</p>
+                    </div>
+                </div>
+
+                <!-- BEN -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="astronaut profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/scorpio.jpg" alt="scorpio constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Ben Fiske</h2>
+                        <p>UTA | bfiske1</p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <!-- CALDER -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/chansen6.jpg"
+                            alt="calder's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/libra.jpg" alt="libra constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Calder Ruhl Hansen</h2>
+                        <p>UTA | chansen6</p>
+                        <p>he/him/his</p>
+                        <p>Hi! I’m a junior from the SF Bay Area. I like designing fonts, learning about space (of
+                            course), and making math-related art.</p>
+                        <p>🖍</p>
+                    </div>
+                </div>
+
+                <!-- ASHLEY -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/hchung21.jpg"
+                            alt="ashley's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Ashley Chung</h2>
+                        <p>UTA | hchung21</p>
+                        <p>she/her/hers</p>
+                        <p>Howdy! I'm a junior from Connecticut and Seoul, South Korea. I love drawing, playing Tetris,
+                            and watching anime. My favorite 22 topics are Number Theory and Sets :)</p>
+                        <p>🥺</p>
+                    </div>
+                </div>
+
+                <!-- JIAHUA -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/jchen345.jpg"
+                            alt="jiahua's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/taurus.jpg" alt="taurus constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Jiahua Chen</h2>
+                        <p>UTA | jchen345</p>
+                        <p>he/him/his</p>
+                        <p>Hey! I'm from Hong Kong & Shanghai. Talk to me about photography, number theory or
+                            cryptography! And yes Pluto is a planet. </p>
+                        <p>🥰</p>
+                    </div>
+                </div>
+
+                <!-- JOANNA -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/jtasmin.jpg"
+                            alt="joanna's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/leo.jpg" alt="leo constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Joanna Tasmin</h2>
+                        <p>UTA | jtasmin</p>
+                        <p>she/her/hers</p>
+                        <p>Hi! I'm from Jakarta/Singapore and I study mathsy stuff - I like taking terrible film
+                            pictures and graph theory.</p>
+                        <p>🤡</p>
+                    </div>
+                </div>
+
+                <!-- KEN -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="ken's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aries.jpg" alt="aries constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Ken Kawamura</h2>
+                        <p>UTA | kkawamu1</p>
+                        <p>he/him/his</p>
+                        <p>This is the third time to TA this course!</p>
+                        <p>"　　　*'``・*。
+                            　　　 |　　　 `*。
+                            　　,。∩　　　　*
+                            +　 (´∀｀ ) *。+゜
+                            `*。 ヽ、　つ *゜*
+                            　 `・+。*・'⊃+゜
+                            　 ☆　　∪~。*゜
+                            　　 `・+。*・"</p>
+                    </div>
+                </div>
+
+                <!-- MARY -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/mlou2.jpg"
+                            alt="mary's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/capricorn.jpg" alt="capricorn constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Mary Lou</h2>
+                        <p>UTA | mlou2</p>
+                        <p>she/her/hers</p>
+                        <p>Hello! I'm a rising senior studying Biology and CS. I love swimming, baking, and
+                            binge-watching dramas with friends. </p>
+                        <p>🥟</p>
+                    </div>
+                </div>
+
+                <!-- NICK -->
+                <div class="staff-tile">
+                    <div title="sasageyo" class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/nyoung10.jpg"
+                            alt="nick's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/leo.jpg" alt="leo constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Nick Young</h2>
+                        <p>UTA | nyoung10</p>
+                        <p>he/him/his</p>
+                        <p>Hi! I'm from Vancouver, Canada and I love lasagna!</p>
+                        <p>🐝</p>
+                    </div>
+                </div>
+
+                <!-- CLAIRE -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/schung25.jpg"
+                            alt="claire's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/gemini.jpg" alt="gemini constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Claire Chung</h2>
+                        <p>UTA | schung25</p>
+                        <p>she/her/hers</p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <!-- WALTER -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/xzhan180.jpg"
+                            alt="walter's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/aquarius.jpg" alt="aquarius constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Walter Zhang</h2>
+                        <p>UTA | xzhan180</p>
+                        <p>he/his/him</p>
+                        <p>I'm (technically) a junior studying APMA-CS but I also like history, geography, and learning
+                            in general!</p>
+                        <p>🗿</p>
+                    </div>
+                </div>
+
+                <!-- DANIEL -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/dghebrey.jpg"
+                            alt="dghebrey's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/libra.jpg" alt="libra constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Daniel Ghebreyesus</h2>
+                        <p>UTA | dghebrey</p>
+                        <p>he/his/him</p>
+                        <p>Hey! I'm a rising junior from the greater Seattle area studying CS. I enjoy solving
+                            crosswords and watching the NBA with friends.</p>
+                        <p>🥳</p>
+                    </div>
+                </div>
+
+                <!-- ALYSSA -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/staff/acong3.jpg"
+                            alt="alyssa's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/gemini.jpg" alt="gemini constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Alyssa Cong</h2>
+                        <p>STA | acong3</p>
+                        <p>she/her/hers</p>
+                        <p>hi! i'm a freshman from maryland, and i love my cat (her name is winter, and i am allergic to
+                            her. it's fine. allergy meds go a looong way)</p>
+                        <p>🤠</p>
+                    </div>
+                </div>
+
+                <!-- RAYMOND -->
+                <div class="staff-tile">
+                    <div class="effect">
+                        <img loading="lazy" class="staff-photo" src="static/img/planets/astronaut.png"
+                            alt="raymond's profile picture" />
+                        <img loading="lazy" class="staff-photo staff-photo-hover"
+                            src="static/img/constellations/leo.jpg" alt="leo constellation" />
+                    </div>
+                    <div class="lightbox">
+                        <h2>Raymond Dai</h2>
+                        <p>STA | rdai4</p>
+                        <p>he/him/his</p>
+                        <!-- <p></p> -->
+                        <p>¯\_(ツ)_/¯</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Copyright © 2021 CSCI 0220 @ Brown</p>
+    </footer>
+</body>
+
+</html>

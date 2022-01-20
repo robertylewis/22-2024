@@ -13,8 +13,10 @@
     --fs-sm: 1rem;
     --fs-xs: 0.8rem;
 
+    --color-background: #fbe9e6;
+    --color-body: #393d4d;
     --color-black: #060912;
-    --color-off-black: #11172d;
+    --color-off-black: #fecdda;
     --color-white: #f5f5f5;
     --color-off-white: #e8e8e8;
     --color-planet-1: #4dc4e2;
@@ -38,16 +40,16 @@ html {
 }
 
 body {
-    font-family: "Roboto Mono", Monaco, sans-serif;
+    font-family: "Poppins", Monaco, sans-serif;
     font-weight: 400;
     /* NOTE: We should decide on smth here */
-    background-color: var(--color-black);
+    background-color: var(--color-background);
     /* background-color: #000; */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    color: var(--color-white);
+    color: var(--color-body);
     overflow-x: hidden;
     position: relative;
 }
@@ -82,12 +84,12 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: "Roboto Slab", Copperplate, serif;
+    font-family: "Bitter", Copperplate, serif;
     font-weight: 700;
 }
 
 a {
-    color: var(--color-white);
+    color: var(--color-body);
     text-decoration-color: var(--color-planet-1);
 }
 
@@ -118,8 +120,8 @@ div.iframe-container {
 }
 
 div.lightbox {
-    padding: 25px 50px;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    background-color: #e6effb;
 }
 
 @media screen and (max-width: 768px) {
@@ -254,11 +256,11 @@ span.nav-link {
 }
 
 span.nav-link > a {
-    font-family: "Roboto Slab", Georgia, serif;
+    font-family: "Bitter", Georgia, serif;
     font-weight: 700;
     font-size: var(--fs-md);
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--color-body);
 }
 
 span.nav-link > a:hover {
@@ -303,7 +305,7 @@ span.hamburger {
         top: 15px;
         right: 25px;
         font-size: 40px;
-        color: var(--color-white);
+        color: var(--color-body);
         text-decoration: none;
     }
 
@@ -318,7 +320,7 @@ span.hamburger {
     div.navholder-content > a {
         padding: 8px;
         font-size: 36px;
-        color: var(--color-white);
+        color: var(--color-body);
         display: block;
     }
 
@@ -328,7 +330,7 @@ span.hamburger {
         top: 15px;
         right: 25px;
         font-size: 40px;
-        color: var(--color-white);
+        color: var(--color-body);
     }
 }
 
@@ -364,6 +366,10 @@ h2.landing-subtitle {
 img.landing-logo {
     width: 300px;
     margin: -40px;
+}
+
+.landing-logo-container {
+    margin: 30px;
 }
 
 div.ring {
@@ -406,7 +412,7 @@ td {
 }
 
 th {
-    font-family: "Roboto Slab", Georgia, serif;
+    font-family: "Bitter", Georgia, serif;
     font-size: var(--fs-md);
     background-color: rgba(0, 0, 0, 0.5);
 }
