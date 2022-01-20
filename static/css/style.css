@@ -123,7 +123,8 @@ div.iframe-container {
 
 div.lightbox {
     padding: 10px 20px;
-    background-color: #e6effb;
+    text-align: center;
+    /*background-color: #e6effb;*/
 }
 
 @media screen and (max-width: 768px) {
@@ -151,22 +152,22 @@ div.lightbox {
     text-underline-offset: 6px;
 }
 .ul-1 {
-    text-decoration-color: var(--color-planet-1) !important;
+    text-decoration-color: var(--border-color-1) !important;
 }
 .ul-2 {
-    text-decoration-color: var(--color-planet-2) !important;
+    text-decoration-color: var(--border-color-1) !important;
 }
 .ul-3 {
-    text-decoration-color: var(--color-planet-3) !important;
+    text-decoration-color: var(--border-color-1) !important;
 }
 .ul-4 {
-    text-decoration-color: var(--color-planet-4) !important;
+    text-decoration-color: var(--border-color-1) !important;
 }
 .ul-5 {
-    text-decoration-color: var(--color-planet-5) !important;
+    text-decoration-color: var(--border-color-1) !important;
 }
 .ul-6 {
-    text-decoration-color: var(--color-planet-6) !important;
+    text-decoration-color: var(--border-color-1) !important;
 }
 
 /* NOTE: Planet placement/sizing is done in js/script.js */
@@ -415,9 +416,9 @@ td {
 }
 
 th {
-    font-family: "Bitter", Georgia, serif;
+    font-family: "Parisienne", Georgia, serif;
     font-size: var(--fs-md);
-    background-color: rgba(0, 0, 0, 0.5);
+    /*background-color: rgba(0, 0, 0, 0.5);*/
 }
 
 td {
