@@ -25,6 +25,7 @@
     --color-planet-4: #f7bb66;
     --color-planet-5: #aae1bd;
     --color-planet-6: #8ca77f;
+    --border-color-1: rgb(171, 121, 214);
 }
 
 *,
@@ -84,13 +85,14 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: "Bitter", Copperplate, serif;
-    font-weight: 700;
+    font-family: "MonteCarlo", Copperplate, serif;
+    
 }
 
 a {
     color: var(--color-body);
-    text-decoration-color: var(--color-planet-1);
+    /*text-decoration-color: var(--color-planet-1);*/
+    text-decoration-color: rgb(155, 119, 255)
 }
 
 img {
@@ -353,7 +355,8 @@ div.landing-left {
 h1.landing-title {
     display: inline-block;
     font-size: var(--fs-hg);
-    border-bottom: 4px solid var(--color-planet-1);
+    /*border-bottom: 4px solid var(--color-planet-1);*/
+    border-bottom: 4px solid var(--border-color-1);
     margin: 0;
     margin-bottom: 10px;
 }
