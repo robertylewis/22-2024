@@ -42,6 +42,7 @@ html {
 
 body {
     font-family: "Poppins", Monaco, sans-serif;
+    /* TODO: Change default system font */
     font-weight: 400;
     /* NOTE: We should decide on smth here */
     background-color: var(--color-background);
@@ -85,8 +86,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: "MonteCarlo", Copperplate, serif;
-    
+    font-family: Courgette;
 }
 
 a {
