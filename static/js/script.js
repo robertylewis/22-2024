@@ -13,7 +13,7 @@ let planets = {
 }
 
 function placePlanets() {
-    const height = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
+    const height = Math.max(document.body.scrollHeight, document.body.offsetHeight,
         document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
 
     for (const p in planets) {
@@ -44,4 +44,10 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("navholder-mobile").style.height = "0%";
+}
+
+// Set links
+var links = document.links;
+for (var i = 0; i < links.length; i++) {
+    links[i].target = "_blank";
 }
