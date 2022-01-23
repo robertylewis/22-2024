@@ -506,7 +506,7 @@ div.effect > img.staff-photo-hover {
 }
 
 div.effect:hover > img.staff-photo {
-    display: none;
+    /*display: none;*/
 }
 
 div.effect:hover > img.staff-photo-hover {
