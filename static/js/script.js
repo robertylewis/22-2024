@@ -1,15 +1,15 @@
 // Planet placement; [y%, x%, width]
 let planets = {
-    "sun": [0.1, 0.5, 600],
-    "mercury": [0.2, 0.7, 400],
+    "sun": [0.1, 0.5, 500],
+    "mercury": [0.2, 0.7, 500],
     "venus": [0.25, 0.2, 500],
     "earth": [0.35, 0.75, 500],
-    "mars": [0.4, 0.2, 400],
-    "jupiter": [0.45, 0.6, 1000],
-    "saturn": [0.6, 0.3, 1200],
-    "uranus": [0.7, 0.65, 800],
-    "neptune": [0.85, 0.3, 600],
-    "pluto": [0.95, 0.65, 400],
+    "mars": [0.4, 0.2, 500],
+    "jupiter": [0.45, 0.6, 500],
+    "saturn": [0.6, 0.3, 500],
+    "uranus": [0.7, 0.65, 500],
+    "neptune": [0.85, 0.3, 500],
+    "pluto": [0.95, 0.65, 500],
 }
 
 function placePlanets() {
@@ -30,11 +30,11 @@ $(document).ready(placePlanets);
 
 // Swapping astronauts
 let counter = 0;
-const prefix = "static/img/planets/";
-const astronauts = ["astronaut.png", "astronaut_person.png", "astronaut_shrek.png"];
+const prefix = "static/img/drinks/";
+const astronauts = ["hot_chocolate.png", "hot_chocolate_melted.png"];
 $('#astronaut').click(() => {
     counter++;
-    $('#astronaut').attr("src", prefix + astronauts[counter % 3]);
+    $('#astronaut').attr("src", prefix + astronauts[counter % 2]);
 })
 
 // Navbar
