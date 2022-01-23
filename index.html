@@ -26,6 +26,8 @@
         href="https://fonts.googleapis.com/css2?family=Courgette&family=Parisienne&family=MonteCarlo&family=Bitter:wght@700&family=Poppins:ital@0;1&display=swap"
         rel="stylesheet">
 
+    <!-- Sets links to open in new tab on default -->
+    <base target="_blank">
 
 </head>
 
@@ -37,27 +39,43 @@
             <div class="nav-holder nav-left">
                 <!-- <img loading="lazy" class="nav-logo shake" src="static/img/drinks/latte_22.png" draggable="false" alt="logo" /> -->
                 <span class="nav-link nav-link-main">
-                    <a class="ul ul-1" href="#">CSCI 0220</a>
+                    <a class="ul ul-1" href="#" target="_self">CSCI 0220</a>
                 </span>
             </div>
             <div class="nav-holder nav-left">
                 <span class="nav-link">
-                    <a class="ul ul-2" href="#assignments">Assignments</a>
+                    <a class="ul ul-2" href="#assignments" target="_self">Assignments</a>
                 </span>
                 <span class="nav-link">
-                    <a class="ul ul-3" href="#lectures">Lectures</a>
+                    <a class="ul ul-3" href="#lectures" target="_self">Lectures</a>
                 </span>
                 <span class="nav-link">
-                    <a class="ul ul-4" href="#calendar">Calendar</a>
+                    <a class="ul ul-4" href="#calendar" target="_self">Calendar</a>
                 </span>
                 <span class="nav-link">
-                    <a class="ul ul-5" href="#resources">Resources</a>
+                    <a class="ul ul-5" href="#resources" target="_self">Resources</a>
                 </span>
                 <span class="nav-link">
-                    <a class="ul ul-6" href="#staff">Staff</a>
+                    <a class="ul ul-6" href="#staff" target="_self">Staff</a>
                 </span>
             </div>
         </div>
+
+        <!-- MOBILE NAV -->
+        <div id="navholder-mobile" class="navholder-mobile">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">☰</a>
+            <div class="navholder-content">
+                <a class="ul ul-1" onclick="closeNav()" href="#" target="_self">CSCI 0220</a>
+                <a class="ul ul-2" onclick="closeNav()" href="#assignments" target="_self">Assignments</a>
+                <a class="ul ul-3" onclick="closeNav()" href="#lectures" target="_self">Lectures</a>
+                <a class="ul ul-4" onclick="closeNav()" href="#calendar" target="_self">Calendar</a>
+                <a class="ul ul-5" onclick="closeNav()" href="#resources" target="_self">Resources</a>
+                <a class="ul ul-6" onclick="closeNav()" href="#staff" target="_self">Staff</a>
+            </div>
+        </div>
+
+        <!-- MOBILE NAV BUTTON -->
+        <span class="hamburger" onclick="openNav()">☰</span>
     </nav>
 
     <!-- MAIN BODY -->
@@ -439,7 +457,8 @@
                         <h2>Jiahua Chen</h2>
                         <p>HTA | Shanghai, China</p>
                         <p>he/him</p>
-                        <p>Hey! I'm from Hong Kong & Shanghai. Talk to me about photography, number theory or cryptography!</p>
+                        <p>Hey! I'm from Hong Kong & Shanghai. Talk to me about photography, number theory or
+                            cryptography!</p>
                         <p>fav hot beverage: </p>
                     </div>
                 </div>
@@ -454,7 +473,8 @@
                         <h2>Rachel Ma</h2>
                         <p>HTA | Toronto, Canada</p>
                         <p>she/her</p>
-                        <p>CS and music concentrator, often either in CIT or the music buildings, love composition, piano, and making puns with friends!</p>
+                        <p>CS and music concentrator, often either in CIT or the music buildings, love composition,
+                            piano, and making puns with friends!</p>
                         <p>fav hot beverage: hot chai latte and earl grey tea with milk</p>
                     </div>
                 </div>
@@ -484,7 +504,8 @@
                         <h2>Nicholas Liu</h2>
                         <p>HTA | Fairfax Station, Virginia</p>
                         <p>he/him</p>
-                        <p>Hi! I'm a junior studying biophysics and CS. I like to run, play tennis, and listen to lofi. Looking forward to working with you guys!</p>
+                        <p>Hi! I'm a junior studying biophysics and CS. I like to run, play tennis, and listen to lofi.
+                            Looking forward to working with you guys!</p>
                         <p>fav hot beverage: covfefe</p>
                     </div>
                 </div>
@@ -514,7 +535,8 @@
                         <h2>Linus Sun</h2>
                         <p>UTA | Berkeley, California</p>
                         <p>he/him</p>
-                        <p>sophomore studying cs+music!! I like rock climbing & listening to music (currently into yves tumor, fka twigs, tyler, olivia rodrigo)</p>
+                        <p>sophomore studying cs+music!! I like rock climbing & listening to music (currently into yves
+                            tumor, fka twigs, tyler, olivia rodrigo)</p>
                         <p>fav hot beverage: jasmine green milk tea</p>
                     </div>
                 </div>
@@ -529,7 +551,8 @@
                         <h2>Mary Lou</h2>
                         <p>UTA | Alpharetta, Georgia</p>
                         <p>she/her</p>
-                        <p>Hello! I'm a senior concentrating in Biology and CS. I love baking, swimming, taking walks, and watching dramas with friends.</p>
+                        <p>Hello! I'm a senior concentrating in Biology and CS. I love baking, swimming, taking walks,
+                            and watching dramas with friends.</p>
                         <p>fav hot beverage: green tea</p>
                     </div>
                 </div>
@@ -574,7 +597,8 @@
                         <h2>Mariana Alvaro</h2>
                         <p>UTA | Panama</p>
                         <p>she/her</p>
-                        <p>I'm a senior concentrating in CS-Econ, and I have the cutest puppy on campus. Outside of class, I love going to the beach, singing, and drawing. </p>
+                        <p>I'm a senior concentrating in CS-Econ, and I have the cutest puppy on campus. Outside of
+                            class, I love going to the beach, singing, and drawing. </p>
                         <p>fav hot beverage: matcha latte</p>
                     </div>
                 </div>
@@ -589,7 +613,8 @@
                         <h2>Alex Duchnowski</h2>
                         <p>UTA | Brookline, Massachusetts</p>
                         <p>he/him</p>
-                        <p>Three of my favorite movies are Memento, Spider-Man: Into the Spider-Verse, and The Social Network. </p>
+                        <p>Three of my favorite movies are Memento, Spider-Man: Into the Spider-Verse, and The Social
+                            Network. </p>
                         <p>fav hot beverage: hot chocolate</p>
                     </div>
                 </div>
@@ -604,7 +629,9 @@
                         <h2>Gil Alon</h2>
                         <p>UTA | Newton, Massachusetts</p>
                         <p>she/her</p>
-                        <p>Hi! I'm Gil and I'm a senior studying CS from Massachusetts. I love to cook and am always trying out new recipes, if you have any suggestions! I'm super excited to meet all of you :) </p>
+                        <p>Hi! I'm Gil and I'm a senior studying CS from Massachusetts. I love to cook and am always
+                            trying out new recipes, if you have any suggestions! I'm super excited to meet all of you :)
+                        </p>
                         <p>fav hot beverage: cappuccino</p>
                     </div>
                 </div>
@@ -619,7 +646,8 @@
                         <h2>Edward Xing</h2>
                         <p>UTA | Westfield, New Jersey</p>
                         <p>he/him</p>
-                        <p>Hi! I'm a junior concentrating in Applied Math-Computer Science and Economics. In my free time, I enjoy playing table tennis, speedcubing, and performing magic.</p>
+                        <p>Hi! I'm a junior concentrating in Applied Math-Computer Science and Economics. In my free
+                            time, I enjoy playing table tennis, speedcubing, and performing magic.</p>
                         <p>fav hot beverage: matcha latte</p>
                     </div>
                 </div>
@@ -694,7 +722,9 @@
                         <h2>Michelle Lu</h2>
                         <p>UTA | Dallas, Texas</p>
                         <p>she/her</p>
-                        <p>Hi there! I'm a sophomore concentrating in APMA-CS. I enjoy rediscovering previous music favorites, rollerblading, and as of recently, trying out various hot (instead of iced!) caffeinated beverages. </p>
+                        <p>Hi there! I'm a sophomore concentrating in APMA-CS. I enjoy rediscovering previous music
+                            favorites, rollerblading, and as of recently, trying out various hot (instead of iced!)
+                            caffeinated beverages. </p>
                         <p>fav hot beverage: dirty chai latte</p>
                     </div>
                 </div>
@@ -730,8 +760,8 @@
                 </div>
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/spring-2022/thomas-del-vecchio.jpg"
-                            alt="thomas dv's pfp" />
+                        <img loading="lazy" class="staff-photo"
+                            src="static/img/staff/spring-2022/thomas-del-vecchio.jpg" alt="thomas dv's pfp" />
                         <!-- <img loading="lazy" class="staff-photo staff-photo-hover"
                             src="static/img/constellations/virgo.jpg" alt="virgo constellation" /> -->
                     </div>
@@ -745,8 +775,8 @@
                 </div>
                 <div class="staff-tile">
                     <div class="effect">
-                        <img loading="lazy" class="staff-photo" src="static/img/staff/spring-2022/tiger-lamlertprasertkul.jpeg"
-                            alt="tiger's pfp" />
+                        <img loading="lazy" class="staff-photo"
+                            src="static/img/staff/spring-2022/tiger-lamlertprasertkul.jpeg" alt="tiger's pfp" />
                         <!-- <img loading="lazy" class="staff-photo staff-photo-hover"
                             src="static/img/constellations/virgo.jpg" alt="virgo constellation" /> -->
                     </div>
@@ -754,7 +784,8 @@
                         <h2>Tanadol (Tiger) Lamlertprasertkul</h2>
                         <p>UTA | Bangkok, Thailand</p>
                         <p>he/him</p>
-                        <p>Hi! I'm a sophomore from Bangkok, Thailand. I enjoy cooking, baking, and (most importantly) eating! I'm basically a foodie at heart :)</p>
+                        <p>Hi! I'm a sophomore from Bangkok, Thailand. I enjoy cooking, baking, and (most importantly)
+                            eating! I'm basically a foodie at heart :)</p>
                         <p>fav hot beverage: green tea</p>
                     </div>
                 </div>

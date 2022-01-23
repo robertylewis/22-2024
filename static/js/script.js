@@ -45,9 +45,3 @@ function openNav() {
 function closeNav() {
     document.getElementById("navholder-mobile").style.height = "0%";
 }
-
-// Set links
-var links = document.links;
-for (var i = 0; i < links.length; i++) {
-    links[i].target = "_blank";
-}
