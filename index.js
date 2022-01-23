@@ -78,10 +78,11 @@ function getAccessToken(oAuth2Client, callback) {
  */
 function listEvents(auth) {
   const calendar = google.calendar({version: 'v3', auth});
+  var today = new Date();
   calendar.events.list({
     calendarId: 'c_04g1vprcvf4dj8t26k4o3381gs@group.calendar.google.com',
-    timeMin: (new Date()).toISOString(),
-    maxResults: 10,
+    timeMin: (new Date(today.getTime() - (1000*60*60*2))).toISOString(),
+    timeMax: (new Date(today.getTime() + (1000*60*60*2))).toISOString(),
     singleEvents: true,
     orderBy: 'startTime',
   }, (err, res) => {
@@ -91,7 +92,10 @@ function listEvents(auth) {
       console.log('Upcoming 10 events:');
       events.map((event, i) => {
         const start = event.start.dateTime || event.start.date;
-        console.log(`${start} - ${event.summary}`);
+        if (event.summary.includes("Hours")) {
+            console.log(`${start} - ${event.summary}`);
+        }
+        
       });
     } else {
       console.log('No upcoming events found.');
