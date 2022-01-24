@@ -41,7 +41,7 @@ html {
 }
 
 body {
-    font-family: "Poppins", Monaco, sans-serif;
+    font-family: "Poppins", Verdana, sans-serif;
     /* TODO: Change default system font */
     font-weight: 400;
     /* NOTE: We should decide on smth here */
