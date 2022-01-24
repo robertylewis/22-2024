@@ -42,11 +42,8 @@ html {
 
 body {
     font-family: "Poppins", Verdana, sans-serif;
-    /* TODO: Change default system font */
     font-weight: 400;
-    /* NOTE: We should decide on smth here */
     background-color: var(--color-background);
-    /* background-color: #000; */
     margin: 0;
     padding: 0;
     display: flex;
