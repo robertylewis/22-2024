@@ -172,6 +172,24 @@ div.lightbox {
     text-decoration-color: var(--border-color-1) !important;
 }
 
+.section-text {
+    align-self: center;
+    float: left;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+img.drink-1 {
+    height: 10%;
+    width: 10%;
+    float: right;
+    display: block;
+    align-self: center;
+}
+
 /* NOTE: Planet placement/sizing is done in js/script.js */
 img.planet {
     z-index: -1;
@@ -537,3 +555,5 @@ div.staff-tile > div.lightbox > p {
         font-size: var(--fs-xs);
     }
 }
+
+
