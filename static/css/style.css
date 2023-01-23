@@ -13,19 +13,13 @@
     --fs-sm: 1rem;
     --fs-xs: 0.8rem;
 
-    --color-background: #fbe9e6;
+    --color-background: #B2D0A5;
     --color-body: #393d4d;
     --color-black: #060912;
-    --color-off-black: #ffdbe5;
+    --color-off-black: #75A55D;
     --color-white: #f5f5f5;
     --color-off-white: #e8e8e8;
-    --color-planet-1: #4dc4e2;
-    --color-planet-2: #ff714d;
-    --color-planet-3: #6c7cfb;
-    --color-planet-4: #f7bb66;
-    --color-planet-5: #aae1bd;
-    --color-planet-6: #8ca77f;
-    --border-color-1: rgb(171, 121, 214);
+    --border-color-1: #686132;
 }
 
 *,
@@ -72,10 +66,15 @@ section {
 
 footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 100px;
     background-color: var(--color-off-black);
+}
+
+footer p {
+    line-height: 0;
 }
 
 h1,
@@ -89,7 +88,8 @@ h5 {
 a {
     color: var(--color-body);
     /*text-decoration-color: var(--color-planet-1);*/
-    text-decoration-color: rgb(155, 119, 255)
+    text-decoration-color: #686132;
+
 }
 
 img {
@@ -124,6 +124,7 @@ div.centering {
 
 div.lightbox {
     padding: 10px 20px;
+    margin: 1%;
     /* text-align: center; */
     background-color: rgba(255, 255, 255, 0.3);
 }
@@ -182,48 +183,14 @@ div.lightbox {
     justify-content: space-between;
 }
 
-img.drink-1 {
-    height: 18%;
-    width: 18%;
+img.plant-1 {
+    height: 25%;
+    width: 25%;
     float: right;
     display: block;
     align-self: center;
 }
 
-/* NOTE: Planet placement/sizing is done in js/script.js */
-img.planet {
-    z-index: -1;
-    position: absolute;
-}
-
-.orbit-1 {
-    animation-delay: 0s;
-    animation: orbit 8s linear infinite;
-}
-
-.orbit-2 {
-    animation-delay: 1s;
-    animation: orbit 6s linear infinite;
-}
-
-.orbit-3 {
-    animation-delay: 3s;
-    animation: orbit 11s linear infinite;
-}
-
-.orbit-4 {
-    animation-delay: 2s;
-    animation: orbit 14s linear infinite;
-}
-
-@keyframes orbit {
-    from {
-        transform: rotate(0deg) translateX(10px) rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg) translateX(10px) rotate(-360deg);
-    }
-}
 
 .shake:hover {
     animation: shake 0.5s ease-in-out;
@@ -491,11 +458,28 @@ tr:hover > td {
 /* =================================== */
 
 div.staff-tiling {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 10%;
     width: 90%;
-    max-width: var(--md-width);
+    /* max-width: var(--md-width); */
+    margin: auto;
+}
+
+div.uta-tiling {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    display: flex;
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 2%;
+    width: 90%;
+    /* max-width: var(--md-width); */
     margin: auto;
 }
 
@@ -509,19 +493,17 @@ div.staff-tile {
 
 div.effect > img.staff-photo {
     width: 100%;
-    max-width: 40vw;
     height: auto;
     object-fit: cover;
     margin: 0;
+    width: 22vw;
+    margin-top: 2%;
 }
 
 div.effect > img.staff-photo-hover {
     display: none;
 }
 
-div.effect:hover > img.staff-photo {
-    /*display: none;*/
-}
 
 div.effect:hover > img.staff-photo-hover {
     display: block;
@@ -531,6 +513,7 @@ div.effect:hover > img.staff-photo-hover {
 div.staff-tile > div.lightbox {
     margin: 0;
     padding: 5px 10px;
+    width: 22vw;
 }
 
 div.staff-tile > div.lightbox > h2 {
@@ -543,8 +526,12 @@ div.staff-tile > div.lightbox > p {
 
 @media screen and (max-width: 768px) {
     div.staff-tiling {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 25px;
+    }
+
+    .landing-container {
+        text-align: center;
     }
 
     /* NOTE: These are really small, but they fix shitty alignment */
@@ -553,6 +540,21 @@ div.staff-tile > div.lightbox > p {
     }
     div.staff-tile > div.lightbox > p {
         font-size: var(--fs-xs);
+    }
+
+
+    div.effect > img.staff-photo {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin: 0;
+        width: 70vw;
+    }
+    
+    div.staff-tile > div.lightbox {
+        margin: 0;
+        padding: 5px 10px;
+        width: 70vw;
     }
 }
 
