@@ -31,7 +31,7 @@ $(document).ready(placePlanets);
 // Swapping astronauts
 let counter = 0;
 const prefix = "static/img/drinks/";
-const astronauts = ["hot_chocolate.png", "hot_chocolate_melted.png"];
+const astronauts = ["coinplant_nobaby.png", "coinplant.png"];
 $('#astronaut').click(() => {
     counter++;
     $('#astronaut').attr("src", prefix + astronauts[counter % 2]);
