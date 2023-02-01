@@ -30,11 +30,11 @@ $(document).ready(placePlanets);
 
 // Swapping astronauts
 let counter = 0;
-const prefix = "static/img/drinks/";
-const astronauts = ["hot_chocolate.png", "hot_chocolate_melted.png"];
-$('#astronaut').click(() => {
+const prefix = "static/img/plants/";
+const plants = ["coinplant_nobaby.png", "coinplant.png"];
+$('#plant_shift').click(() => {
     counter++;
-    $('#astronaut').attr("src", prefix + astronauts[counter % 2]);
+    $('#plant_shift').attr("src", prefix + plants[counter % 2]);
 })
 
 // Navbar
