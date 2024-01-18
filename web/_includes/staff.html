@@ -1,7 +1,7 @@
 <section id="staff" class="anchor">
     <div class="wrapper">
         <h1 class="ul ul-2 section-text">{{site.data.staff.title}}</h1>
-        <img loading="lazy" class="drink-1 shake" id="tea" src="static/img/drinks/tea.png" draggable="false"
+        <img loading="lazy" class="drink-1 shake inter-photo" id="tea" src="{{site.data.staff.staffs_photo}}" draggable="false"
             alt="chai" />
     </div>
     <div class="lightbox">
@@ -37,7 +37,7 @@
         </div>
         <!-- HTA's -->
         <div class="staff-tiling">
-            {% for i in site.data.staff.staff %}
+            {% for i in site.data.staff.htas %}
             {% if i.role == "HTA" %}
             
             <div class="staff-tile">
@@ -64,7 +64,7 @@
             <h1 class="ul ul-2 section-text">UTA-STA's</h1>
         </div>
         <div class="staff-tiling">
-            {% for i in site.data.staff.staff %}
+            {% for i in site.data.staff.uta-sta %}
             {% if i.role == "UTA-STA" %}
             <div class="staff-tile">
                 <div class="effect">
@@ -91,7 +91,6 @@
         </div>
         <div class="staff-tiling">
             {% for i in site.data.staff.staff %}
-            {% if i.role == "UTA" %}
             <div class="staff-tile">
                 <div class="effect">
                     <img loading="lazy" class="staff-photo" src="{{i.photo}}"
@@ -105,7 +104,6 @@
                     <p>{{site.data.staff.theme}}: {{i.theme}}</p>
                 </div>
             </div>
-            {% endif %}
     
         {% endfor %}
         </div>

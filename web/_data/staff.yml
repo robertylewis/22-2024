@@ -2,6 +2,7 @@ title: Staff
 head_ta_list_email: cs0220headtas@lists.brown.edu
 ta_list_email: cs0220tas@lists.brown.edu
 theme: Fav Dinosaur
+staffs_photo: assets/images/art/Untitled_Artwork(1).png
 instructor:
     - name: Robert Y. Lewis
       pronouns: he/him
@@ -10,6 +11,59 @@ instructor:
       theme: Dino
       blurb: Call me Rob! I'm 50% computer scientist, 40% mathematician, and 10% philosopher, so this course is pretty much my dream.
       photo: assets/images/staff/rob.jpg
+htas:
+    - name: Allie Masthay
+      pronouns: she/her
+      role: HTA
+      hometown: Simsbury, Connecticut
+      theme: Allosaurus
+      blurb: Hi guys! I am a junior from Connecticut studying Computer Science, and I am super excited for this semester! When I am not in the CIT, I love going to Bajas, drinking Diet Coke, singing karaoke, or trying to catch the Sci Li rats. Feel free to reach out to me anytime about anything CS22, CS at Brown, or general questions on life. Can't wait to meet you!
+      photo: assets/images/staff/Allie.jpeg
+    - name: Carmen Yu
+      pronouns: she/her
+      role: HTA
+      hometown: sacramento, ca
+      theme: carcharodontosaurus
+      blurb: hi 🦕 i'm carmen, and i'm a senior studying math and computer science. in my free time, i enjoy tetris, climbing, and warm weather :) looking forward to a fun semester with you all!
+      photo: assets/images/staff/carmen.png
+    - name: Jania Vandevoorde
+      pronouns: she/her
+      role: HTA
+      hometown: Dubai, UAE
+      theme: Arlo from The Good Dinosaur
+      blurb: Call me Janj! I'm a junior on the Rugby team studying CS and Statistics! I love reading, traveling, running, and making new Spotify playlists :)
+      photo: assets/images/staff/Janj.jpeg
+    - name: Joseph Rotella
+      pronouns: he/him
+      role: HTA
+      hometown: Philadelphia, PA
+      theme: Microraptor
+      blurb: I'm a senior studying math-CS with interests in logic, programming languages, and formal methods. When not writing proofs in Lean, I can often be found playing piano or reading in the Rock stacks.
+      photo: assets/images/staff/joseph.jpg
+    - name: Tyler Gurth
+      pronouns: he/him
+      role: HTA
+      graduation:
+      hometown: Parsippany, NJ
+      theme: Stegosaurus
+      blurb: Hey!! I'm a junior studying CS and History of Art and Architecture. When I'm not programming or appreciating art, one can find me being made fun of on the CS22 Edstem.
+      photo: assets/images/staff/tyler.JPG
+
+uta-sta:
+    - name: Grant Landon
+      pronouns: he/him
+      role: UTA-STA
+      hometown: Hamilton, MA
+      theme: Stuffy the Triceratops
+      blurb: Hello everyone! I'm a Junior studying Applied Math and Computer Science and I will be one of your joint UTA/STA's this year. I enjoy finding and petting stray cats, climbing anything that looks climbable, and occasionally coding. When I was 5 years old, my dad bought me a stuffed triceratops named Stuffy after a visit to Boston's Museums of Science. Stuffy still remains on my night stand to this day. I can't wait to meet you all!
+      photo: assets/images/staff/Grant.png
+    - name: Sam Shulman
+      pronouns: she/her
+      role: UTA-STA
+      hometown: Toronto, Canada
+      theme: Giganotosaurus
+      blurb: Hiiiii I'm a junior studying computer science and I really like cheese and hiking and beautiful sunsets <3
+      photo: assets/images/staff/Sam.JPG
 staff:
     - name: Adela Zhou
       pronouns: she/her
@@ -25,13 +79,6 @@ staff:
       theme: Velociraptor
       blurb: Hi guys, I'm a sophomore concentrating in MATH-CS. In my free time, I enjoy playing poker, trying new foods and traveling.
       photo: assets/images/staff/adithya.JPG
-    - name: Allie Masthay
-      pronouns: she/her
-      role: HTA
-      hometown: Simsbury, Connecticut
-      theme: Allosaurus
-      blurb: Hi guys! I am a junior from Connecticut studying Computer Science, and I am super excited for this semester! When I am not in the CIT, I love going to Bajas, drinking Diet Coke, singing karaoke, or trying to catch the Sci Li rats. Feel free to reach out to me anytime about anything CS22, CS at Brown, or general questions on life. Can't wait to meet you!
-      photo: assets/images/staff/Allie.jpeg
     - name: Alyssa Sun
       pronouns: she/her
       role: UTA
@@ -60,13 +107,6 @@ staff:
       theme: Psittacosaurus
       blurb: Hi y'all! I'm a senior studying computer science and environmental studies. I like baking, hula-hooping, and dino nuggets. Excited to meet everyone!
       photo: assets/images/staff/brendan.png
-    - name: Carmen Yu
-      pronouns: she/her
-      role: HTA
-      hometown: sacramento, ca
-      theme: carcharodontosaurus
-      blurb: hi 🦕 i'm carmen, and i'm a senior studying math and computer science. in my free time, i enjoy tetris, climbing, and warm weather :) looking forward to a fun semester with you all!
-      photo: assets/images/staff/carmen.png
     - name: Cerulean Ozarow
       pronouns: he/him
       role: UTA
@@ -88,13 +128,6 @@ staff:
       theme: Brachiosaurus
       blurb: Hi! I am a Junior studying CS-Econ. In my free time I enjoy playing sports, hanging at the beach, and walking my dog. I also really, really like cheeseburgers. I'm looking forward to working with everyone this spring!
       photo: assets/images/staff/ethan.JPG
-    - name: Grant Landon
-      pronouns: he/him
-      role: UTA-STA
-      hometown: Hamilton, MA
-      theme: Stuffy the Triceratops
-      blurb: Hello everyone! I'm a Junior studying Applied Math and Computer Science and I will be one of your joint UTA/STA's this year. I enjoy finding and petting stray cats, climbing anything that looks climbable, and occasionally coding. When I was 5 years old, my dad bought me a stuffed triceratops named Stuffy after a visit to Boston's Museums of Science. Stuffy still remains on my night stand to this day. I can't wait to meet you all!
-      photo: assets/images/staff/Grant.png
     - name: Ilan Brauns
       pronouns: he/him
       role: UTA
@@ -102,13 +135,6 @@ staff:
       theme: Indominus Rex
       blurb: Hi everyone, I'm Ilan! I am a sophomore studying Applied Math - Computer Science and Mathematics. In my free time I like to play sports, work out, and hang with friends. I love my dog Ruby and you can find me impatiently waiting for fantasy football season. I'm so excited for the semester and feel free to reach out about CS22 or anything else!
       photo: assets/images/staff/Ilan.png
-    - name: Jania Vandevoorde
-      pronouns: she/her
-      role: HTA
-      hometown: Dubai, UAE
-      theme: Arlo from The Good Dinosaur
-      blurb: Call me Janj! I'm a junior on the Rugby team studying CS and Statistics! I love reading, traveling, running, and making new Spotify playlists :)
-      photo: assets/images/staff/Janj.jpeg
     - name: Jason Eveleth
       pronouns: he/him
       role: UTA
@@ -128,7 +154,7 @@ staff:
       role: UTA
       hometown: Livingston, NJ
       theme: yoshi
-      blurb: hi! I'm a junior studying CS on a premed track. I love listening to podcasts, food, and art!
+      blurb: hi! I'm a junior studying CS on a premed track. I love listening to podcasts, food, and art! My favorite food is dinosaurs--so good!
       photo: assets/images/staff/jen.png
     - name: Jiahua Chen
       pronouns: he/him
@@ -137,13 +163,6 @@ staff:
       theme: Triceratops
       blurb: Hi! I'm a senior from HK and Shanghai studying Math & CS! Talk to me about art, photography, or board games!
       photo: assets/images/staff/jiahua_chen.JPG
-    - name: Joseph Rotella
-      pronouns: he/him
-      role: HTA
-      hometown: Philadelphia, PA
-      theme: Microraptor
-      blurb: I'm a senior studying math-CS with interests in logic, programming languages, and formal methods. When not writing proofs in Lean, I can often be found playing piano or reading in the Rock stacks.
-      photo: assets/images/staff/joseph.jpg
     - name: Justin Shin
       pronouns: he/him
       role: UTA
@@ -172,13 +191,6 @@ staff:
       theme: anchiornis (fake) aerodactyl (real)
       blurb: senior (.5er 🤯🤯🤯🤯🤯) studying cs + music!!! big fan of climbing + music + sleeping + being awake!!! 😎😎😎😎😎😎
       photo: assets/images/staff/linus.jpeg
-    - name: Sam Shulman
-      pronouns: she/her
-      role: UTA-STA
-      hometown: Toronto, Canada
-      theme: Giganotosaurus
-      blurb: Hiiiii I'm a junior studying computer science and I really like cheese and hiking and beautiful sunsets <3
-      photo: assets/images/staff/Sam.JPG
     - name: Tiger Lamlertprasertkul
       pronouns: he/him
       role: UTA
@@ -186,14 +198,6 @@ staff:
       theme: Elasmosaurus
       blurb: I enjoy indoor bouldering and just picked up ice skating this past winter break!
       photo: assets/images/staff/Tiger.JPG
-    - name: Tyler Gurth
-      pronouns: he/him
-      role: HTA
-      graduation:
-      hometown: Parsippany, NJ
-      theme: Stegosaurus
-      blurb: Hey!! I'm a junior studying CS and History of Art and Architecture. When I'm not programming or appreciating art, one can find me being made fun of on the CS22 Edstem.
-      photo: assets/images/staff/tyler.JPG
     - name: Vignesh Pandiarajan
       pronouns: he/him
       role: UTA
