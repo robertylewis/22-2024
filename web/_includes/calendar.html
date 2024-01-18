@@ -1,0 +1,25 @@
+<section id="calendar" class="anchor">
+    <div class="wrapper">
+        <h1 class="ul ul-2 section-text">{{site.data.calendar.title}}</h1>
+        <img loading="lazy" class="drink-1 shake" id="latte" src="static/img/drinks/latte.png" draggable="false"
+            alt="chai" />
+    </div>
+    <div class="lightbox">
+        <h2>How do hours work?</h2>
+        <p>
+            CS22 hours are collaborative spaces for students to work together on problems, facilitated by TAs.
+            Hours will be primarily in-person. More details about hours can be found in the <a
+                href="{{site.data.calendar.hours_and_recitation_policy}}">Hours
+                and Recitation Policy</a>. Remote hours will be facilitated using tickets handled from <a
+                href="{{site.data.calendar.hours_queue}}">Hours</a>.</p>
+        <p><a
+                href="{{site.data.calendar.course_calendar_link}}">Here</a>
+            is a link to the course calendar (same as below).
+        </p>
+    </div>
+    <div class="iframe-container">
+        <iframe
+            src="{{site.data.calendar.course_calendar_block}}"
+            style="border: 0" frameborder="0" scrolling="no" SameSite=Lax></iframe>
+    </div>
+</section>

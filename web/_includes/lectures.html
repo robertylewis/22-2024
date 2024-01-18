@@ -1,0 +1,36 @@
+<section id="lectures" class="anchor">
+    <div class="wrapper">
+        <h1 class="ul ul-2 section-text">{{site.data.lectures.title}}</h1>
+        <img loading="lazy" class="drink-1 shake" id="eggnog" src="static/img/drinks/eggnog.png"
+            draggable="false" alt="chai" />
+    </div>
+    <table>
+        <tr>
+            {% for item in site.data.lectures.section_titles %}
+            <th>{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% for lecture in site.data.lectures.lectures %}
+            <tr>
+                <td>{{lecture.number}}</td>
+                <td>{{lecture.date}}</td>
+                <td>
+                    {% if lecture.num == "-" or lecture.slides == "" %}
+                    {{lecture.name}}
+                    {% else %}
+                    <a href="{{ lecture.slides }}" target="_blank">{{lecture.name}}</a>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if lecture.num == "-" or lecture.video == "" %}
+                    -
+                    {% else %}
+                    <a href="{{ lecture.video }}" target="_blank">Video</a>
+                    {% endif %}
+                </td>        
+            </tr>
+
+        {% endfor %}
+
+    </table>
+</section>

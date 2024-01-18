@@ -1,0 +1,207 @@
+title: "Lectures"
+section_titles:
+    - Lecture
+    - Date
+    - Topic
+    - Recording
+lectures:
+    - number: 1
+      date: Jan 24
+      name: "Intro"
+      slides: ""
+      video: ""
+    - number: 2
+      date: Jan 26
+      name: "Statements, Proofs, and Contradictions"
+      slides: ""
+      video: ""
+    - number: 3
+      date: Jan 29
+      name: "Propositional Logic: Connectives, Truth Tables"
+      slides: ""
+      video: ""
+    - number: 4
+      date: Jan 31
+      name: "Proofs in Propositional Logic"
+      slides: ""
+      video: ""
+    - number: 5
+      date: Feb 2
+      name: "Normal Forms in Propositional Logic"
+      slides: ""
+      video: ""
+    - number: 6
+      date: Feb 5
+      name: "First Order Logic (Quantifiers)"
+      slides: ""
+      video: ""
+    - number: 7
+      date: Feb 7
+      name: "Language of Set Theory"
+      slides: ""
+      video: ""
+    - number: 8
+      date: Feb 9
+      name: "Proofs about Sets"
+      slides: ""
+      video: ""
+    - number: 9
+      date: Feb 12
+      name: "Binary Relations"
+      slides: ""
+      video: ""
+    - number: 10
+      date: Feb 14
+      name: "Injectivity, Surjectivity, Bijectivity"
+      slides: ""
+      video: ""
+    - number: 11
+      date: Feb 16
+      name: "More Properties of Relations"
+      slides: ""
+      video: ""
+    - number: "-"
+      date: Feb 19
+      name: "President's Day - NO CLASS"
+      slides: ""
+      video: ""
+    - number: 12
+      date: Feb 21
+      name: "Induction"
+      slides: ""
+      video: ""
+    - number: 13
+      date: Feb 23
+      name: "Induction Variants"
+      slides: ""
+      video: ""
+    - number: 14
+      date: Feb 26
+      name: "Number Theory: Division"
+      slides: ""
+      video: ""
+    - number: 15
+      date: Feb 28
+      name: "Division Algorithm"
+      slides: ""
+      video: ""
+    - number: 16
+      date: Mar 2
+      name: "Modular Arithmetic"
+      slides: ""
+      video: ""
+    - number: 17
+      date: Mar 5
+      name: "Number Theory in Lean"
+      slides: ""
+      video: ""
+    - number: 18
+      date: Mar 7
+      name: "Multiplicative Inverse, Fermat's Little Theorem"
+      slides: ""
+      video: ""
+    - number: 19
+      date: Mar 9
+      name: "Euler's Phi Function"
+      slides: ""
+      video: ""
+    - number: 20
+      date: Mar 12
+      name: "Message Passing, RSA"
+      slides: ""
+      video: ""
+    - number: 21
+      date: Mar 14
+      name: "Encryption, Ethics, and More Lean"
+      slides: ""
+      video: ""
+    - number: "-"
+      date: Mar 16
+      name: "MIDTERM - IN CLASS"
+      slides: ""
+      video: ""
+    - number: 22
+      date: Mar 19
+      name: "Intro to Counting"
+      slides: ""
+      video: ""
+    - number: 23
+      date: Mar 21
+      name: "Division Rule and Subsets"
+      slides: ""
+      video: ""
+    - number: "-"
+      date: Mar 23
+      name: "Lean Practice - NO CLASS"
+      slides: ""
+      video: ""
+    - number: "-"
+      date: Mar 26
+      name: "Spring Recess - NO CLASS	"
+      slides: ""
+      video: ""
+    - number: "-"
+      date: Mar 28
+      name: "Spring Recess - NO CLASS	"
+      slides: ""
+      video: ""
+    - number: "-"
+      date: Mar 30
+      name: "Spring Recess - NO CLASS	"
+      slides: ""
+      video: ""
+    - number: 24
+      date: Apr 2
+      name: "Binomial Theorem"
+      slides: ""
+      video: ""
+    - number: 25
+      date: Apr 4
+      name: "Pigeonhole Principle"
+      slides: ""
+      video: ""
+    - number: 26
+      date: Apr 6
+      name: "Intro to Probability"
+      slides: ""
+      video: ""
+    - number: 27
+      date: Apr 9
+      name: "Probability and Independence"
+      slides: ""
+      video: ""
+    - number: 28
+      date: Apr 11
+      name: "Random Variables, Expectation"
+      slides: ""
+      video: ""
+    - number: 29
+      date: Apr 13
+      name: "Conditional Expectation"
+      slides: ""
+      video: ""
+    - number: 30
+      date: Apr 16
+      name: "Linearity of Expectation"
+      slides: ""
+      video: ""
+    - number: 31
+      date: Apr 18
+      name: "Probability Wrapup; Intro to Graph Theory"
+      slides: ""
+      video: ""
+    - number: 32
+      date: Apr 20
+      name: "Graphs and Trees"
+      slides: ""
+      video: ""
+    - number: 33
+      date: Apr 23
+      name: "Counting Trees"
+      slides: ""
+      video: ""
+    - number: 34
+      date: Apr 25
+      name: "Random Walks on Graphs"
+      slides: ""
+      video: ""

@@ -1,0 +1,76 @@
+title: "Assignments"
+description: "Times listed are in EST. Assignments are released on Saturdays, and are due 11:59pm on Fridays. LaTeX files for homework problems can be found "
+latex_templates: "https://www.overleaf.com/read/nwpvczzqxwkq"
+section_titles:
+    - Homework
+    - Template
+    - Released
+    - Due
+    - Solutions
+homeworks:
+    - name: HW0
+      link: ""
+      template: ""
+      released: Jan 26
+      due: Jan 31
+      solution: ""
+    - name: HW1
+      link: ""
+      template: ""
+      released: Feb 5
+      due: Feb 11
+      solution: ""
+    - name: HW2
+      link: ""
+      template: ""
+      released: Feb 12
+      due: Feb 18
+      solution: ""
+    - name: HW3
+      link: ""
+      template: ""
+      released: Feb 19
+      due: Feb 27
+      solution: ""
+    - name: HW4
+      link: ""
+      template: ""
+      released: Feb 26
+      due: Mar 4
+      solution: ""
+    - name: HW5
+      link: ""
+      template: ""
+      released: Mar 5
+      due: Mar 18
+      solution: ""
+    - name: HW6
+      link: ""
+      template: ""
+      released: Mar 19
+      due: Mar 25
+      solution: ""
+    - name: HW7
+      link: ""
+      template: ""
+      released: Mar 26
+      due: Apr 8
+      solution: ""
+    - name: HW8
+      link: ""
+      template: ""
+      released: Apr 9
+      due: Apr 15
+      solution: ""
+    - name: HW9
+      link: ""
+      template: ""
+      released: Apr 16
+      due: Apr 22
+      solution: ""
+    - name: HW10
+      link: ""
+      template: ""
+      released: Apr 23
+      due: Apr 29
+      solution: ""

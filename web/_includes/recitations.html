@@ -1,0 +1,35 @@
+
+<div class=lightbox>
+    <p>{{site.data.recitations.description}}<a target="_blank"
+            href={{site.data.recitations.latex_templates}}>here</a>.</p>
+    <p>
+</div>
+<table>
+    <tr>
+        {% for item in site.data.recitations.section_titles %}
+        <th>{{item}}</th>
+        {% endfor %}
+    </tr>
+    {% for recitation in site.data.recitations.recitations %}
+    <tr>
+        <td>
+          {% if recitation.link == "" %}
+            -
+          {% else %}
+            <a href="{{ recitation.link }}" target="_blank">{{recitation.name}}</a>
+          {% endif %}
+        </td>
+        <td>{{recitation.released}}</td>
+        <td>
+            {% if recitation.solution == "" %}
+              -
+            {% else %}
+              <a href="{{ recitation.solution }}" target="_blank">Solution</a>
+            {% endif %}
+          </td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>

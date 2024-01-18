@@ -1,0 +1,24 @@
+
+<section id="landing">
+            <div class="landing-container">
+                <div>
+                    <h1 class="landing-title">{{site.data.landing.class}}</h1>
+                    <h2 class="landing-subtitle">{{site.data.landing.name}}</h2>
+
+                    <p>
+                        {{ site.data.landing.location_description }}
+                    </p>
+                    <p>
+                        {{ site.data.landing.main_description }}
+                    </p>
+                    <!-- TODO! -->
+                    <p><strong><a
+                                href={{site.data.landing.livestream_recordings}}>Lecture
+                                Recordings/Livestream</a></strong></p>
+                </div>
+                <div class="landing-logo-container">
+                    <img loading="lazy" id="astronaut" class="landing-logo shake"
+                        src="static/img/drinks/hot_chocolate.png" draggable="false" alt="teacup" />
+                </div>
+            </div>
+        </section>

@@ -1,0 +1,48 @@
+
+<section id="assignments" class="anchor">
+    <div class="wrapper">
+        <h1 class="ul ul-2 section-text">{{site.data.assignments.title}}</h1>
+        <img loading="lazy" class="drink-1 shake" id="chai_tea_latte" src="static/img/drinks/chai_tea_latte.png"
+            draggable="false" alt="chai" />
+    </div>
+    <div class=lightbox>
+        <p>{{site.data.assignments.description}}<a target="_blank"
+                href="{{site.data.assignments.latex_templates}}">here</a>.</p>
+        <p>
+    </div>
+    <table>
+        <tr>
+            {% for section in site.data.assignments.section_titles %}
+                <th>{{section}}</th>
+            {% endfor %}
+        </tr>
+        {% for homework in site.data.assignments.homeworks %}
+            <tr>
+              <td>
+                  {% if homework.link == "" %}
+                    {{homework.name}}
+                  {% else %}
+                    <a href="{{ homework.link }}" target="_blank"> {{homework.name}}</a>
+                  {% endif %}
+                </td>
+                <td>
+                    {% if homework.template == "" %}
+                      -
+                    {% else %}
+                      <a href="{{ homework.template }}" target="_blank">Overleaf Template</a>
+                    {% endif %}
+                  </td>               
+                <td>{{homework.released}}</td>
+                <td>{{homework.due}}</td>
+                <td>
+                    {% if homework.solution == "" %}
+                      -
+                    {% else %}
+                      <a href="{{ homework.solution }}" target="_blank">Solution</a>
+                    {% endif %}
+                  </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</section>
