@@ -29,7 +29,7 @@ htas:
     - name: Jania Vandevoorde
       pronouns: she/her
       role: HTA
-      hometown: Dubai, UAE
+      hometown: Dubai, United Arab Emirates
       theme: Arlo from The Good Dinosaur
       blurb: Call me Janj! I'm a junior on the Rugby team studying CS and Statistics! I love reading, traveling, running, and making new Spotify playlists :)
       photo: assets/images/staff/Janj.jpeg
@@ -159,7 +159,7 @@ staff:
     - name: Jiahua Chen
       pronouns: he/him
       role: UTA
-      hometown: Hong Kong & Shanghai
+      hometown: Hong Kong & Shanghai, China
       theme: Triceratops
       blurb: Hi! I'm a senior from HK and Shanghai studying Math & CS! Talk to me about art, photography, or board games!
       photo: assets/images/staff/jiahua_chen.JPG
@@ -174,7 +174,7 @@ staff:
       pronouns: he/him
       role: UTA
       hometown: Frisco, TX
-      theme: Bulbasaur
+      theme: dino nuggets
       blurb: I like sunsets, stargazing, and cooking :).
       photo: assets/images/staff/Kai.png
     - name: Kristen Cai
