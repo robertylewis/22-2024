@@ -1,213 +1,213 @@
-title: "Lectures"
+title: Lectures
 section_titles:
-    - Lecture
-    - Date
-    - Topic
-    - Recording
+  - Lecture
+  - Date
+  - Topic
+  - Recording
 lectures_photo: assets/images/art/Untitled_Artwork 2.png
 lectures:
-    - number: 1
-      date: Jan 24
-      name: "Intro"
-      slides: ""
-      video: ""
-    - number: 2
-      date: Jan 26
-      name: "Statements, Proofs, and Contradictions"
-      slides: ""
-      video: ""
-    - number: 3
-      date: Jan 29
-      name: "Propositional Logic: Connectives, Truth Tables"
-      slides: ""
-      video: ""
-    - number: 4
-      date: Jan 31
-      name: "Formal Proofs in Propositional Logic"
-      slides: ""
-      video: ""
-    - number: 5
-      date: Feb 2
-      name: "Propositional Proofs and Algorithms"
-      slides: ""
-      video: ""
-    - number: 6
-      date: Feb 5
-      name: "First Order Logic (Quantifiers)"
-      slides: ""
-      video: ""
-    - number: 7
-      date: Feb 7
-      name: "Formal Proofs in FOL"
-      slides: ""
-      video: ""
-    - number: 8
-      date: Feb 9
-      name: "Language of Set Theory"
-      slides: ""
-      video: ""
-    - number: 9
-      date: Feb 12
-      name: "Proof about Sets"
-      slides: ""
-      video: ""
-    - number: 10
-      date: Feb 14
-      name: "Binary Relations"
-      slides: ""
-      video: ""
-    - number: 11
-      date: Feb 16
-      name: "Injectivity, Surjectivity, Bijectivity"
-      slides: ""
-      video: ""
-    - number: "-"
-      date: Feb 19
-      name: "President's Day - NO CLASS"
-      slides: ""
-      video: ""
-    - number: 12
-      date: Feb 21
-      name: "More Properties of Relations"
-      slides: ""
-      video: ""
-    - number: 13
-      date: Feb 23
-      name: "Induction"
-      slides: ""
-      video: ""
-    - number: 14
-      date: Feb 26
-      name: "Induction Variants"
-      slides: ""
-      video: ""
-    - number: 15
-      date: Feb 28
-      name: "Number Theory -- Division"
-      slides: ""
-      video: ""
-    - number: 16
-      date: Mar 1
-      name: "Division Algorithm"
-      slides: ""
-      video: ""
-    - number: 17
-      date: Mar 4
-      name: "Modular Arithmetic"
-      slides: ""
-      video: ""
-    - number: 18
-      date: Mar 6
-      name: "Number Theory in Lean"
-      slides: ""
-      video: ""
-    - number: 19
-      date: Mar 8
-      name: "Multiplicative Inverses"
-      slides: ""
-      video: ""
-    - number: 20
-      date: Mar 11
-      name: "Message Passing, RSA"
-      slides: ""
-      video: ""
-    - number: 21
-      date: Mar 13
-      name: "Encryption and Ethics"
-      slides: ""
-      video: ""
-    - number: "-"
-      date: Mar 15
-      name: "MIDTERM - IN CLASS"
-      slides: ""
-      video: ""
-    - number: 22
-      date: Mar 18
-      name: "Intro to Counting"
-      slides: ""
-      video: ""
-    - number: 23
-      date: Mar 20
-      name: "Division Rule and Subsets"
-      slides: ""
-      video: ""
-    - number: 24
-      date: Mar 22
-      name: "Binomial Theorem"
-      slides: ""
-      video: ""
-    - number: "-"
-      date: Mar 25
-      name: "Spring Recess - NO CLASS	"
-      slides: ""
-      video: ""
-    - number: "-"
-      date: Mar 27
-      name: "Spring Recess - NO CLASS	"
-      slides: ""
-      video: ""
-    - number: "-"
-      date: Mar 29
-      name: "Spring Recess - NO CLASS	"
-      slides: ""
-      video: ""
-    - number: 25
-      date: Apr 1
-      name: "Pigeonhole Principle"
-      slides: ""
-      video: ""
-    - number: 26
-      date: Apr 3
-      name: "Counting Trees"
-      slides: ""
-      video: ""
-    - number: 27
-      date: Apr 5
-      name: "Intro to Probability"
-      slides: ""
-      video: ""
-    - number: 28
-      date: Apr 8
-      name: "Probability and Independence"
-      slides: ""
-      video: ""
-    - number: 29
-      date: Apr 10
-      name: "Random Variables, Expectation"
-      slides: ""
-      video: ""
-    - number: 30
-      date: Apr 12
-      name: "Conditional Expectation"
-      slides: ""
-      video: ""
-    - number: 31
-      date: Apr 15
-      name: "Bayes' Rule"
-      slides: ""
-      video: ""
-    - number: 32
-      date: Apr 17
-      name: "Variance"
-      slides: ""
-      video: ""
-    - number: 33
-      date: Apr 19
-      name: "Linearity of Expectation"
-      slides: ""
-      video: ""
-    - number: 34
-      date: Apr 22
-      name: "TBD"
-      slides: ""
-      video: ""
-    - number: 35
-      date: Apr 24
-      name: "Induction and Proofs on Data"
-      slides: ""
-      video: ""
-    - number: "-"
-      date: May 9
-      name: "FINAL EXAM - IN PERSON"
-      slides: ""
-      video: ""
+  - number: 1
+    date: Jan 24
+    name: Intro
+    slides: ""
+    video: ""
+  - number: 2
+    date: Jan 26
+    name: Statements, Proofs, and Contradictions
+    slides: ""
+    video: ""
+  - number: 3
+    date: Jan 29
+    name: "Propositional Logic: Connectives, Truth Tables"
+    slides: ""
+    video: ""
+  - number: 4
+    date: Jan 31
+    name: Formal Proofs in Propositional Logic
+    slides: ""
+    video: ""
+  - number: 5
+    date: Feb 2
+    name: Propositional Proofs and Algorithms
+    slides: ""
+    video: ""
+  - number: 6
+    date: Feb 5
+    name: First Order Logic (Quantifiers)
+    slides: ""
+    video: ""
+  - number: 7
+    date: Feb 7
+    name: Formal Proofs in FOL
+    slides: ""
+    video: ""
+  - number: 8
+    date: Feb 9
+    name: Language of Set Theory
+    slides: ""
+    video: ""
+  - number: 9
+    date: Feb 12
+    name: Proof about Sets
+    slides: ""
+    video: ""
+  - number: 10
+    date: Feb 14
+    name: Binary Relations
+    slides: ""
+    video: ""
+  - number: 11
+    date: Feb 16
+    name: Injectivity, Surjectivity, Bijectivity
+    slides: ""
+    video: ""
+  - number: "-"
+    date: Feb 19
+    name: President's Day - NO CLASS
+    slides: ""
+    video: ""
+  - number: 12
+    date: Feb 21
+    name: More Properties of Relations
+    slides: ""
+    video: ""
+  - number: 13
+    date: Feb 23
+    name: Induction
+    slides: ""
+    video: ""
+  - number: 14
+    date: Feb 26
+    name: Induction Variants
+    slides: ""
+    video: ""
+  - number: 15
+    date: Feb 28
+    name: Number Theory -- Division
+    slides: ""
+    video: ""
+  - number: 16
+    date: Mar 1
+    name: Division Algorithm
+    slides: ""
+    video: ""
+  - number: 17
+    date: Mar 4
+    name: Modular Arithmetic
+    slides: ""
+    video: ""
+  - number: 18
+    date: Mar 6
+    name: Number Theory in Lean
+    slides: ""
+    video: ""
+  - number: 19
+    date: Mar 8
+    name: Multiplicative Inverses
+    slides: ""
+    video: ""
+  - number: 20
+    date: Mar 11
+    name: Message Passing, RSA
+    slides: ""
+    video: ""
+  - number: 21
+    date: Mar 13
+    name: Encryption and Ethics
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=740d6559-14df-4ac8-8112-b0fc0148e8e5
+  - number: "-"
+    date: Mar 15
+    name: MIDTERM - IN CLASS
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=187451a7-f76f-441b-927f-b0fc0148e8fa
+  - number: 22
+    date: Mar 18
+    name: Intro to Counting
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=568b297a-a4db-449a-bbfa-b0fc0148e910
+  - number: 23
+    date: Mar 20
+    name: Division Rule and Subsets
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=07193010-83b3-4f5c-a7a9-b0fc0148e924
+  - number: 24
+    date: Mar 22
+    name: Binomial Theorem
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=06162427-cff4-432d-9fe1-b0fc0148e93a
+  - number: "-"
+    date: Mar 25
+    name: "Spring Recess - NO CLASS\t"
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=94881083-76c7-4e4e-ad5b-b0fc0148e951
+  - number: "-"
+    date: Mar 27
+    name: "Spring Recess - NO CLASS\t"
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6d26eb11-15eb-4207-a554-b0fc0148e965
+  - number: "-"
+    date: Mar 29
+    name: "Spring Recess - NO CLASS\t"
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f554c371-5fea-4776-b8fd-b0fc0148e978
+  - number: 25
+    date: Apr 1
+    name: Pigeonhole Principle
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6c37d440-1720-4e3c-a328-b0fc0148e99c
+  - number: 26
+    date: Apr 3
+    name: Counting Trees
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=92545dc7-3d29-44e4-968b-b0fc0148e9b5
+  - number: 27
+    date: Apr 5
+    name: Intro to Probability
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=71ef97c0-a050-4977-993a-b0fc0148e9cc
+  - number: 28
+    date: Apr 8
+    name: Probability and Independence
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f340486f-2b88-4054-827c-b0fc0148e9e4
+  - number: 29
+    date: Apr 10
+    name: Random Variables, Expectation
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=de76d39e-2cfa-40b1-806a-b0fc0148e9fb
+  - number: 30
+    date: Apr 12
+    name: Conditional Expectation
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=492342cf-cdfe-4bdd-80da-b0fc0148ea13
+  - number: 31
+    date: Apr 15
+    name: Bayes' Rule
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2818f2ba-60ea-4028-9f8f-b0fc0148ea31
+  - number: 32
+    date: Apr 17
+    name: Variance
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6e663891-dae1-4457-8d3f-b0fc0148ea4b
+  - number: 33
+    date: Apr 19
+    name: Linearity of Expectation
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2ebb59a-140a-4966-a188-b0fc0148ea63
+  - number: 34
+    date: Apr 22
+    name: TBD
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8b605817-39d4-4aed-91fb-b0fc0148ea7f
+  - number: 35
+    date: Apr 24
+    name: Induction and Proofs on Data
+    slides: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=696823ff-ffcf-45db-9fb6-b0fc0148ea97
+  - number: "-"
+    date: May 9
+    name: FINAL EXAM - IN PERSON
+    slides: ""
+    video: ""
