@@ -15,16 +15,16 @@ htas:
     - name: Allie Masthay
       pronouns: she/her
       role: HTA
-      hometown: Simsbury, Connecticut
+      hometown: Simsbury, CT
       theme: Allosaurus
       blurb: Hi guys! I am a junior from Connecticut studying Computer Science, and I am super excited for this semester! When I am not in the CIT, I love going to Bajas, drinking Diet Coke, singing karaoke, or trying to catch the Sci Li rats. Feel free to reach out to me anytime about anything CS22, CS at Brown, or general questions on life. Can't wait to meet you!
       photo: assets/images/staff/Allie.jpeg
     - name: Carmen Yu
       pronouns: she/her
       role: HTA
-      hometown: sacramento, ca
+      hometown: Sacramento, CA
       theme: carcharodontosaurus
-      blurb: hi 🦕 i'm carmen, and i'm a senior studying math and computer science. in my free time, i enjoy tetris, climbing, and warm weather :) looking forward to a fun semester with you all!
+      blurb: Hi 🦕 I'm carmen, and I'm a senior studying math and computer science. In my free time, I enjoy tetris, climbing, and warm weather :) looking forward to a fun semester with you all!
       photo: assets/images/staff/carmen.png
     - name: Jania Vandevoorde
       pronouns: she/her
@@ -62,7 +62,7 @@ uta-sta:
       role: UTA-STA
       hometown: Toronto, Canada
       theme: Giganotosaurus
-      blurb: Hiiiii I'm a junior studying computer science and I really like cheese and hiking and beautiful sunsets <3
+      blurb: Hiiiii I'm a junior studying computer science and I really like cheese and hiking and beautiful sunsets <3.
       photo: assets/images/staff/Sam.JPG
 staff:
     - name: Adela Zhou
@@ -82,9 +82,9 @@ staff:
     - name: Alyssa Sun
       pronouns: she/her
       role: UTA
-      hometown: Wilsonville, Oregon
+      hometown: Wilsonville, OR
       theme: Mononykus
-      blurb: I <3 Bagels
+      blurb: I <3 Bagels.
       photo: assets/images/staff/Alyssa.png
     - name: Amy Qiao
       pronouns: she/her
@@ -103,21 +103,21 @@ staff:
     - name: Brendan Ho
       pronouns: he/him
       role: UTA
-      hometown: Wayland, Massachusetts
+      hometown: Wayland, MA
       theme: Psittacosaurus
       blurb: Hi y'all! I'm a senior studying computer science and environmental studies. I like baking, hula-hooping, and dino nuggets. Excited to meet everyone!
       photo: assets/images/staff/brendan.png
     - name: Cerulean Ozarow
       pronouns: he/him
       role: UTA
-      hometown: brooklyn, ny
+      hometown: Brooklyn, NY
       theme: archaeopteryx
-      blurb: hi everyone! i'm cerulean, a junior studying applied math, because the building is nicer than the cit. ask me about graph theory, educational policy, genealogy, or literally anything else. :)
+      blurb: Hi everyone! I'm cerulean, a junior studying applied math, because the building is nicer than the cit. Ask me about graph theory, educational policy, genealogy, or literally anything else. :)
       photo: assets/images/staff/Cerulean Ozarow.PNG
     - name: Dan Fiume
       pronouns: he/him
       role: UTA
-      hometown: Odenton, Maryland
+      hometown: Odenton, MD
       theme: Camarasaurus
       blurb: Hi! I'm a senior studying applied math - computer science. When I'm not working, you can find me playing games, taking photos, or eating ice cream. Looking forward to meeting everyone this semester!
       photo: assets/images/staff/danf.jpg
@@ -153,7 +153,7 @@ staff:
       pronouns: she/her
       role: UTA
       hometown: Livingston, NJ
-      theme: yoshi
+      theme: Yoshi
       blurb: hi! I'm a junior studying CS on a premed track. I love listening to podcasts, food, and art! My favorite food is dinosaurs--so good!
       photo: assets/images/staff/jen.png
     - name: Jiahua Chen
@@ -174,23 +174,30 @@ staff:
       pronouns: he/him
       role: UTA
       hometown: Frisco, TX
-      theme: bulbasaur
-      blurb: i like sunsets, stargazing, and cooking :)
+      theme: Bulbasaur
+      blurb: I like sunsets, stargazing, and cooking :).
       photo: assets/images/staff/Kai.png
     - name: Kristen Cai
       pronouns: she/her
       role: UTA
       hometown: Vernon Hills, IL
-      theme: pterodactyl
+      theme: Pterodactyl
       blurb: I'm a junior studying APMA-CS. Recently I've been loving coffee, hawthorn, and playing guitar.
       photo: assets/images/staff/Kristen_Cai.jpg
     - name: Linus Sun
       pronouns: he/him
       role: UTA
-      hometown: berkeley, ca
-      theme: anchiornis (fake) aerodactyl (real)
+      hometown: Berkeley, CA
+      theme: Anchiornis (fake) Aerodactyl (real)
       blurb: senior (.5er 🤯🤯🤯🤯🤯) studying cs + music!!! big fan of climbing + music + sleeping + being awake!!! 😎😎😎😎😎😎
       photo: assets/images/staff/linus.jpeg
+    - name: Serena West
+      pronouns: she/her
+      role: UTA
+      hometown: Houston, TX
+      theme: Saurolophus
+      blurb: I really enjoy trying different hobbies and food (current hobby is attempting roller skating), also have a cute little chihuahua named Poppie :)!
+      photo: assets/images/staff/Serena.png
     - name: Tiger Lamlertprasertkul
       pronouns: he/him
       role: UTA
@@ -208,7 +215,7 @@ staff:
     - name: Zachary Wang
       pronouns: he/him
       role: UTA
-      hometown: College Station, Texas
+      hometown: College Station, TX
       theme: Brachiosaurus
-      blurb: Howdy! I'm a sophomore studying apma + cs. ask me about the 2017-2018 houston rockets
+      blurb: Howdy! I'm a sophomore studying apma + cs. ask me about the 2017-2018 houston rockets.
       photo: assets/images/staff/zach.JPG
