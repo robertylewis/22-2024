@@ -11,66 +11,66 @@ homeworks:
     - name: HW0
       link: ""
       template: ""
-      released: Jan 26
+      released: Jan 24
       due: Jan 31
       solution: ""
     - name: HW1
       link: ""
       template: ""
-      released: Feb 5
-      due: Feb 11
+      released: Feb 1
+      due: Feb 7
       solution: ""
     - name: HW2
       link: ""
       template: ""
-      released: Feb 12
-      due: Feb 18
+      released: Feb 8
+      due: Feb 14
       solution: ""
     - name: HW3
       link: ""
       template: ""
-      released: Feb 19
-      due: Feb 27
+      released: Feb 15
+      due: Feb 23
       solution: ""
     - name: HW4
       link: ""
       template: ""
-      released: Feb 26
-      due: Mar 4
+      released: Feb 22
+      due: Feb 28
       solution: ""
     - name: HW5
       link: ""
       template: ""
-      released: Mar 5
-      due: Mar 18
+      released: Feb 29
+      due: Mar 6
       solution: ""
     - name: HW6
       link: ""
       template: ""
-      released: Mar 19
-      due: Mar 25
+      released: Mar 15
+      due: Mar 20
       solution: ""
     - name: HW7
       link: ""
       template: ""
-      released: Mar 26
-      due: Apr 8
+      released: Mar 21
+      due: Apr 3
       solution: ""
     - name: HW8
       link: ""
       template: ""
-      released: Apr 9
-      due: Apr 15
+      released: Apr 4
+      due: Apr 10
       solution: ""
     - name: HW9
       link: ""
       template: ""
-      released: Apr 16
-      due: Apr 22
+      released: Apr 11
+      due: Apr 17
       solution: ""
     - name: HW10
       link: ""
       template: ""
-      released: Apr 23
-      due: Apr 29
+      released: Apr 18
+      due: Apr 24
       solution: ""
