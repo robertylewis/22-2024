@@ -10,107 +10,107 @@ lectures:
     date: Jan 24
     name: Intro
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=25c5a58d-f7db-4c8f-81d4-b0fc0148e678
   - number: 2
     date: Jan 26
     name: Statements, Proofs, and Contradictions
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=22449af2-5a1c-4d24-b54c-b0fc0148e6b1
   - number: 3
     date: Jan 29
     name: "Propositional Logic: Connectives, Truth Tables"
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9f8cfb76-5f4d-47ff-8ab7-b0fc0148e6c9
   - number: 4
     date: Jan 31
     name: Formal Proofs in Propositional Logic
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4f66613e-548b-4f7f-a877-b0fc0148e6de
   - number: 5
     date: Feb 2
     name: Propositional Proofs and Algorithms
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fa33747e-fbc1-4705-9f83-b0fc0148e6f5
   - number: 6
     date: Feb 5
     name: First Order Logic (Quantifiers)
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f45b0609-94ae-4b15-bd9e-b0fc0148e70f
   - number: 7
     date: Feb 7
     name: Formal Proofs in FOL
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=35bcdd19-9d72-4268-adae-b0fc0148e72d
   - number: 8
     date: Feb 9
     name: Language of Set Theory
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=aa087517-abee-4ac6-8c8e-b0fc0148e755
   - number: 9
     date: Feb 12
     name: Proof about Sets
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7c24c905-f054-43bd-b1f6-b0fc0148e779
   - number: 10
     date: Feb 14
     name: Binary Relations
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1bbf366a-522e-464c-9061-b0fc0148e799
   - number: 11
     date: Feb 16
     name: Injectivity, Surjectivity, Bijectivity
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8bf593c9-185c-44c0-9297-b0fc0148e7b5
   - number: "-"
     date: Feb 19
     name: President's Day - NO CLASS
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a78d08d7-874e-432e-a143-b0fc0148e7ce
   - number: 12
     date: Feb 21
     name: More Properties of Relations
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=85172a5c-867b-40e2-a940-b0fc0148e7e7
   - number: 13
     date: Feb 23
     name: Induction
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2c79e838-50a6-4a9c-827d-b0fc0148e801
   - number: 14
     date: Feb 26
     name: Induction Variants
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=72a358fc-4d1a-4763-85dc-b0fc0148e820
   - number: 15
     date: Feb 28
     name: Number Theory -- Division
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd1059c4-fb5d-4cb8-a232-b0fc0148e845
   - number: 16
     date: Mar 1
     name: Division Algorithm
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e8725cd5-0c8c-49dd-9afd-b0fc0148e864
   - number: 17
     date: Mar 4
     name: Modular Arithmetic
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3edbb5bd-8049-452b-ac2e-b0fc0148e884
   - number: 18
     date: Mar 6
     name: Number Theory in Lean
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b7010032-b662-4c9d-8c0c-b0fc0148e89d
   - number: 19
     date: Mar 8
     name: Multiplicative Inverses
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c0715fb9-b6d5-4729-85e7-b0fc0148e8b9
   - number: 20
     date: Mar 11
     name: Message Passing, RSA
     slides: ""
-    video: ""
+    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=34a5e794-8d52-49cf-9d3f-b0fc0148e8ce
   - number: 21
     date: Mar 13
     name: Encryption and Ethics
