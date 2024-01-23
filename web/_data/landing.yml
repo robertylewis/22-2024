@@ -12,11 +12,13 @@ main_description: |
     If these topics sound unfamiliar, not to fear—you're in exactly the right place! This course
     assumes
     no prior experience with these topics.
-                    
+    <br><br>                
     Important info before the semester starts:
-    * Exams are in person: March 15 and May 9.
-    * Lectures will be streamed and recorded; attendance is strongly encouraged but not required.
-    * Attendance at weekly recitation sections is required.
+    <ul>
+      <li>Exams are in person: March 15 and May 9.</li>
+      <li>Lectures will be streamed and recorded; attendance is strongly encouraged but not required.</li>
+      <li>Attendance at weekly recitation sections is required.</li>
+    </ul>
                     
 theme_description: This year, we're taking proofs prehistoric! Rawr!
 livestream_recordings: "https://brown.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%226d0e9891-d555-43bd-8b1c-ae2600e2e754%22"
