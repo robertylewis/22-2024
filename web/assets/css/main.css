@@ -387,7 +387,7 @@ div.ring {
     border: 2px solid white;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
     section#landing {
         margin: 5vh 0;
     }
