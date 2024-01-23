@@ -65,7 +65,7 @@ lectures:
     date: Feb 19
     name: President's Day - NO CLASS
     slides: ""
-    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a78d08d7-874e-432e-a143-b0fc0148e7ce
+    video: ""
   - number: 12
     date: Feb 21
     name: More Properties of Relations
@@ -120,7 +120,7 @@ lectures:
     date: Mar 15
     name: MIDTERM - IN CLASS
     slides: ""
-    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=187451a7-f76f-441b-927f-b0fc0148e8fa
+    video: ""
   - number: 22
     date: Mar 18
     name: Intro to Counting
@@ -140,17 +140,17 @@ lectures:
     date: Mar 25
     name: "Spring Recess - NO CLASS\t"
     slides: ""
-    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=94881083-76c7-4e4e-ad5b-b0fc0148e951
+    video: ""
   - number: "-"
     date: Mar 27
     name: "Spring Recess - NO CLASS\t"
     slides: ""
-    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6d26eb11-15eb-4207-a554-b0fc0148e965
+    video: ""
   - number: "-"
     date: Mar 29
     name: "Spring Recess - NO CLASS\t"
     slides: ""
-    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f554c371-5fea-4776-b8fd-b0fc0148e978
+    video: ""
   - number: 25
     date: Apr 1
     name: Pigeonhole Principle
