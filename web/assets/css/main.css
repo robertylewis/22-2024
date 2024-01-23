@@ -366,6 +366,7 @@ h2.landing-subtitle {
 }
 
 img.landing-logo {
+    padding: 15%;
     width: 450px;
     margin: -40px;
 }
