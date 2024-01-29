@@ -19,7 +19,7 @@ lectures:
   - number: 3
     date: Jan 29
     name: "Propositional Logic: Connectives, Truth Tables"
-    slides: ""
+    slides: "Lecture03.pdf"
     video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9f8cfb76-5f4d-47ff-8ab7-b0fc0148e6c9
   - number: 4
     date: Jan 31
