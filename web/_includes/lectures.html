@@ -15,14 +15,25 @@
                 <td>{{lecture.number}}</td>
                 <td>{{lecture.date}}</td>
                 <td>
-                    {% if lecture.num == "-" or lecture.slides == "" %}
+                    {% if lecture.number == "-" or lecture.slides == "" %}
                     {{lecture.name}}
                     {% else %}
-                    <a href="assets/slides/{{ lecture.slides }}" target="_blank">{{lecture.name}}</a>
+                    {% assign path = '/assets/slides/Lecture' | append: lecture.number | append: '.pdf' %}
+                    {% assign slides_exist = false %}
+                    {% for static_file in site.static_files %}
+                      {% if static_file.path == path %}
+                        {% assign slides_exist = true %}
+                      {% endif %}
+                    {% endfor %}
+                    {% if slides_exist == true %}
+                        <a href="{{ path }}" target="_blank">{{lecture.name}}</a>
+                    {% else %}
+                        {{ lecture.name }}
+                    {% endif %}
                     {% endif %}
                 </td>
                 <td>
-                    {% if lecture.num == "-" or lecture.video == "" %}
+                    {% if lecture.number == "-" or lecture.video == "" %}
                     -
                     {% else %}
                     <a href="{{ lecture.video }}" target="_blank">Video</a>
