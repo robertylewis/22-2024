@@ -16,7 +16,7 @@ homeworks:
       solution: ""
     - name: HW1
       link: "/assets/hw/hw01_nosol.pdf"
-      template: "/assets/hw/hw01_template.zip"
+      template: "https://www.overleaf.com/docs?snip_uri=https://cs22.io/assets/hw/hw01_template.zip"
       released: Feb 1
       due: Feb 7
       solution: ""
