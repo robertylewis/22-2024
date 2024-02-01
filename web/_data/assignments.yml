@@ -15,8 +15,8 @@ homeworks:
       due: Jan 31
       solution: ""
     - name: HW1
-      link: ""
-      template: ""
+      link: "/assets/hw/hw01_nosol.pdf"
+      template: "/assets/hw/hw01_template.zip"
       released: Feb 1
       due: Feb 7
       solution: ""
