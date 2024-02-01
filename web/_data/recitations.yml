@@ -9,7 +9,7 @@ section_titles:
     - Solution
 recitations:
     - name: Recitation 1
-      link: "https://drive.google.com/file/d/19XrBTgx7mAMDMtvPUfBXol3_R0c_4wpk/view?usp=sharing"
+      link: "/assets/recitation/recitation_1.pdf"
       released: Feb 1
       solution: ""
     - name: Recitation 2
