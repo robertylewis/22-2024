@@ -9,7 +9,7 @@ instructor:
       role: Instructor
       hometown: Brookline, MA
       theme: Diplodocus carnegii
-      blurb: Call me Rob! I'm 50% computer scientist, 40% mathematician, and 10% philosopher, so this course is pretty much my dream.
+      blurb: "Call me Rob! I'm 50% computer scientist, 40% mathematician, and 10% philosopher, so this course is pretty much my dream.<br>Office hours (double check on the calendar): Mon 11-12 in person, Thu 10-11 virtual"
       photo: assets/images/staff/rob.jpg
 htas:
     - name: Allie Masthay
