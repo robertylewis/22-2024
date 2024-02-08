@@ -5,50 +5,62 @@ description:
 absence_form: https://forms.gle/CD9WmAxzTHfAyEkT9
 section_titles:
     - Recitation
+    - Template
     - Released
     - Solution
 recitations:
     - name: Recitation 1
       link: "/assets/recitation/recitation_1.pdf"
+      template: ""
       released: Feb 1
       solution: ""
     - name: Recitation 2
       link: ""
+      template: ""
       released: Feb 8
       solution: ""
     - name: Recitation 3
       link: ""
+      template: ""
       released: Feb 15
       solution: ""
     - name: Recitation 4
       link: ""
+      template: ""
       released: Feb 22
       solution: ""
     - name: Recitation 5
       link: ""
+      template: ""
       released: Feb 29
       solution: ""
     - name: Midterm Practice
       link: ""
+      template: ""
       released: Mar 7
       solution: ""
     - name: Recitation 6
       link: ""
+      template: ""
       released: Apr 4
       solution: ""
     - name: Recitation 7
       link: ""
+      template: ""
       released: Apr 11
       solution: ""
     - name: Recitation 8
       link: ""
+      template: ""
       released: Apr 18
       solution: ""
     - name: Recitation 9
       link: ""
+      template: ""
       released: Apr 25
       solution: ""
     - name: Final Exam Review
       link: ""
+      template: ""
       released: May 2
       solution: ""

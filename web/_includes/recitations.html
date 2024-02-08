@@ -20,6 +20,13 @@
             <a href="{{ recitation.link }}" target="_blank">{{recitation.name}}</a>
           {% endif %}
         </td>
+        <td>
+          {% if recitation.template == "" %}
+            -
+          {% else %}
+            <a href="{{ recitation.template }}" target="_blank">Overleaf Template</a>
+          {% endif %}
+        </td>
         <td>{{recitation.released}}</td>
         <td>
             {% if recitation.solution == "" %}
