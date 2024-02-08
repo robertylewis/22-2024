@@ -16,7 +16,7 @@ recitations:
       solution: ""
     - name: Recitation 2
       link: ""
-      template: ""
+      template: "/assets/recitation/rec02_template.zip"
       released: Feb 8
       solution: ""
     - name: Recitation 3
