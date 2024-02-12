@@ -191,6 +191,13 @@ staff:
       theme: Anchiornis (fake) Aerodactyl (real)
       blurb: senior (.5er 🤯🤯🤯🤯🤯) studying cs + music!!! big fan of climbing + music + sleeping + being awake!!! 😎😎😎😎😎😎
       photo: assets/images/staff/linus.jpeg
+    - name: Michael Sun
+      pronouns: he/him
+      role: UTA
+      hometown: East Brunswick, NJ
+      theme: Xenoceratops
+      blurb: I'm a junior studying comp-bio. I love coffee/matcha, swimming, and playing my wooden stringed violin instrument.
+      photo: assets/images/staff/Michael_Sun.jpg
     - name: Serena West
       pronouns: she/her
       role: UTA
@@ -205,6 +212,13 @@ staff:
       theme: Elasmosaurus
       blurb: I enjoy indoor bouldering and just picked up ice skating this past winter break!
       photo: assets/images/staff/Tiger.JPG
+    - name: Truman Cunningham
+      pronouns: he/him
+      role: UTA
+      hometown: Austin, TX
+      theme: Chicken
+      blurb: I am a senior studying Art History and CS. I love all things photography and bees! Ask me about my birb collection!
+      photo: assets/images/staff/Truman_Cunningham.png
     - name: Vignesh Pandiarajan
       pronouns: he/him
       role: UTA
