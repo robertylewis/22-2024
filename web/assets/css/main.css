@@ -26,13 +26,13 @@
     --border-color-1: #686132;
     */
 
-    --color-background: #ffffff;
-    --color-body: #393d4d;
+    --color-background: #ffdae9;
+    --color-body: #741313;
     --color-black: #060912;
-    --color-off-black: #ffc5e6;
-    --color-white: #f5f5f5;
-    --color-off-white: #e8e8e8;
-    --border-color-1: #686132;
+    --color-off-black: #a31616;
+    --color-white: #ffd8d8;
+    --color-off-white: #ff8282;
+    --border-color-1: #721919;
 }
 
 *,
@@ -239,6 +239,9 @@ div.nav-nav {
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-off-black);
+    background-image: url(../images/art/pink-heart.png);
+    background-repeat: repeat;
+    background-size: 20em;
 }
 
 div.nav-holder {
@@ -261,7 +264,8 @@ span.nav-link > a {
     font-weight: 700;
     font-size: var(--fs-md);
     text-decoration: none;
-    color: var(--color-body);
+    /* color: var(--color-body); */    
+    color: white;
 }
 
 span.nav-link > a:hover {
