@@ -3,44 +3,33 @@
         <!-- REGULAR NAV -->
         <div class="nav-nav">
             <div class="nav-holder nav-left">
-                <img loading="lazy" class="nav-logo shake" src="../assets/images/art/header_logo.png" draggable="false"
+                <img loading="lazy" class="nav-logo shake" src="{{site.data.header.logo_image}}" draggable="false"
                     alt="logo" />
                 <span class="nav-link nav-link-main">
                     <a class="ul ul-1" href="#" target="_self">CSCI 0220</a>
                 </span>
             </div>
             <div class="nav-holder nav-left">
-                <span class="nav-link">
-                    <a class="ul ul-2" href="#assignments" target="_self">Assignments</a>
-                </span>
-                <span class="nav-link">
-                    <a class="ul ul-3" href="#lectures" target="_self">Lectures</a>
-                </span>
-                <span class="nav-link">
-                    <a class="ul ul-4" href="#calendar" target="_self">Calendar</a>
-                </span>
-                <span class="nav-link">
-                    <a class="ul ul-5" href="#resources" target="_self">Resources</a>
-                </span>
-                <span class="nav-link">
-                    <a class="ul ul-6" href="#staff" target="_self">Staff</a>
-                </span>
+                {% for section in site.data.header.sections %}
+                    {% if forloop.index > 1 %}
+                        <span class="nav-link">
+                            <a class="ul ul-{{forloop.index}}" href="#{{ section.name | downcase }}" target="_self">{{ section.name }}</a>
+                        </span>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
 
         <!-- MOBILE NAV -->
         <div id="navholder-mobile" class="navholder-mobile">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">☰</a>
+            <a class="closebtn" onclick="toggleNav()">☰</a>
             <div class="navholder-content">
-                <a class="ul ul-1" onclick="closeNav()" href="#" target="_self">CSCI 0220</a>
-                <a class="ul ul-2" onclick="closeNav()" href="#assignments" target="_self">Assignments</a>
-                <a class="ul ul-3" onclick="closeNav()" href="#lectures" target="_self">Lectures</a>
-                <a class="ul ul-4" onclick="closeNav()" href="#calendar" target="_self">Calendar</a>
-                <a class="ul ul-5" onclick="closeNav()" href="#resources" target="_self">Resources</a>
-                <a class="ul ul-6" onclick="closeNav()" href="#staff" target="_self">Staff</a>
+                {% for section in site.data.header.sections %}
+                    <a class="ul ul-{{forloop.index}}" onclick="toggleNav()" href="#{{ section.name | downcase }}" target="_self">{{section.name}}</a>
+                {% endfor %}
             </div>
         </div>
 
         <!-- MOBILE NAV BUTTON -->
-        <span class="hamburger" onclick="openNav()">☰</span>
+        <span class="hamburger" onclick="toggleNav()">☰</span>
     </nav>

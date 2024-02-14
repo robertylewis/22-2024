@@ -1,8 +1,10 @@
 // Navbar script
-function openNav() {
-    document.getElementById("navholder-mobile").style.height = "100%";
-}
 
-function closeNav() {
-    document.getElementById("navholder-mobile").style.height = "0%";
+function toggleNav() {
+    var navholder = document.getElementById("navholder-mobile");
+    if (navholder.style.height === "100%") {
+        navholder.style.height = "0%";
+    } else {
+        navholder.style.height = "100%";
+    }
 }
