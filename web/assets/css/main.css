@@ -15,11 +15,21 @@
     --fs-md: 1.3rem;
     --fs-sm: 1rem;
     --fs-xs: 0.8rem;
-
-    --color-background: #faf4cd;
+    /*
+    - ORIGINAL THEME: 
+        --color-background: #faf4cd;
     --color-body: #393d4d;
     --color-black: #060912;
     --color-off-black: #ea9ab2;
+    --color-white: #f5f5f5;
+    --color-off-white: #e8e8e8;
+    --border-color-1: #686132;
+    */
+
+    --color-background: #ffffff;
+    --color-body: #393d4d;
+    --color-black: #060912;
+    --color-off-black: #ffc5e6;
     --color-white: #f5f5f5;
     --color-off-white: #e8e8e8;
     --border-color-1: #686132;
