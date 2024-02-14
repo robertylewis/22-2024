@@ -25,7 +25,13 @@
             <a class="closebtn" onclick="toggleNav()">☰</a>
             <div class="navholder-content">
                 {% for section in site.data.header.sections %}
-                    <a class="ul ul-{{forloop.index}}" onclick="toggleNav()" href="#{{ section.name | downcase }}" target="_self">{{section.name}}</a>
+                    {% if forloop.index == 1 %}
+                        <a class="ul ul-{{forloop.index}}" href="#" onclick="toggleNav()"  target="_self">{{section.name}}</a>
+
+                    {% else %}
+                        <a class="ul ul-{{forloop.index}}" onclick="toggleNav()" href="#{{ section.name | downcase }}" target="_self">{{section.name}}</a>
+                    {% endif %}
+
                 {% endfor %}
             </div>
         </div>
