@@ -20,8 +20,8 @@ recitations:
       released: Feb 8
       solution: ""
     - name: Recitation 3
-      link: ""
-      template: ""
+      link: "/assets/recitation/rec03.pdf"
+      template: "/assets/recitation/rec03_template.zip"
       released: Feb 15
       solution: ""
     - name: Recitation 4
