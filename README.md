@@ -4,9 +4,7 @@ This is the source code for Brown's CS22 Course Website.
 
 ## Setup Jekyll Dependencies
 
-To make sure that you have the right requirements to run Jekyll, you can click [here](https://jekyllrb.com/docs/) for setup instructions. 
-- If you want to set up your local environment then `cd web`, and then run the following command: 
-```bundle exec jekyll serve```. Then, your local environment should be running on `http://127.0.0.1:4000/`. 
+To make sure that you have the right requirements to run Jekyll, you can click [here](https://jekyllrb.com/docs/) for setup instructions.
 
 ## Source Code Setup
 
