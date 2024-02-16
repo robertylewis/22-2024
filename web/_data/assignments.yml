@@ -27,9 +27,9 @@ homeworks:
       due: Feb 14
       solution: ""
     - name: HW3
-      link: ""
-      template: ""
-      released: Feb 15
+      link: "/assets/hw/hw03_nosol.pdf"
+      template: "/assets/hw/hw03_template.zip"
+      released: Feb 16
       due: Feb 23
       solution: ""
     - name: HW4
