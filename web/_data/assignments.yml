@@ -33,8 +33,8 @@ homeworks:
       due: Feb 23
       solution: ""
     - name: HW4
-      link: ""
-      template: ""
+      link: "/assets/hw/hw04_nosol.pdf"
+      template: "/assets/hw/hw04_template.zip"
       released: Feb 22
       due: Feb 28
       solution: ""
