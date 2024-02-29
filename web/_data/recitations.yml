@@ -30,8 +30,8 @@ recitations:
       released: Feb 22
       solution: ""
     - name: Recitation 5
-      link: ""
-      template: ""
+      link: "/assets/recitation/rec05.pdf"
+      template: "/assets/recitation/rec05_template.zip"
       released: Feb 29
       solution: ""
     - name: Midterm Practice
