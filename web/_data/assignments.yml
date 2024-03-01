@@ -40,7 +40,7 @@ homeworks:
       solution: ""
     - name: HW5
       link: "/assets/hw/hw05_nosol.pdf"
-      template: ""
+      template: "/assets/hw/hw05_template.zip"
       released: Feb 29
       due: Mar 6
       solution: ""
