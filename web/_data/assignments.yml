@@ -31,7 +31,7 @@ homeworks:
       template: "/assets/hw/hw03_template.zip"
       released: Feb 16
       due: Feb 23
-      solution: ""
+      solution: "/assets/hw/hw03_sol.pdf"
     - name: HW4
       link: "/assets/hw/hw04_nosol.pdf"
       template: "/assets/hw/hw04_template.zip"
