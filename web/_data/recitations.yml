@@ -28,7 +28,7 @@ recitations:
       link: "/assets/recitation/rec04.pdf"
       template: "/assets/recitation/rec04_template.zip"
       released: Feb 22
-      solution: ""
+      solution: "/assets/recitation/rec04_sol.pdf"
     - name: Recitation 5
       link: "/assets/recitation/rec05.pdf"
       template: "/assets/recitation/rec05_template.zip"
