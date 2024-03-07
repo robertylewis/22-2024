@@ -40,8 +40,8 @@ recitations:
       released: Mar 7
       solution: ""
     - name: Recitation 6
-      link: ""
-      template: ""
+      link: "/assets/recitation/rec06.pdf"
+      template: "/assets/recitation/rec06_template.zip"
       released: Apr 4
       solution: ""
     - name: Recitation 7
