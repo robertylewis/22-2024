@@ -34,15 +34,15 @@ recitations:
       template: "/assets/recitation/rec05_template.zip"
       released: Feb 29
       solution: ""
-    - name: Midterm Practice
-      link: ""
-      template: ""
-      released: Mar 7
-      solution: ""
     - name: Recitation 6
       link: "/assets/recitation/rec06.pdf"
       template: "/assets/recitation/rec06_template.zip"
-      released: Apr 4
+      released: Mar 7
+      solution: ""
+    - name: Midterm Practice
+      link: ""
+      template: ""
+      released: 
       solution: ""
     - name: Recitation 7
       link: ""
