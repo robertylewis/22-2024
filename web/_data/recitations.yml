@@ -35,7 +35,7 @@ recitations:
       released: Feb 29
       solution: ""
     - name: Recitation 6
-      link: ""
+      link: "/assets/recitation/rec06.pdf"
       template: "/assets/recitation/rec06_template.zip"
       released: Mar 7
       solution: ""
