@@ -33,12 +33,12 @@ recitations:
       link: "/assets/recitation/rec05.pdf"
       template: "/assets/recitation/rec05_template.zip"
       released: Feb 29
-      solution: ""
+      solution: "/assets/recitation/rec05_sol.pdf"
     - name: Recitation 6
       link: "/assets/recitation/rec06.pdf"
       template: "/assets/recitation/rec06_template.zip"
       released: Mar 7
-      solution: ""
+      solution: "/assets/recitation/rec06_sol.pdf"
     - name: Midterm Practice
       link: ""
       template: ""
