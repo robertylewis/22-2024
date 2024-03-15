@@ -45,10 +45,10 @@ homeworks:
       due: Mar 6
       solution: "/assets/hw/hw05_sol.pdf"
     - name: HW6
-      link: ""
-      template: ""
+      link: "/assets/hw/hw06_nosol.pdf"
+      template: "/assets/hw/hw06_template.zip"
       released: Mar 15
-      due: Mar 20
+      due: Mar 22
       solution: ""
     - name: HW7
       link: ""
