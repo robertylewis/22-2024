@@ -42,12 +42,12 @@ recitations:
     - name: Midterm Practice
       link: ""
       template: ""
-      released: Apr 4
+      released: ""
       solution: ""
     - name: Recitation 7
       link: "/assets/recitation/rec07.pdf"
       template: "/assets/recitation/rec07_template.zip"
-      released: Apr 11
+      released: Apr 4
       solution: ""
     - name: Recitation 8
       link: ""
