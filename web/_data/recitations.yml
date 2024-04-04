@@ -45,8 +45,8 @@ recitations:
       released: Apr 4
       solution: ""
     - name: Recitation 7
-      link: ""
-      template: ""
+      link: "/assets/recitation/rec07.pdf"
+      template: "/assets/recitation/rec07_template.zip"
       released: Apr 11
       solution: ""
     - name: Recitation 8
