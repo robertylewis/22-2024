@@ -50,8 +50,8 @@ recitations:
       released: Apr 4
       solution: ""
     - name: Recitation 8
-      link: ""
-      template: ""
+      link: "/assets/recitation/rec08.pdf"
+      template: "/assets/recitation/rec08_template.pdf"
       released: Apr 11
       solution: ""
     - name: Recitation 9
