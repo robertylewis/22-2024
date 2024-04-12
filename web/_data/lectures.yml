@@ -142,27 +142,27 @@ lectures:
     date: Apr 10
     name: Random Variables, Expectation
     video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=de76d39e-2cfa-40b1-806a-b0fc0148e9fb
-  - number: 30
+  - number: "-"
     date: Apr 12
-    name: Conditional Expectation
-    video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=492342cf-cdfe-4bdd-80da-b0fc0148ea13
-  - number: 31
+    name: "SICK DAY - NO CLASS\t"
+    video: ""
+  - number: 30
     date: Apr 15
-    name: Bayes' Rule
+    name: Conditional Expectation
     video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2818f2ba-60ea-4028-9f8f-b0fc0148ea31
-  - number: 32
+  - number: 31
     date: Apr 17
-    name: Variance
+    name: Bayes' Rule
     video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6e663891-dae1-4457-8d3f-b0fc0148ea4b
-  - number: 33
+  - number: 32
     date: Apr 19
-    name: Linearity of Expectation
+    name: Variance
     video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2ebb59a-140a-4966-a188-b0fc0148ea63
-  - number: 34
+  - number: 33
     date: Apr 22
-    name: TBD
+    name: Linearity of Expectation
     video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8b605817-39d4-4aed-91fb-b0fc0148ea7f
-  - number: 35
+  - number: 34
     date: Apr 24
     name: Induction and Proofs on Data
     video: https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=696823ff-ffcf-45db-9fb6-b0fc0148ea97
