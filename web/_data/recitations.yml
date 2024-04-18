@@ -48,7 +48,7 @@ recitations:
       link: "/assets/recitation/rec07.pdf"
       template: "/assets/recitation/rec07_template.zip"
       released: Apr 4
-      solution: ""
+      solution: "/assets/recitation/rec07_sol.pdf"
     - name: Recitation 8
       link: "/assets/recitation/rec08.pdf"
       template: "/assets/recitation/rec08_template.zip"
@@ -57,7 +57,7 @@ recitations:
     - name: Recitation 9
       link: ""
       template: ""
-      released: Apr 18
+      released: Apr 25
       solution: ""
     - name: Final Exam Review
       link: ""
