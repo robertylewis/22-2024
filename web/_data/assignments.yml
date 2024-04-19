@@ -55,13 +55,13 @@ homeworks:
       template: "/assets/hw/hw07_template.zip"
       released: Mar 22
       due: Apr 5
-      solution: ""
+      solution: "/assets/hw/hw07_sol.pdf"
     - name: HW8
       link: "/assets/hw/hw08_nosol.pdf"
       template: "/assets/hw/hw08_template.zip"
       released: Apr 5
       due: Apr 11
-      solution: ""
+      solution: "/assets/hw/hw08_sol.pdf"
     - name: HW9
       link: "/assets/hw/hw09_nosol.pdf"
       template: "/assets/hw/hw09_template.zip"
