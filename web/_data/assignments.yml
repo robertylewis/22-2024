@@ -69,8 +69,8 @@ homeworks:
       due: Apr 17
       solution: ""
     - name: HW10
-      link: ""
-      template: ""
-      released: Apr 18
-      due: Apr 24
+      link: "/assets/hw/hw10_nosol.pdf"
+      template: "/assets/hw/hw10_template.zip"
+      released: Apr 19
+      due: Apr 26
       solution: ""
