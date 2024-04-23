@@ -55,8 +55,8 @@ recitations:
       released: Apr 11
       solution: ""
     - name: Recitation 9
-      link: ""
-      template: ""
+      link: "/assets/recitation/rec09.pdf"
+      template: "/assets/recitation/rec09_template.zip"
       released: Apr 25
       solution: ""
     - name: Final Exam Review
