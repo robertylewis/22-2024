@@ -67,10 +67,10 @@ homeworks:
       template: "/assets/hw/hw09_template.zip"
       released: Apr 12
       due: Apr 17
-      solution: ""
+      solution: "/assets/hw/hw09_sol.pdf"
     - name: HW10
       link: "/assets/hw/hw10_nosol.pdf"
       template: "/assets/hw/hw10_template.zip"
       released: Apr 19
       due: Apr 26
-      solution: ""
+      solution: "/assets/hw/hw10_sol.pdf"
