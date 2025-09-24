@@ -18,7 +18,7 @@
                     {% if lecture.number == "-" or lecture.slides == "" %}
                     {{lecture.name}}
                     {% else %}
-                    {% assign path = 'assets/slides/Lecture' | append: lecture.number | append: '.pdf' %}
+                    {% assign path = '/assets/slides/Lecture' | append: lecture.number | append: '.pdf' %}
                     {% assign slides_exist = false %}
                     {% for static_file in site.static_files %}
                       {% if static_file.path == path %}
@@ -26,7 +26,7 @@
                       {% endif %}
                     {% endfor %}
                     {% if slides_exist == true %}
-                        <a href="{{ path }}" target="_blank">{{lecture.name}}</a>
+                        <a href="./{{ path }}" target="_blank">{{lecture.name}}</a>
                     {% else %}
                         {{ lecture.name }}
                     {% endif %}

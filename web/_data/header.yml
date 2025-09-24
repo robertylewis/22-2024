@@ -1,5 +1,5 @@
 title: Header
-logo_image: ../assets/images/art/header_logo.png
+logo_image: assets/images/art/header_logo.png
 sections:
     - name: CSCI 0220
     - name: Assignments
