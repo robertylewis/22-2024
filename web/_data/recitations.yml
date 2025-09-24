@@ -10,55 +10,55 @@ section_titles:
     - Solution
 recitations:
     - name: Recitation 1
-      link: "/assets/recitation/rec01.pdf"
+      link: "assets/recitation/rec01.pdf"
       template: ""
       released: Feb 1
-      solution: "/assets/recitation/rec01_sol.pdf"
+      solution: "assets/recitation/rec01_sol.pdf"
     - name: Recitation 2
-      link: "/assets/recitation/rec02.pdf"
-      template: "/assets/recitation/rec02_template.zip"
+      link: "assets/recitation/rec02.pdf"
+      template: "assets/recitation/rec02_template.zip"
       released: Feb 8
-      solution: "/assets/recitation/rec02_sol.pdf"
+      solution: "assets/recitation/rec02_sol.pdf"
     - name: Recitation 3
-      link: "/assets/recitation/rec03.pdf"
-      template: "/assets/recitation/rec03_template.zip"
+      link: "assets/recitation/rec03.pdf"
+      template: "assets/recitation/rec03_template.zip"
       released: Feb 15
-      solution: "/assets/recitation/rec03_sol.pdf"
+      solution: "assets/recitation/rec03_sol.pdf"
     - name: Recitation 4
-      link: "/assets/recitation/rec04.pdf"
-      template: "/assets/recitation/rec04_template.zip"
+      link: "assets/recitation/rec04.pdf"
+      template: "assets/recitation/rec04_template.zip"
       released: Feb 22
-      solution: "/assets/recitation/rec04_sol.pdf"
+      solution: "assets/recitation/rec04_sol.pdf"
     - name: Recitation 5
-      link: "/assets/recitation/rec05.pdf"
-      template: "/assets/recitation/rec05_template.zip"
+      link: "assets/recitation/rec05.pdf"
+      template: "assets/recitation/rec05_template.zip"
       released: Feb 29
-      solution: "/assets/recitation/rec05_sol.pdf"
+      solution: "assets/recitation/rec05_sol.pdf"
     - name: Recitation 6
-      link: "/assets/recitation/rec06.pdf"
-      template: "/assets/recitation/rec06_template.zip"
+      link: "assets/recitation/rec06.pdf"
+      template: "assets/recitation/rec06_template.zip"
       released: Mar 7
-      solution: "/assets/recitation/rec06_sol.pdf"
+      solution: "assets/recitation/rec06_sol.pdf"
     - name: Midterm Practice
       link: ""
       template: ""
       released: ""
       solution: ""
     - name: Recitation 7
-      link: "/assets/recitation/rec07.pdf"
-      template: "/assets/recitation/rec07_template.zip"
+      link: "assets/recitation/rec07.pdf"
+      template: "assets/recitation/rec07_template.zip"
       released: Apr 4
-      solution: "/assets/recitation/rec07_sol.pdf"
+      solution: "assets/recitation/rec07_sol.pdf"
     - name: Recitation 8
-      link: "/assets/recitation/rec08.pdf"
-      template: "/assets/recitation/rec08_template.zip"
+      link: "assets/recitation/rec08.pdf"
+      template: "assets/recitation/rec08_template.zip"
       released: Apr 11
-      solution: "/assets/recitation/rec08_sol.pdf"
+      solution: "assets/recitation/rec08_sol.pdf"
     - name: Recitation 9
-      link: "/assets/recitation/rec09.pdf"
-      template: "/assets/recitation/rec09_template.zip"
+      link: "assets/recitation/rec09.pdf"
+      template: "assets/recitation/rec09_template.zip"
       released: Apr 25
-      solution: "/assets/recitation/rec09_sol.pdf"
+      solution: "assets/recitation/rec09_sol.pdf"
     - name: Final Exam Review
       link: ""
       template: ""
